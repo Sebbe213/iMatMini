@@ -22,7 +22,6 @@ public class IMatMini extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("iMatMini.fxml"));
         
         Scene scene = new Scene(root);
-        System.out.println("HEJHEJ");
         stage.setScene(scene);
         stage.show();
     }
