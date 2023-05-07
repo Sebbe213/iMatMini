@@ -10,10 +10,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+<AnchorPane id="AnchorPane" prefHeight="720" prefWidth="1080" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
     <children>
       <StackPane prefHeight="560.0" prefWidth="720.0">
          <children>
+            <AnchorPane fx:id="historyPane" prefHeight="200.0" prefWidth="200.0" />
             <AnchorPane fx:id="dynamicPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
             <AnchorPane fx:id="accountPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
@@ -42,9 +43,9 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="shopPane" prefHeight="240.0" prefWidth="720.0" style="-fx-background-color: #FFF000;">
+            <AnchorPane fx:id="shopPane" prefHeight="701.0" prefWidth="1090.0" style="-fx-background-color: #FFF000;">
                <children>
-                  <AnchorPane prefHeight="102.0" prefWidth="720.0" style="-fx-background-color: #ff6600;">
+                  <AnchorPane prefHeight="102.0" prefWidth="1074.0" style="-fx-background-color: #ff6600;">
                      <children>
                         <TextField fx:id="searchField" layoutX="150.0" layoutY="34.0" prefHeight="35.0" prefWidth="476.0" promptText="Sök vara">
                            <font>
@@ -57,25 +58,26 @@
                               <Font size="18.0" />
                            </font>
                         </Button>
+                        <Button layoutX="727.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleShowHistoryAction" text="Historik" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutY="501.0" prefHeight="59.0" prefWidth="720.0" style="-fx-background-color: #ff6600;">
-                     <children>
-                        <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
-                        <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
-                        <Label fx:id="itemsLabel" layoutX="139.0" layoutY="21.0" prefHeight="17.0" prefWidth="150.0" text="Antal varor: 3456" />
-                        <Label fx:id="costLabel" layoutX="479.0" layoutY="21.0" text="Kostnad: 3456.60" />
-                        <Button layoutX="312.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleNameAction" text="Mina uppgifter" />
-                     </children>
-                  </AnchorPane>
-                  <ScrollPane hbarPolicy="NEVER" layoutY="102.0" prefHeight="398.0" prefWidth="720.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+                  <ScrollPane hbarPolicy="NEVER" layoutY="102.0" prefHeight="560.0" prefWidth="1080.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-102.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="102.0">
                      <content>
-                        <FlowPane fx:id="productsFlowPane" prefHeight="395.0" prefWidth="718.0" style="-fx-background-color: #5e6d70;" vgap="4.0" />
+                        <FlowPane fx:id="productsFlowPane" prefHeight="559.0" prefWidth="1068.0" style="-fx-background-color: #5e6d70;" vgap="4.0" />
                      </content>
                   </ScrollPane>
                </children>
             </AnchorPane>
          </children>
       </StackPane>
+      <AnchorPane layoutX="3.0" layoutY="661.0" prefHeight="59.0" prefWidth="1074.0" style="-fx-background-color: #ff6600;">
+         <children>
+            <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
+            <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
+            <Label fx:id="itemsLabel" layoutX="139.0" layoutY="21.0" prefHeight="17.0" prefWidth="150.0" text="Antal varor: 3456" />
+            <Label fx:id="costLabel" layoutX="479.0" layoutY="21.0" text="Kostnad: 3456.60" />
+            <Button layoutX="312.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleNameAction" text="Mina uppgifter" />
+         </children>
+      </AnchorPane>
     </children>
 </AnchorPane>

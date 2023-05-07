@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<fx:root prefHeight="720.0" prefWidth="1080.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="720.0" stroke="BLACK" strokeType="INSIDE" width="1080.0" />
+      <Button layoutX="514.0" layoutY="348.0" mnemonicParsing="false" onAction="#closeHistoryView" text="Stäng" />
+   </children>
+</fx:root>
