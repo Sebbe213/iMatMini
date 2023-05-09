@@ -2,6 +2,7 @@ package imatmini;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 
@@ -11,6 +12,8 @@ public class History extends AnchorPane {
     iMatMiniController mainController;
     @FXML
     private Rectangle rectangle;
+    @FXML
+    private Button closebutton;
     public History(iMatMiniController mainController) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("History.fxml"));
@@ -27,7 +30,7 @@ public class History extends AnchorPane {
     }
 
     @FXML
-    public void closeHistoryView() {
+    public void closeHistory() {
         mainController.closeNameView();
     }
 }

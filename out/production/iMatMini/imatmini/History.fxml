@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<fx:root prefHeight="720.0" prefWidth="1080.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="720.0" prefWidth="1080.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="720.0" stroke="BLACK" strokeType="INSIDE" width="1080.0" />
-      <Button layoutX="514.0" layoutY="348.0" mnemonicParsing="false" onAction="#closeHistoryView" text="Stäng" />
-      <Label layoutX="514.0" layoutY="217.0" onMouseClicked="#closeHistoryView" text="Historik" />
+      <Button layoutX="514.0" layoutY="348.0" mnemonicParsing="false" onAction="#closeHistory" text="Stäng" />
+      <Label layoutX="514.0" layoutY="217.0" text="Historik" />
    </children>
 </fx:root>
