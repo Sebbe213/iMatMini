@@ -1,7 +1,35 @@
 .text-larger{
-    -fx-font-size: 70px;
+    -fx-font-size: 40px;
     -fx-font-style: normal;
     -fx-font-weight: 600;
+    -fx-text-fill: #3C3C50;
+    -fx-font-family: 'Montserrat';
+}
+
+.iMAT-logo {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3C3C50;
+    -fx-font-family: 'Montserrat';
+}
+
+.navigation-bar-text {
+    -fx-font-size: 32px;
+    -fx-font-style: normal;
+    -fx-text-fill: #3C3C50;
+    -fx-font-family: 'Montserrat';
+}
+
+.navigation-bar-text-bold {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3C3C50;
+    -fx-font-family: 'Montserrat';
+}
+
+.navigation-bar-kundvagn-text {
+    -fx-font-size: 34px;
+    -fx-font-style: normal;
     -fx-text-fill: #3C3C50;
     -fx-font-family: 'Montserrat';
 }
