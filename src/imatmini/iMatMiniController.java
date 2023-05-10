@@ -67,6 +67,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML
     private AnchorPane dynamicPane;
+    @FXML
+    private AnchorPane historyPane;
 
     @FXML
     private AnchorPane carouselContainer;
@@ -88,6 +90,11 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
         openAccountView();
+    }
+
+    @FXML
+    private void handleShowHistoryAction(ActionEvent event) {
+        openHistoryView();
     }
     
     @FXML
@@ -144,6 +151,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         // The NamePanel holds a reference to the main controller (this class)
         AnchorPane namePane = new NamePanel(this);
         dynamicPane.getChildren().add(namePane);
+        AnchorPane history = new History(this);
+        historyPane.getChildren().add(history);
+
+
 
     }    
     
@@ -160,6 +171,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void openNameView() {
         dynamicPane.toFront();
+    }
+
+    public void openHistoryView() {
+        historyPane.toFront();
     }
 
     public void closeNameView() {
