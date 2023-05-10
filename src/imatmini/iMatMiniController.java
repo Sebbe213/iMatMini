@@ -10,17 +10,23 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingCartListener;
+
 
 
 /**
@@ -64,6 +70,19 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private AnchorPane historyPane;
 
+    @FXML
+    private AnchorPane carouselContainer;
+
+    @FXML AnchorPane ProductsPane;
+
+
+
+
+
+    @FXML
+    private AnchorPane main;
+
+
     // Other variables
     private final Model model = Model.getInstance();
 
@@ -80,11 +99,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     
     @FXML
     private void handleSearchAction(ActionEvent event) {
-        
         List<Product> matches = model.findProducts(searchField.getText());
         updateProductList(matches);
         System.out.println("# matching products: " + matches.size());
+        ProductsPane.toFront();
 
+    }
+@FXML
+    private void backButton(ActionEvent event){
+        ProductsPane.toBack();
     }
     
     @FXML
@@ -115,6 +138,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         model.getShoppingCart().addShoppingCartListener(this);
 
         updateProductList(model.getProducts());
+
         updateBottomPanel();
         
         setupAccountPane();
@@ -168,12 +192,31 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         System.out.println("updateProductList " + products.size());
         productsFlowPane.getChildren().clear();
 
+
         for (Product product : products) {
 
             productsFlowPane.getChildren().add(new ProductPanel(product));
+
+
         }
 
+
+
     }
+    /*private void updateCarousel(){
+        Carousel carousel = new Carousel();
+        carouselContainer.getChildren().add(carousel);
+        carouselContainer.setTopAnchor(carousel, 5.0);
+        carouselContainer.setLeftAnchor(carousel, 5.0);
+        carouselContainer.setRightAnchor(carousel, 5.0);
+        carouselContainer.setBottomAnchor(carousel, 5.0);
+       //Kan skapa error
+
+
+    }*/
+
+
+
     
     private void updateBottomPanel() {
         
