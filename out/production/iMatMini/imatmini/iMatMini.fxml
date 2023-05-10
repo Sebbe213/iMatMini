@@ -14,17 +14,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane id="AnchorPane" fx:id="main" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
     <children>
       <StackPane prefHeight="720.0" prefWidth="1080.0">
          <children>
             <AnchorPane fx:id="ProductsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="154.0" layoutY="143.0" prefHeight="491.0" prefWidth="760.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="166.0" AnchorPane.topAnchor="143.0">
-                     <content>
-                        <FlowPane fx:id="productsFlowPane" prefHeight="490.0" prefWidth="745.0" style="-fx-background-color: #FFFFFF;" vgap="4.0" />
-                     </content>
-                  </ScrollPane>
+
                   <Button fx:id="backButton" layoutX="2.0" layoutY="5.0" mnemonicParsing="false" onAction="#backButton" prefWidth="68.0" style="-fx-background-color: 00FFFFFF;" styleClass="back-button" stylesheets="@iMatMini.css" text="Tillbaka">
                      <graphic>
                         <ImageView fitHeight="22.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
@@ -36,9 +33,9 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="dynamicPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
 
-<AnchorPane id="AnchorPane" prefHeight="720" prefWidth="1080" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+
+<AnchorPane id="AnchorPane" prefHeight="720" prefWidth="1080" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
       <StackPane prefHeight="720.0" prefWidth="1080.0">
          <children>
@@ -73,182 +70,6 @@
                </children>
             </AnchorPane>
 
-            <AnchorPane fx:id="shopPane" prefHeight="560.0" prefWidth="711.0" style="-fx-background-color: #FFFFFF;">
-               <children>
-                  <AnchorPane layoutX="158.0" layoutY="655.0" prefHeight="65.0" prefWidth="488.0" style="-fx-background-color: #ff6600;">
-                     <children>
-                        <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
-                        <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
-                        <Label fx:id="itemsLabel" layoutX="139.0" layoutY="21.0" prefHeight="17.0" prefWidth="150.0" text="Antal varor: 3456" />
-                        <Label fx:id="costLabel" layoutX="479.0" layoutY="21.0" text="Kostnad: 3456.60" />
-                        <Button layoutX="312.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleNameAction" text="Mina uppgifter" />
-                     </children>
-                  </AnchorPane>
-                  <TextField fx:id="searchField" layoutX="85.0" layoutY="109.0" prefHeight="46.0" prefWidth="804.0" stylesheets="@iMatMini.css">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="search-bar" />
-                        <String fx:value="search-bar-border" />
-                     </styleClass>
-                  </TextField>
-                  <Button layoutX="857.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSearchAction" prefHeight="44.0" prefWidth="153.0" styleClass="button-search" stylesheets="@iMatMini.css" text="Sök..." textFill="WHITE" AnchorPane.rightAnchor="56.0">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <ImageView fitHeight="214.0" fitWidth="720.0" layoutX="195.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@pics/image1.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="436.0" layoutY="237.0" prefHeight="41.0" prefWidth="194.0" text="Välkommen">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="14.0" layoutY="200.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" styleClass="category-button" stylesheets="@iMatMini.css" text="Fisk">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pics/fish.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="269.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" styleClass="category-button" stylesheets="@iMatMini.css" text="Kött">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pics/meat.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="337.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" styleClass="category-button" stylesheets="@iMatMini.css" text="Kategori">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pics/vegetable.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="406.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" styleClass="category-button" stylesheets="@iMatMini.css" text="Mejeri">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pics/dairy.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="475.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" styleClass="category-button" stylesheets="@iMatMini.css" text="Frukt">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pics/image2.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="544.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" styleClass="category-button" stylesheets="@iMatMini.css" text="Skafferi">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pics/image3.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="613.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" styleClass="category-button" stylesheets="@iMatMini.css" text="Dryck">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pics/Mejeri.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="22.0" layoutY="169.0" prefHeight="17.0" prefWidth="112.0" text="Kategorier">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <AnchorPane fx:id="headerAnchor" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="97.0" prefWidth="1080.0" style="-fx-background-color: ';" styleClass="header-color" stylesheets="@iMatMini.css">
-                     <children>
-                        <Button layoutX="583.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleShowAccountAction" styleClass="header-color" stylesheets="@iMatMini.css" text="Mina sidor" translateX="70.0">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="186.0" layoutY="29.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="109.0" stylesheets="@iMatMini.css" text="Hem " translateX="70.0">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="header-color" />
-                              <String fx:value="button" />
-                           </styleClass>
-                        </Button>
-                        <Button layoutX="316.0" layoutY="28.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="109.0" styleClass="header-color" stylesheets="@iMatMini.css" text="Favoriter" translateX="70.0">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="449.0" layoutY="28.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="109.0" stylesheets="@iMatMini.css" text="Historik" translateX="70.0">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="header-color" />
-                              <String fx:value="button" />
-                           </styleClass>
-                        </Button>
-                        <Button layoutX="932.0" layoutY="6.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="128.0" styleClass="header-color" stylesheets="@iMatMini.css" text="Kundvagn" textFill="TRANSPARENT">
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="-5.0">
-                                 <image>
-                                    <Image url="@pics/shopping-cart(1).png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Label layoutX="947.0" layoutY="53.0" maxWidth="-Infinity" prefHeight="42.0" prefWidth="104.0" styleClass="kundvagn" stylesheets="@iMatMini.css" text="Kundvagn" translateX="5.0">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Button layoutX="31.0" layoutY="25.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="99.0" styleClass="header-color" stylesheets="@iMatMini.css">
-                           <graphic>
-                              <ImageView fitHeight="38.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@pics/logga.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </AnchorPane>
 
             <AnchorPane fx:id="shopPane" prefHeight="701.0" prefWidth="1090.0" style="-fx-background-color: #FFF000;">
                <children>
@@ -298,5 +119,9 @@
             <Label layoutX="872.0" layoutY="53.0" styleClass="navigation-bar-kundvagn-text" text="Kundvagn" />
          </children>
       </AnchorPane>
+    </children>
+</AnchorPane>
+         </children>
+      </StackPane>
     </children>
 </AnchorPane>
