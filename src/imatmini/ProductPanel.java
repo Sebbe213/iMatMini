@@ -5,14 +5,18 @@
  */
 package imatmini;
 
+
 import java.io.IOException;
+import java.util.List;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.*;
 
 /**
  *
@@ -24,8 +28,18 @@ public class ProductPanel extends AnchorPane {
     @FXML Label nameLabel;
     @FXML Label prizeLabel;
     @FXML Label ecoLabel;
+
+    @FXML Label howLabel;
+
+    @FXML
+    Button addButton;
+
+    @FXML
+    Button buyButton;
+
     
     private Model model = Model.getInstance();
+
 
     private Product product;
     
@@ -52,10 +66,65 @@ public class ProductPanel extends AnchorPane {
             ecoLabel.setText("");
         }
     }
-    
+
+
+    @FXML
+    public void addProduct() {
+        int quantity = Integer.parseInt(howLabel.getText());
+        quantity++;
+        howLabel.setText(String.valueOf(quantity));
+    }
+
+    @FXML
+    public void removeProduct(){
+
+        int quantity = Integer.parseInt(howLabel.getText());
+        if(quantity>0) {
+            quantity--;
+            howLabel.setText(String.valueOf(quantity));
+        }
+
+    }
+
+    @FXML
+    public void sendBuyButtonBack(){
+        buyButton.toBack();
+        buyButton.setStyle("-fx-background-color: #FFFFFF;");
+    }
+
+
+
+   @FXML
+    public void handleRemoveAction(ActionEvent event) {
+        List<ShoppingItem> items = model.getShoppingCart().getItems();      //en lista med alla våra varor
+
+       for (int i = 0; i < items.size(); i++) {
+           ShoppingItem item = items.get(i);
+            if (item.getProduct().equals(product)) {
+                if (item.getAmount() > 1) {
+                    item.setAmount(item.getAmount() - 1);
+
+
+                } else {
+                    model.getShoppingCart().removeProduct(product);
+                }
+                model.getShoppingCart().fireShoppingCartChanged(item ,true);
+                break;
+            }
+
+
+        }
+
+        removeProduct();
+    }
+
     @FXML
     private void handleAddAction(ActionEvent event) {
         System.out.println("Add " + product.getName());
         model.addToShoppingCart(product);
+        addProduct();
+
+
+        }
     }
-}
+

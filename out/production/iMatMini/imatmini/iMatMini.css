@@ -1,15 +1,119 @@
-.text-larger{
-    -fx-font-size: 70px;
-    -fx-font-style: normal;
-    -fx-font-weight: 600;
-    -fx-text-fill: #3C3C50;
-    -fx-font-family: 'Montserrat';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,300&display=swap');
+
+
+
+
+.button-search{
+    -fx-font-family: 'Montserrat Alternates', sans-serif;
+    -fx-pref-width: 167px;
+    -fx-pref-height: 45px;
+    -fx-background-color: #40AA54;
+    -fx-border-color: #000000;
+    -fx-border-width: 1px;
+    -fx-border-radius: 35px;
+    -fx-layout-x: 1077px;
+    -fx-layout-y: 169px;
+    -fx-background-radius: 35px;
+ }
+
+.search-bar{
+    -fx-background-color: #FFFFFF;
+    -fx-pref-width: 938px;
+    -fx-pref-height: 40px;
+    -fx-layout-y: 291px;
+    -fx-layout-x:172px
+
+
+
 }
 
-.button-style{
-    fx-font-family: 'Montserrat';
-    fx-font-style: italic;
-    fx-font-weight: 500;
-    fx-font-size: 25px;
-    fx-text-fill: #3C3C50;
+.search-bar-border{
+ -fx-border-color: #000000;
+  -fx-border-width: 1px;
+ -fx-border-radius:35px;
+  -fx-background-radius:35px;
+
+
+}
+
+
+.header-color{
+    -fx-font-family: 'Montserrat Alternates', sans-serif;
+    -fx-background-color:#AED4C0;
+    -fx-font-weight: 400;
+}
+
+.kundvagn{
+-fx-font-size: 20px;
+
+}
+
+.button:hover {
+     -fx-background-color: #80BEBEBE;
+     -fx-background-radius: 35px;
+     -fx-border-radius: 35px;
+    -fx-effect: rgba(0,0,0,0.6);
+    -fx-underline: true;
+}
+
+.button:pressed{
+    -fx-background-color: #80BEBEBE;
+    -fx-effect: dropshadow(three-pass-box, #000000, 10, 0, 0, 0);
+    -fx-padding: 0.5em 0.7em;
+    -fx-underline: true;
+
+}
+
+.category-button{
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #000000;
+    -fx-radius-width:1px;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.product-card{
+    -fx-border-radius: 35px;
+    -fx-background-radius: 35px;
+    -fx-border-color: #000000;
+
+
+
+}
+.add-button{
+    -fx-pref-width: 48px;
+    -fx-pref-height: 45px;
+    -fx-border-radius: 40px;
+    -fx-background-radius: 50%;
+    -fx-background-color: #40AA54;
+
+
+}
+
+.back-button{
+    -fx-background-color: #FCF6F6;
+    -fx-pref-height:20px;
+    -fx-pref-width:140px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width:2px;
+    -fx-background-radius: 20px;
+
+
+}
+.product-card{
+   -fx-border-radius: 10px;
+   -fx-background-radius:10px;
+   -fx-border-color: #0000000;
+   -fx-border-width:2px;
+
+}
+
+.buy-button{
+    -fx-border-radius: 30px;
+    -fx-background-radius:30px;
+
+
 }
