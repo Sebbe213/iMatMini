@@ -33,6 +33,7 @@ public class ProductPanel extends AnchorPane {
 
     @FXML
     Button addButton;
+    @FXML Button addButton1;
 
     @FXML
     Button buyButton;
@@ -43,7 +44,7 @@ public class ProductPanel extends AnchorPane {
 
     private Product product;
     
-    private final static double kImageWidth = 100.0;
+    private final static double kImageWidth = 200.0;
     private final static double kImageRatio = 0.75;
 
     public ProductPanel(Product product) {
@@ -57,7 +58,7 @@ public class ProductPanel extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
+        addButton.setText("+");
         this.product = product;
         nameLabel.setText(product.getName());
         prizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
@@ -81,15 +82,22 @@ public class ProductPanel extends AnchorPane {
         int quantity = Integer.parseInt(howLabel.getText());
         if(quantity>0) {
             quantity--;
+            if(quantity==0){
+                buyButton.toFront();
+            }
             howLabel.setText(String.valueOf(quantity));
         }
+
 
     }
 
     @FXML
     public void sendBuyButtonBack(){
         buyButton.toBack();
-        buyButton.setStyle("-fx-background-color: #FFFFFF;");
+        int quantity = Integer.parseInt(howLabel.getText());
+        quantity++;
+        howLabel.setText(String.valueOf(quantity));
+
     }
 
 

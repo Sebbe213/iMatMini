@@ -1,10 +1,18 @@
 <component name="libraryTable">
   <library name="lib3">
     <CLASSES>
+<<<<<<< Updated upstream
       <root url="file://$USER_HOME$/Desktop/Skola/DeisgnOchKonstruktionAvGrafiskaGranssnitt/javafx-sdk-19.0.2/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
     <jarDirectory url="file://$USER_HOME$/Desktop/Skola/DeisgnOchKonstruktionAvGrafiskaGranssnitt/javafx-sdk-19.0.2/lib" recursive="false" />
+=======
+      <root url="file://$USER_HOME$/Desktop/javafx-sdk-19.0.2.1/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Desktop/javafx-sdk-19.0.2.1/lib" recursive="false" />
+>>>>>>> Stashed changes
   </library>
 </component>
