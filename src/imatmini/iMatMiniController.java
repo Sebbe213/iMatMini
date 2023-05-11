@@ -96,9 +96,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleShowHistoryAction(ActionEvent event) {
         openHistoryView();
     }
-    
-    @FXML
-    private void handleSearchAction(ActionEvent event) {
+
+    public void handleSearchAction(ActionEvent event) {
         List<Product> matches = model.findProducts(searchField.getText());
         updateProductList(matches);
         System.out.println("# matching products: " + matches.size());
@@ -111,14 +110,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
     
     @FXML
-    private void handleClearCartAction(ActionEvent event) {
-        model.clearShoppingCart();
-    }
-    
-    @FXML
     private void handleBuyItemsAction(ActionEvent event) {
         model.placeOrder();
-        costLabel.setText("Köpet klart!");
     }
 
     @FXML
@@ -138,8 +131,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         model.getShoppingCart().addShoppingCartListener(this);
 
         updateProductList(model.getProducts());
-
-        updateBottomPanel();
         
         setupAccountPane();
 
@@ -153,6 +144,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         dynamicPane.getChildren().add(namePane);
         AnchorPane history = new History(this);
         historyPane.getChildren().add(history);
+        AnchorPane home = new HomePage(this);
+        shopPane.getChildren().add(home);
 
 
 
@@ -183,7 +176,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Shope pane methods
     @Override
      public void shoppingCartChanged(CartEvent evt) {
-        updateBottomPanel();
+
     }
    
     
@@ -215,17 +208,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     }*/
 
-
-
-    
-    private void updateBottomPanel() {
-        
-        ShoppingCart shoppingCart = model.getShoppingCart();
-        
-        itemsLabel.setText("Antal varor: " + shoppingCart.getItems().size());
-        costLabel.setText("Kostnad: " + String.format("%.2f",shoppingCart.getTotal()));
-        
-    }
     
     private void updateAccountPanel() {
         
@@ -272,5 +254,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         yearCombo.getItems().addAll(model.getYears());
         
+    }
+
+    public void clearShoppingCart() {
+        model.clearShoppingCart();
     }
 }
