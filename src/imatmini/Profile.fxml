@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<fx:root prefHeight="623.0" prefWidth="1080.0" style="-fx-background-color: #FFFFFF;" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="235.0" layoutX="124.0" layoutY="101.0" stroke="#dadae0" strokeType="OUTSIDE" width="841.0" />
+        <Button layoutX="967.0" layoutY="26.0" mnemonicParsing="false" onAction="#closeHistory" text="Stäng" />
+        <Label layoutX="68.0" layoutY="32.0" prefHeight="42.0" prefWidth="158.0" styleClass="navigation-bar-text" text="Mina sidor" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="202.0" layoutX="127.0" layoutY="366.0" stroke="#dadae0" strokeType="OUTSIDE" width="839.0" />
+      <Label layoutX="135.0" layoutY="106.0" text="Perosnuppgifter:" />
+      <Label layoutX="138.0" layoutY="372.0" text="Betalingsuppgifter:" />
+    </children>
+</fx:root>
