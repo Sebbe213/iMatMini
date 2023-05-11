@@ -21,7 +21,7 @@ public class History extends AnchorPane {
     @FXML
     private Button closebutton;
     @FXML
-    private FlowPane orderPane;
+    public FlowPane orderPane;
     private List<Order> orderList;
     public History(iMatMiniController mainController) {
 

@@ -74,7 +74,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML
     private AnchorPane profilePane;
-    
+
     @FXML
     private AnchorPane main;
 
@@ -85,7 +85,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Shop pane actions
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
-        openAccountView();
+        openMyProfile();
     }
 
     @FXML
@@ -156,6 +156,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         AnchorPane profile = new Profile(this);
         profilePane.getChildren().add(profile);
 
+        historyPane.setTranslateY(93);
+        profilePane.setTranslateY(93);
+
 
 
     }    
@@ -163,7 +166,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Navigation
     public void openAccountView() {
         updateAccountPanel();
-        accountPane.toFront();
+        profilePane.toFront();
     }
 
     public void closeAccountView() {
@@ -201,6 +204,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         System.out.println(IMatDataHandler.getInstance().getOrders());
         for (Order order : orderList) {
             HistoryItem item = new HistoryItem(order, this);
+
         }
     }
     

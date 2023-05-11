@@ -19,7 +19,6 @@
          <children>
 
             <AnchorPane fx:id="profilePane" prefHeight="623.0" prefWidth="1080.0" />
-            <AnchorPane fx:id="historyPane" prefHeight="720.0" prefWidth="1080.0" />
 
             <AnchorPane fx:id="ProductsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
@@ -39,7 +38,6 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="historyPane" prefHeight="634.0" prefWidth="1080.0" />
             <AnchorPane fx:id="dynamicPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
             <AnchorPane fx:id="accountPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
@@ -69,6 +67,7 @@
                </children>
             </AnchorPane>
             <AnchorPane fx:id="shopPane" prefHeight="720.0" prefWidth="1080.0" />
+            <AnchorPane fx:id="historyPane" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFFFFF;" />
          </children>
       </StackPane>
 

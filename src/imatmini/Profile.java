@@ -10,21 +10,21 @@ public class Profile extends AnchorPane {
     iMatMiniController mainController;
     public Profile(iMatMiniController mainController) {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("History.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Profile.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
-            System.out.println("Här");
+            System.out.println("profile");
             throw new RuntimeException(exception);
         }
         this.mainController = mainController;
     }
 
     @FXML
-    public void closeHistory() {
-        mainController.closeNameView();
+    public void closeProfile() {
+        mainController.openHomePageView();
     }
 }

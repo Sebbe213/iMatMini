@@ -17,6 +17,9 @@
    <children>
       <StackPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1080.0">
          <children>
+
+            <AnchorPane fx:id="profilePane" prefHeight="623.0" prefWidth="1080.0" />
+
             <AnchorPane fx:id="ProductsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <ScrollPane hbarPolicy="NEVER" layoutX="154.0" layoutY="143.0" prefHeight="491.0" prefWidth="760.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="166.0" AnchorPane.topAnchor="143.0">
@@ -35,7 +38,6 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="historyPane" prefHeight="634.0" prefWidth="1080.0" />
             <AnchorPane fx:id="dynamicPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
             <AnchorPane fx:id="accountPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
@@ -65,6 +67,7 @@
                </children>
             </AnchorPane>
             <AnchorPane fx:id="shopPane" prefHeight="720.0" prefWidth="1080.0" />
+            <AnchorPane fx:id="historyPane" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFFFFF;" />
          </children>
       </StackPane>
 
