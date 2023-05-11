@@ -15,7 +15,11 @@
       <Label layoutX="14.0" layoutY="61.0" styleClass="navigation-bar-text" text="Mina Ordrar:" />
       <ScrollPane layoutX="24.0" layoutY="108.0" prefHeight="494.0" prefWidth="671.0">
          <content>
-            <FlowPane prefHeight="542.0" prefWidth="676.0" />
+            <FlowPane fx:id="orderPane" prefHeight="542.0" prefWidth="676.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="75.0" stroke="BLACK" strokeType="INSIDE" width="656.0" />
+               </children>
+            </FlowPane>
          </content>
       </ScrollPane>
       <Label layoutX="853.0" layoutY="60.0" styleClass="kundvagn" text="Order 2023-04-13" />

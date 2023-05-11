@@ -21,12 +21,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
+import se.chalmers.cse.dat216.project.*;
 
+import javax.swing.*;
 
 
 /**
@@ -75,10 +72,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML AnchorPane ProductsPane;
 
-
-
-
-
     @FXML
     private AnchorPane main;
 
@@ -96,6 +89,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleShowHistoryAction(ActionEvent event) {
         openHistoryView();
     }
+
+    @FXML
+    private void handleShowHomePageAction(ActionEvent event) {openHomePageView();}
 
     public void handleSearchAction(ActionEvent event) {
         List<Product> matches = model.findProducts(searchField.getText());
@@ -140,12 +136,19 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         // There is an fxml file NamePanel.fxml and a corresponding class NamePanel.java
         // Simply create a new NamePanel object and add it as a child of dynamicPane
         // The NamePanel holds a reference to the main controller (this class)
+
+        Product product = new Product();
+        ShoppingItem shoppingItem = new ShoppingItem(product, 2);
+        Model.getInstance().getShoppingCart().addItem(shoppingItem);
+        Model.getInstance().placeOrder();
+
         AnchorPane namePane = new NamePanel(this);
         dynamicPane.getChildren().add(namePane);
         AnchorPane history = new History(this);
         historyPane.getChildren().add(history);
         AnchorPane home = new HomePage(this);
         shopPane.getChildren().add(home);
+
 
 
 
@@ -167,7 +170,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     public void openHistoryView() {
+        updateHistory();
         historyPane.toFront();
+    }
+
+    public void openHomePageView() {
+        shopPane.toFront();
     }
 
     public void closeNameView() {
@@ -178,7 +186,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
      public void shoppingCartChanged(CartEvent evt) {
 
     }
-   
+
+
+    private void updateHistory() {
+        List<Order >orderList = IMatDataHandler.getInstance().getOrders();
+        System.out.println(IMatDataHandler.getInstance().getOrders());
+        for (Order order : orderList) {
+            HistoryItem item = new HistoryItem(order, this);
+        }
+    }
     
     private void updateProductList(List<Product> products) {
 
@@ -187,10 +203,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
 
         for (Product product : products) {
-
             productsFlowPane.getChildren().add(new ProductPanel(product));
-
-
         }
 
 
