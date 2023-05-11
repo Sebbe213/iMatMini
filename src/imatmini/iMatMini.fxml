@@ -17,6 +17,10 @@
    <children>
       <StackPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1080.0">
          <children>
+
+            <AnchorPane fx:id="profilePane" prefHeight="623.0" prefWidth="1080.0" />
+            <AnchorPane fx:id="historyPane" prefHeight="720.0" prefWidth="1080.0" />
+
             <AnchorPane fx:id="ProductsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <ScrollPane hbarPolicy="NEVER" layoutX="154.0" layoutY="143.0" prefHeight="491.0" prefWidth="760.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="166.0" AnchorPane.topAnchor="143.0">
@@ -67,6 +71,7 @@
             <AnchorPane fx:id="shopPane" prefHeight="720.0" prefWidth="1080.0" />
          </children>
       </StackPane>
+
       <AnchorPane fx:id="headerAnchor" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="97.0" prefWidth="1090.0" style="-fx-background-color: ';" styleClass="header-color" stylesheets="@iMatMini.css">
          <children>
             <Button layoutX="583.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleShowAccountAction" styleClass="header-color" stylesheets="@iMatMini.css" text="Mina sidor" translateX="70.0">
@@ -122,5 +127,6 @@
             </Button>
          </children>
       </AnchorPane>
+
    </children>
 </AnchorPane>

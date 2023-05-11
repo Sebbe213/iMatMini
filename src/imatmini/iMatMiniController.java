@@ -73,6 +73,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML AnchorPane ProductsPane;
 
     @FXML
+    private AnchorPane profilePane;
+    
+    @FXML
     private AnchorPane main;
 
 
@@ -146,9 +149,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         dynamicPane.getChildren().add(namePane);
         AnchorPane history = new History(this);
         historyPane.getChildren().add(history);
+
         AnchorPane home = new HomePage(this);
         shopPane.getChildren().add(home);
 
+        AnchorPane profile = new Profile(this);
+        profilePane.getChildren().add(profile);
 
 
 
@@ -164,6 +170,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateCreditCard();
         shopPane.toFront();
     }
+
+    public void openMyProfile() { profilePane.toFront(); }
 
     public void openNameView() {
         dynamicPane.toFront();

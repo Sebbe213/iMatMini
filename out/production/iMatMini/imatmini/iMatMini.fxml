@@ -67,6 +67,7 @@
             <AnchorPane fx:id="shopPane" prefHeight="720.0" prefWidth="1080.0" />
          </children>
       </StackPane>
+
       <AnchorPane fx:id="headerAnchor" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="97.0" prefWidth="1090.0" style="-fx-background-color: ';" styleClass="header-color" stylesheets="@iMatMini.css">
          <children>
             <Button layoutX="583.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleShowAccountAction" styleClass="header-color" stylesheets="@iMatMini.css" text="Mina sidor" translateX="70.0">
@@ -122,5 +123,6 @@
             </Button>
          </children>
       </AnchorPane>
+
    </children>
 </AnchorPane>
