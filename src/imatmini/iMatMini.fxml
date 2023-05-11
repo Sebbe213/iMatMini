@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
+<?import java.lang.String?>
 <AnchorPane id="AnchorPane" fx:id="main" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
    <children>
       <StackPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1080.0">
@@ -20,13 +21,11 @@
             <AnchorPane fx:id="ProductsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <ScrollPane hbarPolicy="NEVER" layoutX="154.0" layoutY="143.0" prefHeight="491.0" prefWidth="760.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="166.0" AnchorPane.topAnchor="143.0">
-<<<<<<< Updated upstream
+
                      <content>
                         <FlowPane fx:id="productsFlowPane" prefHeight="490.0" prefWidth="745.0" style="-fx-background-color: #FFFFFF;" vgap="4.0" />
                      </content>
-=======
 
->>>>>>> Stashed changes
                   </ScrollPane>
                   <Button fx:id="backButton" layoutX="2.0" layoutY="5.0" mnemonicParsing="false" onAction="#backButton" prefWidth="68.0" style="-fx-background-color: 00FFFFFF;" styleClass="back-button" stylesheets="@iMatMini.css" text="Tillbaka">
                      <graphic>
@@ -39,9 +38,9 @@
                   </Button>
                </children>
             </AnchorPane>
-<<<<<<< Updated upstream
+
             <AnchorPane fx:id="dynamicPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
-=======
+
 
 <AnchorPane id="AnchorPane" prefHeight="720" prefWidth="1080" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
@@ -50,7 +49,7 @@
             <AnchorPane fx:id="historyPane" prefHeight="720.0" prefWidth="1080.0" />
             <AnchorPane fx:id="dynamicPane" prefHeight="1080.0" prefWidth="720.0" style="-fx-background-color: blue;" />
 
->>>>>>> Stashed changes
+
             <AnchorPane fx:id="accountPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="289.0" prefWidth="444.0" style="-fx-background-color: #e0e0e0;">
@@ -254,25 +253,23 @@
                         </Button>
                      </children>
                   </AnchorPane>
-<<<<<<< Updated upstream
-=======
+
                   <ScrollPane hbarPolicy="NEVER" layoutY="102.0" prefHeight="560.0" prefWidth="1080.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-102.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="102.0">
                      <content>
                         <FlowPane fx:id="productsFlowPane" prefHeight="559.0" prefWidth="1068.0" prefWrapLength="1100.0" style="-fx-background-color: #5e6d70;" vgap="4.0" />
                      </content>
                   </ScrollPane>
 
->>>>>>> Stashed changes
+
                </children>
             </AnchorPane>
          </children>
       </StackPane>
    </children>
 </AnchorPane>
-<<<<<<< Updated upstream
-=======
+
          </children>
       </StackPane>
     </children>
 </AnchorPane>
->>>>>>> Stashed changes
+
