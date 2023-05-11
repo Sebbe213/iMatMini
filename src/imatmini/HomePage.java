@@ -36,7 +36,7 @@ public class HomePage extends AnchorPane {
     }
 
     @FXML
-    private void handleSearchAction(ActionEvent event) {
+    private void search(ActionEvent event) {
         mainController.handleSearchAction(event);
     }
 }

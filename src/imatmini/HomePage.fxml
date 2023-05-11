@@ -9,10 +9,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="720.0" prefWidth="1080.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="AnchorPane" fx:id="main" prefHeight="720.0" prefWidth="1080.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="6.0" layoutY="8.0" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="shopPane" prefHeight="560.0" prefWidth="711.0" style="-fx-background-color: #FFFFFF;">
          <children>
+            <TextField fx:id="searchField" layoutX="85.0" layoutY="109.0" prefHeight="46.0" prefWidth="804.0" stylesheets="@iMatMini.css">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="search-bar" />
+                  <String fx:value="search-bar-border" />
+               </styleClass>
+            </TextField>
+            <Button layoutX="857.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#search" prefHeight="44.0" prefWidth="153.0" styleClass="button-search" stylesheets="@iMatMini.css" text="Sök..." textFill="WHITE" AnchorPane.rightAnchor="56.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
             <ImageView fitHeight="214.0" fitWidth="720.0" layoutX="195.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@pics/image1.png" />
@@ -109,15 +123,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="searchField" layoutX="95.0" layoutY="119.0" prefHeight="46.0" prefWidth="804.0" stylesheets="@iMatMini.css">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="search-bar" />
-                  <String fx:value="search-bar-border" />
-               </styleClass>
-            </TextField>
          </children>
       </AnchorPane>
    </children>
