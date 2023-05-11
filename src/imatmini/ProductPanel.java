@@ -118,6 +118,7 @@ public class ProductPanel extends AnchorPane {
         removeProduct();
     }
 
+
     @FXML
     private void handleAddAction(ActionEvent event) {
         System.out.println("Add " + product.getName());

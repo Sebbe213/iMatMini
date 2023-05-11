@@ -15,7 +15,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="main" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
    <children>
-      <StackPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1080.0">
+      <StackPane prefHeight="730.0" prefWidth="1090.0">
          <children>
             <AnchorPane fx:id="historyPane" prefHeight="720.0" prefWidth="1080.0" />
             <AnchorPane fx:id="ProductsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
@@ -66,6 +66,15 @@
             </AnchorPane>
             <AnchorPane fx:id="shopPane" prefHeight="560.0" prefWidth="711.0" style="-fx-background-color: #FFFFFF;">
                <children>
+                  <AnchorPane fx:id="carouselPane" layoutX="182.0" layoutY="376.0" prefHeight="208.0" prefWidth="811.0">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="208.0" prefWidth="811.0" vbarPolicy="NEVER">
+                           <content>
+                              <FlowPane fx:id="flowCarousel" prefHeight="208.0" prefWidth="811.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
                   <AnchorPane layoutX="158.0" layoutY="655.0" prefHeight="65.0" prefWidth="488.0" style="-fx-background-color: #ff6600;">
                      <children>
                         <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
@@ -84,7 +93,7 @@
                         <String fx:value="search-bar-border" />
                      </styleClass>
                   </TextField>
-                  <Button layoutX="857.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSearchAction" prefHeight="44.0" prefWidth="153.0" styleClass="button-search" stylesheets="@iMatMini.css" text="Sök..." textFill="WHITE" AnchorPane.rightAnchor="56.0">
+                  <Button layoutX="857.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSearchAction" prefHeight="44.0" prefWidth="153.0" styleClass="button-search" stylesheets="@iMatMini.css" text="Sök..." textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -185,7 +194,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <AnchorPane fx:id="headerAnchor" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="97.0" prefWidth="1080.0" style="-fx-background-color: ';" styleClass="header-color" stylesheets="@iMatMini.css">
+                  <AnchorPane fx:id="headerAnchor" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="97.0" prefWidth="1090.0" style="-fx-background-color: ';" styleClass="header-color" stylesheets="@iMatMini.css">
                      <children>
                         <Button layoutX="583.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleShowAccountAction" styleClass="header-color" stylesheets="@iMatMini.css" text="Mina sidor" translateX="70.0">
                            <font>
