@@ -164,14 +164,19 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         // The NamePanel holds a reference to the main controller (this class)
         AnchorPane namePane = new NamePanel(this);
         dynamicPane.getChildren().add(namePane);
+
         AnchorPane history = new History(this);
         historyPane.getChildren().add(history);
+
         AnchorPane profile = new Profile(this);
         profilePane.getChildren().add(profile);
+
         AnchorPane favourites = new Favourites(this);
         favoritesPane.getChildren().add(favourites);
+
         AnchorPane cart = new Cart(this);
         cartPane.getChildren().add(cart);
+
         AnchorPane checkout = new Checkout(this);
         checkoutPane.getChildren().add(checkout);
 

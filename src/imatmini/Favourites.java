@@ -25,7 +25,7 @@ public class Favourites extends AnchorPane {
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
-            System.out.println("Favourties");
+            System.out.println("Favourites");
             throw new RuntimeException(exception);
         }
         this.mainController = mainController;
