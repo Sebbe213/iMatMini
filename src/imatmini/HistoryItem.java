@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -46,7 +47,7 @@ public class HistoryItem extends AnchorPane {
     }
 
     @FXML
-    public void selectOrder(ActionEvent event) {
+    public void selectTheOrder() {
         History history = new History(mainController);
         history.fillHistoryProduct(this.order);
     }

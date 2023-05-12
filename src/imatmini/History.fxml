@@ -22,7 +22,16 @@
             </FlowPane>
          </content>
       </ScrollPane>
-      <Label layoutX="853.0" layoutY="60.0" styleClass="kundvagn" text="Order 2023-04-13" />
+      <Label fx:id="orderDateLabel" layoutX="853.0" layoutY="60.0" styleClass="kundvagn" text="Order 2023-04-13" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="75.0" layoutX="807.0" layoutY="527.0" stroke="BLACK" strokeType="INSIDE" width="252.0" />
+      <ScrollPane layoutX="807.0" layoutY="90.0" prefHeight="431.0" prefWidth="252.0">
+         <content>
+            <FlowPane fx:id="orderItemsPane" prefHeight="449.0" prefWidth="337.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="81.0" stroke="BLACK" strokeType="INSIDE" width="337.0" />
+               </children>
+            </FlowPane>
+         </content>
+      </ScrollPane>
    </children>
 </fx:root>

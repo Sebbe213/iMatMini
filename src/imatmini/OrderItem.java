@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -41,10 +42,10 @@ public class OrderItem extends AnchorPane {
         }
         this.item = item;
 
-        this.productImage.setImage(model.getImage(item.getProduct()));
+        /*this.productImage.setImage(model.getImage(item.getProduct()));
         this.productNameLabel.setText(item.getProduct().getName());
         this.productPriceLabel.setText(String.format("%f", item.getProduct().getPrice()));
         this.productWeightLabel.setText(item.getProduct().getUnitSuffix());
-        this.amountLabel.setText(String.format("%f", item.getAmount()));
+        this.amountLabel.setText(String.format("%f", item.getAmount()));*/
     }
 }

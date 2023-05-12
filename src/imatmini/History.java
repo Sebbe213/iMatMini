@@ -3,6 +3,7 @@ package imatmini;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
@@ -23,7 +24,9 @@ public class History extends AnchorPane {
     @FXML
     private FlowPane orderPane;
     @FXML
-    private FlowPane productsFlowPane;
+    private FlowPane orderItemsPane;
+    @FXML
+    private Label orderDateLabel;
     private List<Order> orderList;
     public History(iMatMiniController mainController) {
 
@@ -59,10 +62,13 @@ public class History extends AnchorPane {
         }
     }
     public void fillHistoryProduct(Order order) {
-        productsFlowPane.getChildren().clear();
+        System.out.println(order.getItems());
+
+        orderItemsPane.getChildren().clear();
         for (ShoppingItem item : order.getItems()) {
             OrderItem orderitem = new OrderItem(item);
-            productsFlowPane.getChildren().add(orderitem);
+            orderItemsPane.getChildren().add(orderitem);
         }
+        orderDateLabel.setText("Order " + order.getDate().toString());
     }
 }

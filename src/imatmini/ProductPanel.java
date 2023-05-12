@@ -115,6 +115,9 @@ public class ProductPanel extends AnchorPane {
         quantity++;
         howLabel.setText(String.valueOf(quantity));
 
+        //TODO LÄGGER TILL I SHOPPINGCART
+        model.addToShoppingCart(product);
+
     }
 
 

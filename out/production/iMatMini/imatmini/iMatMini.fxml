@@ -258,6 +258,7 @@
       </ImageView>
    </graphic>
 </Button>
+            <Button layoutX="179.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
 </children>
 </AnchorPane>
     </children>
