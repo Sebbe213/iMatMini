@@ -21,6 +21,8 @@ public class ProductCard extends AnchorPane {
 
     @FXML Button buyButton;
 
+
+
     private Product product;
     private Model model = Model.getInstance();
 

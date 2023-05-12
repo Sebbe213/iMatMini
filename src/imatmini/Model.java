@@ -87,6 +87,18 @@ public class Model {
         //shoppingCart.addProduct(p);
     }
 
+    public boolean isFavorite(Product p){
+        return iMatDataHandler.isFavorite(p);
+    }
+
+    public void addFavorite(Product p){
+        iMatDataHandler.addFavorite(p);
+    }
+
+    public void removeFavorite(Product p){
+        iMatDataHandler.removeFavorite(p);
+    }
+
     public List<String> getCardTypes() {
         return availableCardTypes;
     }

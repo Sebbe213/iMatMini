@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
@@ -37,12 +38,15 @@ public class ProductPanel extends AnchorPane {
 
     @FXML
     Button buyButton;
+    @FXML Button favorite;
+    @FXML ImageView favImage;
 
     
     private Model model = Model.getInstance();
 
 
     private Product product;
+
     
     private final static double kImageWidth = 200.0;
     private final static double kImageRatio = 0.75;
@@ -66,6 +70,9 @@ public class ProductPanel extends AnchorPane {
         if (!product.isEcological()) {
             ecoLabel.setText("");
         }
+        if (model.isFavorite(product)){
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
+        }
     }
 
 
@@ -87,8 +94,18 @@ public class ProductPanel extends AnchorPane {
             }
             howLabel.setText(String.valueOf(quantity));
         }
+    }
 
-
+    @FXML
+    public void addFavorite(){
+        if(model.isFavorite(product)){
+            model.removeFavorite(product);
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/unfavorite.png")));
+        }
+        else if(!model.isFavorite(product)) {
+            model.addFavorite(product);
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
+        }
     }
 
     @FXML

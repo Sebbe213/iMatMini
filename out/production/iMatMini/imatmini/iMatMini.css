@@ -52,6 +52,8 @@
      -fx-background-color: #80BEBE;
      -fx-background-radius: 35px;
      -fx-border-radius: 35px;
+     -fx-underline: true;
+     
 
 
 }
