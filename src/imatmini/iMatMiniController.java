@@ -79,6 +79,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private AnchorPane profilePane;
 
     @FXML
+    private AnchorPane cartPane;
+
+    @FXML
+    protected AnchorPane checkoutPane;
+    @FXML
+    private AnchorPane favoritesPane;
+
+    @FXML
     private AnchorPane main;
 
 
@@ -95,6 +103,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleShowHistoryAction(ActionEvent event) {
         openHistoryView();
     }
+
+    @FXML
+    private void handleShowFavouritesAction(ActionEvent event) {openFavourites();}
+
+    @FXML
+    private void handleShowShoppingCartAction(ActionEvent event) {openShoppingCart();}
     
     @FXML
     private void handleSearchAction(ActionEvent event) {
@@ -154,9 +168,18 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         historyPane.getChildren().add(history);
         AnchorPane profile = new Profile(this);
         profilePane.getChildren().add(profile);
+        AnchorPane favourites = new Favourites(this);
+        favoritesPane.getChildren().add(favourites);
+        AnchorPane cart = new Cart(this);
+        cartPane.getChildren().add(cart);
+        AnchorPane checkout = new Checkout(this);
+        checkoutPane.getChildren().add(checkout);
 
         historyPane.setTranslateY(94);
         profilePane.setTranslateY(94);
+        cartPane.setTranslateY(94);
+        favoritesPane.setTranslateY(94);
+        checkoutPane.setTranslateY(94);
 
 
     }    
@@ -180,6 +203,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void openHistoryView() {
         historyPane.toFront();
+    }
+
+    public void openFavourites() {
+        favoritesPane.toFront();
+    }
+
+    public void openShoppingCart() {
+        cartPane.toFront();
     }
 
     public void closeNameView() {
