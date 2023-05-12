@@ -49,15 +49,17 @@
 }
 
 .button:hover {
-     -fx-background-color: #80BEBEBE;
+     -fx-background-color: #80BEBE;
      -fx-background-radius: 35px;
      -fx-border-radius: 35px;
-    -fx-effect: rgba(0,0,0,0.6);
-    -fx-underline: true;
+     -fx-underline: true;
+     
+
+
 }
 
 .button:pressed{
-    -fx-background-color: #80BEBEBE;
+    -fx-background-color: #80BEBE;
     -fx-effect: dropshadow(three-pass-box, #000000, 10, 0, 0, 0);
     -fx-padding: 0.5em 0.7em;
     -fx-underline: true;

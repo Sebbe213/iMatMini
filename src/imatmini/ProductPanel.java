@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
@@ -33,17 +34,21 @@ public class ProductPanel extends AnchorPane {
 
     @FXML
     Button addButton;
+    @FXML Button addButton1;
 
     @FXML
     Button buyButton;
+    @FXML Button favorite;
+    @FXML ImageView favImage;
 
     
     private Model model = Model.getInstance();
 
 
     private Product product;
+
     
-    private final static double kImageWidth = 100.0;
+    private final static double kImageWidth = 200.0;
     private final static double kImageRatio = 0.75;
 
     public ProductPanel(Product product) {
@@ -57,13 +62,16 @@ public class ProductPanel extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
+        addButton.setText("+");
         this.product = product;
         nameLabel.setText(product.getName());
         prizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
         imageView.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
         if (!product.isEcological()) {
             ecoLabel.setText("");
+        }
+        if (model.isFavorite(product)){
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
         }
     }
 
@@ -81,15 +89,32 @@ public class ProductPanel extends AnchorPane {
         int quantity = Integer.parseInt(howLabel.getText());
         if(quantity>0) {
             quantity--;
+            if(quantity==0){
+                buyButton.toFront();
+            }
             howLabel.setText(String.valueOf(quantity));
         }
+    }
 
+    @FXML
+    public void addFavorite(){
+        if(model.isFavorite(product)){
+            model.removeFavorite(product);
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/unfavorite.png")));
+        }
+        else if(!model.isFavorite(product)) {
+            model.addFavorite(product);
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
+        }
     }
 
     @FXML
     public void sendBuyButtonBack(){
         buyButton.toBack();
-        buyButton.setStyle("-fx-background-color: #FFFFFF;");
+        int quantity = Integer.parseInt(howLabel.getText());
+        quantity++;
+        howLabel.setText(String.valueOf(quantity));
+
     }
 
 
