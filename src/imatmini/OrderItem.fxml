@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<fx:root prefHeight="81.0" prefWidth="337.0" style="-fx-background-color: #FFFFFF;" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="productImage" fitHeight="75.0" fitWidth="135.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../.dat215/imat/images/product_9.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="108.0" layoutY="14.0" text="Bröd 500g" />
+      <Label layoutX="295.0" layoutY="59.0" text="50kr" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="33.0" layoutX="104.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" width="63.0" />
+      <Label layoutX="122.0" layoutY="51.0" text="1st" />
+   </children>
+</fx:root>

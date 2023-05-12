@@ -131,6 +131,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private void handleBuyItemsAction(ActionEvent event) {
         model.placeOrder();
+        History history = new History(this);
+        history.fillHistory();
         costLabel.setText("Köpet klart!");
     }
 
@@ -207,6 +209,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     public void openHistoryView() {
+        History history = new History(this);
+        history.fillHistory();
         historyPane.toFront();
     }
 

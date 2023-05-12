@@ -21,7 +21,9 @@ public class History extends AnchorPane {
     @FXML
     private Button closebutton;
     @FXML
-    public FlowPane orderPane;
+    private FlowPane orderPane;
+    @FXML
+    private FlowPane productsFlowPane;
     private List<Order> orderList;
     public History(iMatMiniController mainController) {
 
@@ -54,6 +56,13 @@ public class History extends AnchorPane {
         for (Order order : orderList) {
             HistoryItem item = new HistoryItem(order, mainController);
             orderPane.getChildren().add(item);
+        }
+    }
+    public void fillHistoryProduct(Order order) {
+        productsFlowPane.getChildren().clear();
+        for (ShoppingItem item : order.getItems()) {
+            OrderItem orderitem = new OrderItem(item);
+            productsFlowPane.getChildren().add(orderitem);
         }
     }
 }

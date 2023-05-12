@@ -1,5 +1,6 @@
 package imatmini;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -41,5 +43,11 @@ public class HistoryItem extends AnchorPane {
         this.adressLabel.setText("EN ADRESS");
 
         List<ShoppingItem> orderList = order.getItems();
+    }
+
+    @FXML
+    public void selectOrder(ActionEvent event) {
+        History history = new History(mainController);
+        history.fillHistoryProduct(this.order);
     }
 }

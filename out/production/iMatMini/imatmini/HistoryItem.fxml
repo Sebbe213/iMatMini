@@ -10,6 +10,6 @@
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" stroke="BLACK" strokeType="INSIDE" width="656.0" />
         <Label fx:id="orderDateLabel" layoutX="31.0" layoutY="29.0" text="2023-04-13" />
         <Label fx:id="adressLabel" layoutX="328.0" layoutY="29.0" text="Drottninggatan 40 Göteborg" />
-        <Button fx:id="showOrderButton" layoutX="560.0" layoutY="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #FCF6F6;" text="Visa" />
+        <Button fx:id="showOrderButton" layoutX="560.0" layoutY="25.0" mnemonicParsing="false" onAction="#selectOrder" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #FCF6F6;" text="Visa" />
     </children>
 </fx:root>
