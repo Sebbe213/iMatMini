@@ -64,15 +64,22 @@ public class Carousel extends AnchorPane {
 
 
     public void moveRight(ActionEvent event) {
-            if(currentPos <0)
-            currentPos += 100;
-            flowPane.setLayoutX(currentPos);
+            if(currentPos <0) {
+                currentPos += 720;
+                if (currentPos > (productBox.getWidth() - flowPane.getWidth())) {
+                    currentPos =  flowPane.getWidth()/5;
+                }
+                flowPane.setLayoutX(currentPos);
+            }
 
     }
 
     public void moveLeft(ActionEvent event) {
-                    currentPos -= 100;
-                    flowPane.setLayoutX(currentPos);
+
+        currentPos -= 720;
+        flowPane.setLayoutX(currentPos);
+
+
 
     }
 
