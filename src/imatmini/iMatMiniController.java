@@ -155,6 +155,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         AnchorPane profile = new Profile(this);
         profilePane.getChildren().add(profile);
 
+        historyPane.setTranslateY(94);
+        profilePane.setTranslateY(94);
+
 
     }    
     
