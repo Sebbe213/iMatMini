@@ -63,24 +63,23 @@ public class Carousel extends AnchorPane {
     }
 
 
-    public void moveRight(ActionEvent event) {
-            if(currentPos <0) {
-                currentPos += 720;
-                if (currentPos > (productBox.getWidth() - flowPane.getWidth())) {
-                    currentPos =  flowPane.getWidth()/5;
-                }
-                flowPane.setLayoutX(currentPos);
-            }
 
+    public void moveRight(ActionEvent event) {
+        if(currentPos<0) {
+            currentPos += 720;
+            flowPane.setLayoutX(currentPos);
+            leftButton.setDisable(false);
+        }
     }
 
     public void moveLeft(ActionEvent event) {
-
         currentPos -= 720;
+
+        if (currentPos < -700*5) {
+            leftButton.setDisable(true);
+        }
+
         flowPane.setLayoutX(currentPos);
-
-
-
     }
 
     private void updateProductList(List<Product> products) {
@@ -92,7 +91,6 @@ public class Carousel extends AnchorPane {
         for (int i = 0; i<5; i++) {
             int randomIndex= rand.nextInt(products.size());
             Product product = (products.get(randomIndex));
-
 
             productBox.getChildren().add(new ProductPanel(product));
 
