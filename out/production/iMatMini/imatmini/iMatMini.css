@@ -157,7 +157,8 @@
 .button-style-carousel{
     fx-background-radius: 20px;
     fx-border-radius: 10px;
-    fx-border-width: 2px;
+    -fx-border-width: 2px;
+    -fx-border-color: #000000;
     -fx-background-color : #CBDCCB;
 
 }

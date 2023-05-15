@@ -88,7 +88,7 @@ public class Carousel extends AnchorPane {
         productBox.getChildren().clear();
 
 
-        for (int i = 0; i<5; i++) {
+        for (int i = 0; i<6; i++) {
             int randomIndex= rand.nextInt(products.size());
             Product product = (products.get(randomIndex));
 

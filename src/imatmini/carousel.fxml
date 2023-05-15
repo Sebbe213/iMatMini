@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <fx:root fx:id="manPane" prefHeight="214.0" prefWidth="720.0" style="-fx-background-color: #FFFFFF;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <FlowPane fx:id="flowPane" prefHeight="200.0" prefWidth="200.0">
+      <FlowPane fx:id="flowPane" layoutX="-4.0" prefHeight="214.0" prefWidth="733.0">
          <children>
             <HBox fx:id="productBox" prefHeight="214.0" prefWidth="723.0" />
          </children>
       </FlowPane>
-      <Button fx:id="rightButton" layoutX="653.0" layoutY="91.0" mnemonicParsing="false" onAction="#moveRight" prefHeight="38.0" prefWidth="70.0" style="-fx-background-color: #FFFFFF;" styleClass="button-style-carousel" stylesheets="@iMatMini.css">
+      <Button fx:id="rightButton" layoutX="677.0" layoutY="57.0" mnemonicParsing="false" onAction="#moveRight" prefHeight="118.0" prefWidth="47.0" style="-fx-background-color: #FFFFFF;" styleClass="button-style-carousel" stylesheets="@iMatMini.css">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@pics/right-arrow.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="leftButton" layoutY="90.0" mnemonicParsing="false" onAction="#moveLeft" prefHeight="38.0" prefWidth="65.0" style="-fx-background-color: #FFFFFF;" styleClass="button-style-carousel" stylesheets="@iMatMini.css">
+      <Button fx:id="leftButton" layoutY="50.0" mnemonicParsing="false" onAction="#moveLeft" prefHeight="118.0" prefWidth="47.0" style="-fx-background-color: #FFFFFF;" styleClass="button-style-carousel" stylesheets="@iMatMini.css">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                <image>
