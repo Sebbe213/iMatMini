@@ -194,11 +194,20 @@
          </font>
       </Label>
 
-      <ScrollPane hbarPolicy="NEVER" layoutX="142.0" layoutY="158.0" prefHeight="640.0" prefWidth="938.0" style="-fx-background-color: #FFFFFF;" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-78.0" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="158.0">
+      <ScrollPane hbarPolicy="NEVER" layoutX="134.0" layoutY="348.0" prefHeight="366.0" prefWidth="938.0" style="-fx-background-color: #FFFFFF;" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="134.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="348.0">
          <content>
-            <FlowPane fx:id="productsFlowPane" prefHeight="649.0" prefWidth="923.0" prefWrapLength="1100.0" style="-fx-background-color: #5e6d70;" vgap="4.0" />
+            <FlowPane fx:id="productsFlowPane" prefHeight="364.0" prefWidth="923.0" prefWrapLength="1100.0" style="-fx-background-color: #5e6d70;" vgap="4.0" />
          </content>
       </ScrollPane>
+                  <AnchorPane fx:id="carouselPane" layoutX="172.0" layoutY="7.0" prefHeight="330.0" prefWidth="711.0" style="-fx-background-color: #FEFEFE;">
+                     <children>
+                        <FlowPane fx:id="flowCarousel" layoutX="102.0" layoutY="98.0" prefHeight="408.0" prefWidth="488.0">
+                           <children>
+                              <AnchorPane fx:id="carouselContainer" prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </AnchorPane>
 
 
    </children>

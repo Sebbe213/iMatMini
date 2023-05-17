@@ -71,12 +71,16 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private AnchorPane historyPane;
 
     @FXML
+    private AnchorPane profilePane;
+
+    @FXML
     private AnchorPane carouselContainer;
 
     @FXML AnchorPane ProductsPane;
 
-    @FXML
-    private AnchorPane profilePane;
+    @FXML AnchorPane  carouselPane;
+
+    @FXML FlowPane flowCarousel;
 
     @FXML
     private AnchorPane cartPane;
@@ -179,6 +183,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         AnchorPane checkout = new Checkout(this);
         checkoutPane.getChildren().add(checkout);
+
+        AnchorPane carousel = new Carousel(this);
+        flowCarousel.getChildren().add(carousel);
 
         historyPane.setTranslateY(94);
         profilePane.setTranslateY(94);
