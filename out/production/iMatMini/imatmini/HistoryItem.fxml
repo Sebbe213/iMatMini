@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<javafx.scene.layout.AnchorPane prefHeight="75.0" prefWidth="656.0" stylesheets="@iMatMini.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="75.0" prefWidth="656.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" stroke="BLACK" strokeType="INSIDE" width="656.0" />
         <Label fx:id="orderDateLabel" layoutX="31.0" layoutY="29.0" text="2023-04-13" />
         <Label fx:id="adressLabel" layoutX="328.0" layoutY="29.0" text="Drottninggatan 40 Göteborg" />
         <Button fx:id="showOrderButton" layoutX="560.0" layoutY="25.0" mnemonicParsing="false" onAction="#selectTheOrder" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #FCF6F6;" text="Visa" />
     </children>
-</javafx.scene.layout.AnchorPane>
+</fx:root>

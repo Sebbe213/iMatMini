@@ -17,16 +17,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
-
+import javafx.scene.layout.*;
+import se.chalmers.cse.dat216.project.*;
 
 
 /**
@@ -92,6 +84,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML
     private AnchorPane main;
+
+    private final Favourites favourites = new Favourites(this);
+    private final History history = new History(this);
+    private final Profile  profile = new Profile(this);
+    private final Cart  cart = new Cart(this);
+    private final Checkout checkout = new Checkout(this);
+    private final Carousel carousel = new Carousel(this);
 
 
     // Other variables
@@ -171,22 +170,16 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         AnchorPane namePane = new NamePanel(this);
         dynamicPane.getChildren().add(namePane);
 
-        AnchorPane history = new History(this);
         historyPane.getChildren().add(history);
 
-        AnchorPane profile = new Profile(this);
         profilePane.getChildren().add(profile);
 
-        AnchorPane favourites = new Favourites(this);
         favoritesPane.getChildren().add(favourites);
 
-        AnchorPane cart = new Cart(this);
         cartPane.getChildren().add(cart);
 
-        AnchorPane checkout = new Checkout(this);
         checkoutPane.getChildren().add(checkout);
 
-        AnchorPane carousel = new Carousel(this);
         flowCarousel.getChildren().add(carousel);
 
         historyPane.setTranslateY(94);
@@ -216,14 +209,19 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     public void openHistoryView() {
-        History history = new History(this);
         history.fillHistory();
         historyPane.toFront();
     }
 
-    public void openFavourites() {
-        favoritesPane.toFront();
+    public History getHistory() {
+        return history;
     }
+
+    public void openFavourites() {
+       favourites.fillGridPane();
+       favoritesPane.toFront();
+    }
+
 
     public void openShoppingCart() {
         cartPane.toFront();

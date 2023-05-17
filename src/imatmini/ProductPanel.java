@@ -100,6 +100,7 @@ public class ProductPanel extends AnchorPane {
     public void addFavorite(){
         if(model.isFavorite(product)){
             model.removeFavorite(product);
+            System.out.println("Remove fav: " + product.getProductId());
             favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/unfavorite.png")));
         }
         else if(!model.isFavorite(product)) {

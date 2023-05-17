@@ -50,7 +50,7 @@ public class HistoryItem extends AnchorPane {
 
     @FXML
     public void selectTheOrder(ActionEvent event) {
-        History history = new History(mainController);
+        History history = mainController.getHistory();
         history.fillHistoryProduct(order);
     }
 }
