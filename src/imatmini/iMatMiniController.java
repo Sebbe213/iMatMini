@@ -21,12 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
-
+import se.chalmers.cse.dat216.project.*;
 
 
 /**
@@ -92,6 +87,38 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML
     private AnchorPane main;
+
+    @FXML
+    Button fiskButton;
+
+    @FXML
+    Button köttButton;
+
+    @FXML
+    Button grönsaksButton;
+
+    @FXML
+    Button mejeriButton;
+
+    @FXML
+    Button fruktButton;
+
+    @FXML
+    Button skafferiButton;
+
+    @FXML
+    Button dryckButton;
+    @FXML
+    FlowPane CategoryFlowpane;
+
+    @FXML
+    AnchorPane CategoryAnchorpane;
+
+
+
+
+
+
 
 
     // Other variables
@@ -233,8 +260,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
      public void shoppingCartChanged(CartEvent evt) {
         updateBottomPanel();
     }
-   
-    
+
+
     private void updateProductList(List<Product> products) {
 
         System.out.println("updateProductList " + products.size());
@@ -262,6 +289,27 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
 
     }*/
+
+    @FXML
+    public void openCategory(ActionEvent event) {
+        List<Product> products = model.getProducts();
+        ProductCategory fish = ProductCategory.FISH;
+        ProductCategory meat = ProductCategory.MEAT;
+
+        //Ca.getChildren().clear();
+
+        for (Product product : products) {
+            if (product.getCategory().equals(fish) && fiskButton.isPressed()) {
+                CategoryFlowpane.getChildren().add(new ProductPanel(product));
+            }
+
+            else if(product.getCategory().equals(meat) && köttButton.isPressed()){
+                CategoryFlowpane.getChildren().add(new ProductPanel(product));
+            }
+        }
+
+        CategoryAnchorpane.toFront();
+    }
 
 
 
