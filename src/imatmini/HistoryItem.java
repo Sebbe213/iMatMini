@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -23,8 +24,9 @@ public class HistoryItem extends AnchorPane {
     @FXML
     private Button showOrderButton;
 
-    private Order order;
-    private iMatMiniController mainController;
+
+    protected Order order;
+    private final iMatMiniController mainController;
 
     public HistoryItem(Order order, iMatMiniController mainController) {
 
@@ -47,8 +49,8 @@ public class HistoryItem extends AnchorPane {
     }
 
     @FXML
-    public void selectTheOrder() {
+    public void selectTheOrder(ActionEvent event) {
         History history = new History(mainController);
-        history.fillHistoryProduct(this.order);
+        history.fillHistoryProduct(order);
     }
 }

@@ -13,9 +13,10 @@
             <Image url="@../../../../../.dat215/imat/images/product_9.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="108.0" layoutY="14.0" text="Bröd 500g" />
-      <Label layoutX="295.0" layoutY="59.0" text="50kr" />
+      <Label fx:id="productNameLabel" layoutX="108.0" layoutY="14.0" text="Bröd 500g" />
+      <Label fx:id="productPriceLabel" layoutX="295.0" layoutY="59.0" text="50kr" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="33.0" layoutX="104.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" width="63.0" />
-      <Label layoutX="122.0" layoutY="51.0" text="1st" />
+      <Label fx:id="amountLabel" layoutX="122.0" layoutY="51.0" text="1st" />
+      <Label fx:id="productWeightLabel" layoutX="267.0" layoutY="14.0" text="30g" />
    </children>
 </fx:root>

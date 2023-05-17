@@ -27,6 +27,7 @@ public class OrderItem extends AnchorPane {
     private Label productPriceLabel;
 
     private ShoppingItem item;
+    private Product product;
     private Model model = Model.getInstance();
 
     public OrderItem(ShoppingItem item) {
@@ -41,11 +42,13 @@ public class OrderItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.item = item;
+        this.product = item.getProduct();
+        System.out.println(product);
 
-        /*this.productImage.setImage(model.getImage(item.getProduct()));
+        this.productImage.setImage(model.getImage(item.getProduct()));
         this.productNameLabel.setText(item.getProduct().getName());
-        this.productPriceLabel.setText(String.format("%f", item.getProduct().getPrice()));
+        this.productPriceLabel.setText(String.format("%d", (int)item.getTotal()));
         this.productWeightLabel.setText(item.getProduct().getUnitSuffix());
-        this.amountLabel.setText(String.format("%f", item.getAmount()));*/
+        this.amountLabel.setText(String.format("%d", (int)item.getAmount()));
     }
 }
