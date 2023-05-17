@@ -49,17 +49,15 @@
 }
 
 .button:hover {
-     -fx-background-color: #80BEBE;
+     -fx-background-color: #80BEBEBE;
      -fx-background-radius: 35px;
      -fx-border-radius: 35px;
-     -fx-underline: true;
-     
-
-
+    -fx-effect: rgba(0,0,0,0.6);
+    -fx-underline: true;
 }
 
 .button:pressed{
-    -fx-background-color: #80BEBE;
+    -fx-background-color: #80BEBEBE;
     -fx-effect: dropshadow(three-pass-box, #000000, 10, 0, 0, 0);
     -fx-padding: 0.5em 0.7em;
     -fx-underline: true;
@@ -149,39 +147,18 @@
 }
 
 .button-style{
-    -fx-font-family: 'Montserrat';
-    -fx-font-style: italic;
-    -fx-font-weight: 500;
-    -fx-font-size: 25px;
-    -fx-text-fill: #3C3C50;
+    fx-font-family: 'Montserrat';
+    fx-font-style: italic;
+    fx-font-weight: 500;
+    fx-font-size: 25px;
+    fx-text-fill: #3C3C50;
 }
 
-.my-pages-style{
-    -fx-font-family:'Arial' ;
-    -fx-font-weight: 600;
-    -fx-font-size: 30px;
-    -fx-text-fill: #3C3C50;
-}
+.button-style-carousel{
+    fx-background-radius: 20px;
+    fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: #000000;
+    -fx-background-color : #CBDCCB;
 
-.sub-title{
-    -fx-font-family: 'Arial';
-    -fx-font-weight: 600;
-    -fx-font-size: 20px;
-    -fx-text-fill: #3C3C50;
-}
-
-.my-pages-small-text{
-    -fx-font-family: 'Arial';
-    -fx-font-style: normal;
-    -fx-font-weight: 500;
-    -fx-font-size: 16px;
-    -fx-text-fill: #3C3C50;
-}
-
-.my-pages-fill-text{
-    -fx-font-family: 'Arial';
-    -fx-font-style: normal;
-    -fx-font-weight: 400;
-    -fx-font-size: 16px;
-    -fx-text-fill: #726C6C;
 }
