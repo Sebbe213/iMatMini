@@ -172,6 +172,20 @@
     -fx-pref-width: 602px;
 }
 
+.checkout-anchorpane-style {
+    -fx-background-color: #FCF6F6;
+    -fx-border-radius: 10px;
+    -fx-border-color: #DADAE0;
+    -fx-border-width: 1px;
+}
+
+.checkout-price-anchor {
+    -fx-background-color: #FFFEFE;
+    -fx-border-radius: 10px;
+    -fx-border-color: #DADAE0;
+    -fx-border-width: 1px;
+}
+
 .cart-prices-box {
         -fx-background-color: #FFFEFE;
         -fx-pref-height:84px;

@@ -130,12 +130,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleClearCartAction(ActionEvent event) {
         model.clearShoppingCart();
     }
-    
-    @FXML
-    private void handleBuyItemsAction(ActionEvent event) {
+
+    public void handleBuyItemsAction() {
+        for(ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()) {
+            if(item.getAmount() == 0) {IMatDataHandler.getInstance().getShoppingCart().removeItem(item);}
+        }
         model.placeOrder();
-        History history = new History(this);
         history.fillHistory();
+        cart.fillCartFlowPane();
+        checkout.fillCartFlowPane();
         costLabel.setText("Köpet klart!");
     }
 
@@ -228,6 +231,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         cartPane.toFront();
     }
     public void closeCartPane() {cartPane.toBack();}
+
+    public void updateCheckoutPane() {
+        checkout.fillCartFlowPane();
+    }
 
     public void closeNameView() {
         shopPane.toFront();

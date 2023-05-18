@@ -11,7 +11,7 @@
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="1024.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
         <Label layoutX="169.0" layoutY="14.0" styleClass="navigation-bar-text-bold" text="Min kundvagn" />
-      <Button fx:id="toCheckoutButton" layoutX="1148.0" layoutY="873.0" mnemonicParsing="false" onAction="#handleShowCheckoutAction" styleClass="to-checkout-button" text="Till betalning" AnchorPane.bottomAnchor="103.0" AnchorPane.rightAnchor="117.0" />
+      <Button fx:id="toCheckoutButton" layoutX="1148.0" layoutY="873.0" mnemonicParsing="false" onAction="#openCheckout" styleClass="to-checkout-button" text="Till betalning" AnchorPane.bottomAnchor="103.0" AnchorPane.rightAnchor="117.0" />
       <Button fx:id="backButton" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#handlePressBackButton" prefHeight="29.0" prefWidth="82.0" styleClass="back-button" text="Tillbaka" />
       <AnchorPane layoutX="349.0" layoutY="158.0" prefHeight="624.0" prefWidth="702.0" styleClass="cart-anchorpane-style">
          <children>
@@ -23,7 +23,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffefe" height="84.0" layoutX="59.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" styleClass="cart-prices-box" width="589.0" />
             <Label layoutX="65.0" layoutY="520.0" styleClass="cart-prices-text" text="Frakt:" />
             <Label fx:id="priceLabel" layoutX="151.0" layoutY="520.0" styleClass="cart-prices-text-non-bold" text="70kr" />
-            <Label layoutX="180.0" layoutY="560.0" styleClass="cart-prices-text-non-bold" text="0kr" />
+            <Label fx:id="priceLabel" layoutX="180.0" layoutY="560.0" styleClass="cart-prices-text-non-bold" text="0kr" />
             <Label layoutX="65.0" layoutY="560.0" styleClass="cart-prices-text" text="Summa:" />
          </children>
       </AnchorPane>
