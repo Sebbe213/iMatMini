@@ -4,16 +4,18 @@
 
 
 .button-search{
-    -fx-font-family: 'Montserrat Alternates', sans-serif;
-    -fx-pref-width: 167px;
-    -fx-pref-height: 45px;
+    -fx-font-family: 'Arial';
+    -fx-pref-width: 170px;
+    -fx-pref-height: 47px;
     -fx-background-color: #40AA54;
-    -fx-border-color: #000000;
+    -fx-border-color: #92929B;
     -fx-border-width: 1px;
     -fx-border-radius: 35px;
-    -fx-layout-x: 1077px;
-    -fx-layout-y: 169px;
+    -fx-layout-x: 1066px;
+    -fx-layout-y: 124px;
     -fx-background-radius: 35px;
+    -fx-font-size: 20px;
+    -fx-font-weight:bold;
  }
 
 .search-bar{
@@ -22,38 +24,36 @@
     -fx-pref-height: 40px;
     -fx-layout-y: 291px;
     -fx-layout-x:172px
-
-
-
+    -fx-font-weight: bold;
 }
 
 .search-bar-border{
- -fx-border-color: #000000;
-  -fx-border-width: 1px;
- -fx-border-radius:35px;
-  -fx-background-radius:35px;
-
-
+    -fx-border-color: #92929B;
+    -fx-border-width: 1px;
+    -fx-border-radius:35px;
+    -fx-background-radius:35px;
 }
 
-
 .header-color{
-    -fx-font-family: 'Montserrat Alternates', sans-serif;
+    -fx-font-family: 'Arial';
     -fx-background-color:#AED4C0;
-    -fx-font-weight: 400;
+    -fx-text-fill: #3C3C50;
+    -fx-font-size: 25px;
 }
 
 .kundvagn{
--fx-font-size: 20px;
-
+    -fx-font-family: 'Arial';
+    -fx-font-size: 30px;
+    -fx-text-fill: #3C3C50;
 }
 
 .button:hover {
-     -fx-background-color: #80BEBEBE;
-     -fx-background-radius: 35px;
-     -fx-border-radius: 35px;
+    -fx-background-color: #80BEBEBE;
+    -fx-background-radius: 35px;
+    -fx-border-radius: 35px;
     -fx-effect: rgba(0,0,0,0.6);
     -fx-underline: true;
+    -fx-font-weight: bold;
 }
 
 .button:pressed{
@@ -61,35 +61,26 @@
     -fx-effect: dropshadow(three-pass-box, #000000, 10, 0, 0, 0);
     -fx-padding: 0.5em 0.7em;
     -fx-underline: true;
-
 }
 
 .category-button{
     -fx-background-color: #FFFFFF;
-    -fx-border-color: #000000;
+    -fx-border-color: #92929B;
     -fx-radius-width:1px;
     -fx-pref-width: 120px;
     -fx-pref-height: 50px;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
+    -fx-font-weight: bold;
 }
 
-.product-card{
-    -fx-border-radius: 35px;
-    -fx-background-radius: 35px;
-    -fx-border-color: #000000;
-
-
-
-}
 .add-button{
     -fx-pref-width: 48px;
     -fx-pref-height: 45px;
     -fx-border-radius: 40px;
     -fx-background-radius: 50%;
     -fx-background-color: #40AA54;
-
-
+    -fx-font-weight: bold;
 }
 
 .back-button{
@@ -100,22 +91,18 @@
     -fx-border-color: #000000;
     -fx-border-width:2px;
     -fx-background-radius: 20px;
-
-
 }
-.product-card{
-   -fx-border-radius: 10px;
-   -fx-background-radius:10px;
-   -fx-border-color: #0000000;
-   -fx-border-width:2px;
 
+.product-card{
+    -fx-border-radius: 10px;
+    -fx-background-radius:10px;
+    -fx-border-color: #92929B;
+    -fx-border-width:1px;
 }
 
 .buy-button{
     -fx-border-radius: 30px;
     -fx-background-radius:30px;
-
-
 }
 
 .iMAT-logo {
@@ -147,71 +134,17 @@
 }
 
 .button-style{
-    fx-font-family: 'Montserrat';
-    fx-font-style: italic;
-    fx-font-weight: 500;
-    fx-font-size: 25px;
-    fx-text-fill: #3C3C50;
+    -fx-font-family: 'Montserrat';
+    -fx-font-style: italic;
+    -fx-font-weight: 500;
+    -fx-font-size: 25px;
+    -fx-text-fill: #3C3C50;
 }
 
 .button-style-carousel{
-    fx-background-radius: 20px;
-    fx-border-radius: 10px;
-    -fx-border-width: 2px;
-    -fx-border-color: #000000;
-    -fx-background-color : #CBDCCB;
-
-}
-
-.to-checkout-button {
-    -fx-background-color: #AED4C0;
-    -fx-pref-height:45px;
-    -fx-pref-width:175px;
-    -fx-border-radius: 20px;
-    -fx-border-color: #000000;
-    -fx-border-width:2px;
     -fx-background-radius: 20px;
-    -fx-font-size: 20px;
-    -fx-font-style: italic;
-    -fx-font-weight: bolder;
-    -fx-text-fill: #000000;
-}
-
-.cart-anchorpane-style {
-    -fx-background-color: #FCF6F6;
     -fx-border-radius: 10px;
-    -fx-border-color: #DADAE0;
-    -fx-border-width: 1px;
-    -fx-pref-height: 524px;
-    -fx-pref-width: 602px;
-}
-
-.cart-prices-box {
-        -fx-background-color: #FFFEFE;
-        -fx-pref-height:84px;
-        -fx-pref-width:560px;
-        -fx-border-radius: 20px;
-        -fx-border-color: #DADAE0;
-        -fx-border-width:1px;
-        -fx-background-radius: 10px;
-}
-
-.cart-prices-text {
-    -fx-font-size: 30px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #3C3C50;
-    -fx-font-family: 'Montserrat';
-}
-
-.cart-prices-text-non-bold {
-    -fx-font-size: 30px;
-    -fx-font-weight: normal;
-    -fx-text-fill: #3C3C50;
-    -fx-font-family: 'Montserrat';
-}
-
-.cart-item-circle {
-    -fx-fill: #FFFFFF;
-    -fx-stroke: #92929B;
-    -fx-stroke-type: outside;
+    -fx-border-width: 2px;
+    -fx-border-color: #92929B;
+    -fx-background-color : #CBDCCB;
 }
