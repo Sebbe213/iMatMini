@@ -5,17 +5,32 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.List;
 
 public class Cart extends AnchorPane {
-    iMatMiniController mainController;
+    private final iMatMiniController mainController;
+
+    private final Model model = Model.getInstance();
+
+    @FXML
+    private FlowPane cartFlowPane;
+    @FXML
+    private Label priceLabel;
+    @FXML
+    private Button backButton;
+    @FXML
+    private Button toCheckoutButton;
+
 
     public Cart(iMatMiniController mainController) {
 
@@ -34,9 +49,28 @@ public class Cart extends AnchorPane {
     @FXML
     public void handleShowCheckoutAction(ActionEvent event) {openCheckout();}
 
+    @FXML
+    public void handlePressBackButton(ActionEvent event) {goBack();}
+
+    public void goBack() {
+        mainController.closeCartPane();
+    }
+
     public void openCheckout() {
         mainController.checkoutPane.toFront();
     }
 
+    public void fillCartFlowPane() {
+        cartFlowPane.getChildren().clear();
+        if(Model.getInstance().getShoppingCart().getItems().isEmpty()) {
+            System.out.println("Kundvagn Tom");
+            return;
+        }
+        for(ShoppingItem item : Model.getInstance().getShoppingCart().getItems()) {
+            Product product = item.getProduct();
+            if(item.getAmount() == 0) {continue;}
+            cartFlowPane.getChildren().add(new CartItem(item,this));
+        }
+    }
 
 }

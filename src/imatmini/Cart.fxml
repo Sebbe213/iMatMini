@@ -2,13 +2,30 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.shape.Rectangle?>
 
 <fx:root prefHeight="623.0" prefWidth="1080.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d5f0db" height="623.0" stroke="BLACK" strokeType="INSIDE" width="1080.0" />
-        <Label layoutX="14.0" layoutY="14.0" styleClass="navigation-bar-text-bold" text="Varukorg" />
-      <Button layoutX="514.0" layoutY="505.0" mnemonicParsing="false" onAction="#handleShowCheckoutAction" text="Betala" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="623.0" stroke="BLACK" strokeType="INSIDE" width="1080.0" />
+        <Label layoutX="169.0" layoutY="14.0" styleClass="navigation-bar-text-bold" text="Min kundvagn" />
+      <Button fx:id="toCheckoutButton" layoutX="891.0" layoutY="561.0" mnemonicParsing="false" onAction="#handleShowCheckoutAction" styleClass="to-checkout-button" text="Till betalning" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#handlePressBackButton" prefHeight="29.0" prefWidth="82.0" styleClass="back-button" text="Tillbaka" />
+      <AnchorPane layoutX="239.0" layoutY="61.0" prefHeight="311.0" prefWidth="347.0" styleClass="cart-anchorpane-style">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffefe" height="84.0" layoutX="21.0" layoutY="426.0" stroke="BLACK" strokeType="INSIDE" styleClass="cart-prices-box" width="560.0" />
+            <Label layoutX="41.0" layoutY="426.0" styleClass="cart-prices-text" text="Frakt:" />
+            <Label layoutX="41.0" layoutY="465.0" styleClass="cart-prices-text" text="Summa:" />
+            <Label layoutX="127.0" layoutY="426.0" styleClass="cart-prices-text-non-bold" text="40kr" />
+            <Label fx:id="priceLabel" layoutX="156.0" layoutY="465.0" styleClass="cart-prices-text-non-bold" text="70kr" />
+            <ScrollPane layoutX="14.0" layoutY="14.0" prefHeight="396.0" prefWidth="574.0">
+               <content>
+                  <FlowPane fx:id="cartFlowPane" prefHeight="411.0" prefWidth="559.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
     </children>
 </fx:root>

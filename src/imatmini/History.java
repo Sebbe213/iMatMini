@@ -1,8 +1,10 @@
 package imatmini;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
@@ -21,7 +23,15 @@ public class History extends AnchorPane {
     @FXML
     private Button closebutton;
     @FXML
-    public FlowPane orderPane;
+    private FlowPane orderPane;
+    @FXML
+    private FlowPane orderItemsPane;
+    @FXML
+    private Label selectedOrderDateLabel;
+    @FXML
+    private Label orderPriceLabel;
+
+
     private List<Order> orderList;
     public History(iMatMiniController mainController) {
 
@@ -52,8 +62,27 @@ public class History extends AnchorPane {
         System.out.println(IMatDataHandler.getInstance().getOrders());
         orderPane.getChildren().clear();
         for (Order order : orderList) {
+
             HistoryItem item = new HistoryItem(order, mainController);
             orderPane.getChildren().add(item);
         }
+    }
+
+    public void fillHistoryProduct(Order order) {
+        System.out.println(order);
+
+        double totalCost = 0;
+        orderItemsPane.getChildren().clear();
+        for (ShoppingItem item : order.getItems()) {
+
+            OrderItem orderitem = new OrderItem(item);
+            orderItemsPane.getChildren().add(orderitem);
+
+            totalCost += item.getTotal();
+
+        }
+        selectedOrderDateLabel.setText("Order " + order.getDate().toString());
+        System.out.println(selectedOrderDateLabel);
+        orderPriceLabel.setText("Totalt: " + String.format("%f", totalCost));
     }
 }
