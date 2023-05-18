@@ -43,7 +43,7 @@ public class Favourites extends AnchorPane {
         for(Product product : favoritesList) {
             favoritesGridPane.add(new ProductPanel(product), i, j);
             i++;
-            if(i % 3 == 0) {
+            if(i % 4 == 0) {
                 i = 0;
                 j++;
             }
