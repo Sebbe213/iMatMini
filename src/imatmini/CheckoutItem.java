@@ -17,9 +17,9 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 
-public class CartItem extends AnchorPane implements ShoppingCartListener {
+public class CheckoutItem extends AnchorPane implements ShoppingCartListener {
     private final ShoppingItem item;
-    private final Cart cart;
+    private final Checkout checkout;
     @FXML
     private ImageView productImage;
     @FXML
@@ -39,9 +39,9 @@ public class CartItem extends AnchorPane implements ShoppingCartListener {
 
     private final IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
-    public CartItem(ShoppingItem shoppingItem, Cart cart) {
+    public CheckoutItem(ShoppingItem shoppingItem, Checkout checkout) {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CartItem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CheckoutItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -51,7 +51,7 @@ public class CartItem extends AnchorPane implements ShoppingCartListener {
             throw new RuntimeException(exception);
         }
         this.item = shoppingItem;
-        this.cart = cart;
+        this.checkout = checkout;
 
         productImage.setImage(dataHandler.getFXImage(item.getProduct()));
         this.trashCanImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/deleteIcon.png")));
@@ -69,7 +69,7 @@ public class CartItem extends AnchorPane implements ShoppingCartListener {
     @FXML
     private void removeProductFromCart() {
         dataHandler.getShoppingCart().removeItem(this.item);
-        cart.fillCartFlowPane();
+        checkout.fillCartFlowPane();
     }
 
     @FXML

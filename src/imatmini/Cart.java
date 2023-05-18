@@ -57,6 +57,7 @@ public class Cart extends AnchorPane {
     }
 
     public void openCheckout() {
+        mainController.updateCheckoutPane();
         mainController.checkoutPane.toFront();
     }
 

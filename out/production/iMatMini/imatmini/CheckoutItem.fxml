@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root fx:id="mainAnchor" prefHeight="95.0" prefWidth="293.0" style="-fx-background-color: #FFFEFE; -fx-border-color: #DADAE0; -fx-border-width: 1;" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ImageView fx:id="productImage" fitHeight="67.0" fitWidth="87.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../.dat215/imat/images/product_50.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="productNameLabel" layoutX="115.0" layoutY="28.0" text="Lax 100g" />
+        <Label fx:id="productCostLabel" layoutX="433.0" layoutY="28.0" text="70kr" />
+        <Button layoutX="463.0" layoutY="94.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;" />
+        <Button layoutX="107.0" layoutY="49.0" mnemonicParsing="false" onAction="#removeProduct" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #FFFEFE;">
+         <graphic>
+                <ImageView fx:id="minusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../out/production/iMatMini/imatmini/pics/Ellipse%203removeButton.png" />
+                    </image>
+                </ImageView>
+         </graphic>
+        </Button>
+        <Button layoutX="220.0" layoutY="50.0" mnemonicParsing="false" onAction="#addProduct" style="-fx-background-color: #FFFEFE;">
+         <graphic>
+                <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
+                    </image>
+                </ImageView>
+         </graphic>
+        </Button>
+          <ImageView fx:id="trashCanImage" fitHeight="25.0" fitWidth="22.0" layoutX="446.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                  <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
+              </image>
+          </ImageView>
+        <Label fx:id="amountLabel" layoutX="185.0" layoutY="55.0" styleClass="cart-prices-text" text="1" />
+    </children>
+</fx:root>

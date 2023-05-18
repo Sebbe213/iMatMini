@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root prefHeight="162.0" prefWidth="560.0" style="-fx-background-color: #FFFEFE; -fx-border-color: #DADAE0; -fx-border-width: 1;" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="mainAnchor" prefHeight="162.0" prefWidth="560.0" style="-fx-background-color: #FFFEFE; -fx-border-color: #DADAE0; -fx-border-width: 1;" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImage" fitHeight="114.0" fitWidth="174.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>

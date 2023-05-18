@@ -229,6 +229,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
     public void closeCartPane() {cartPane.toBack();}
 
+    public void updateCheckoutPane() {
+        checkout.fillCartFlowPane();
+    }
+
     public void closeNameView() {
         shopPane.toFront();
     }
