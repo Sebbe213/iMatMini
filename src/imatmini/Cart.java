@@ -68,6 +68,7 @@ public class Cart extends AnchorPane {
         }
         for(ShoppingItem item : Model.getInstance().getShoppingCart().getItems()) {
             Product product = item.getProduct();
+            if(item.getAmount() == 0) {continue;}
             cartFlowPane.getChildren().add(new CartItem(item,this));
         }
     }

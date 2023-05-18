@@ -10,17 +10,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 
-public class CartItem extends AnchorPane {
+public class CartItem extends AnchorPane implements ShoppingCartListener {
     private final ShoppingItem item;
     private Cart cart;
     @FXML
@@ -56,12 +53,14 @@ public class CartItem extends AnchorPane {
 
         productImage.setImage(dataHandler.getFXImage(item.getProduct()));
         this.trashCanImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/deleteIcon.png")));
-        this.minusImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/removeFromCart.png")));
-        this.plusImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/addInCart.png")));
+        this.minusImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/Ellipse 3removeButton.png")));
+        this.plusImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/plusButtonImage.png")));
 
         this.productNameLabel.setText(item.getProduct().getName());
         this.productCostLabel.setText(String.format("%.2f", item.getTotal()));
         this.amountLabel.setText(String.format("%d",(int)item.getAmount()));
+
+        dataHandler.getShoppingCart().addShoppingCartListener(this);
     }
 
     @FXML
@@ -73,15 +72,20 @@ public class CartItem extends AnchorPane {
     @FXML
     private void addProduct() {
         dataHandler.getShoppingCart().addProduct(this.item.getProduct());  //lägger till en shopping item i kundvagnen, om redan finns så +1.
-        updateAmountLabel();
     }
 
     @FXML
     private void removeProduct() {
-        dataHandler.getShoppingCart().removeProduct(item.getProduct());
+        if(this.item.getAmount() > 0) { this.item.setAmount(this.item.getAmount() - 1); }
+        else { this.item.setAmount(0); }
+        dataHandler.getShoppingCart().fireShoppingCartChanged(this.item, true);
     }
 
-    private void updateAmountLabel() {
-        this.amountLabel.setText(String.format("%d", (int)this.item.getAmount()));
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        if(this.item.getAmount()<=0) {this.amountLabel.setText("0");}
+        else {this.amountLabel.setText(String.format("%d", (int)this.item.getAmount()));}
+
+        this.productCostLabel.setText(String.format("%.2f", item.getTotal()));
     }
 }

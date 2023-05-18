@@ -27,7 +27,7 @@
       </Button>
       <Button layoutX="179.0" layoutY="66.0" mnemonicParsing="false" onAction="#removeProduct" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #FFFEFE;">
          <graphic>
-            <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="minusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../out/production/iMatMini/imatmini/pics/Ellipse%203removeButton.png" />
                </image>
@@ -36,7 +36,7 @@
       </Button>
       <Button layoutX="294.0" layoutY="69.0" mnemonicParsing="false" onAction="#addProduct" style="-fx-background-color: #FFFEFE;">
          <graphic>
-            <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
                </image>
