@@ -6,7 +6,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="111.0" prefWidth="161.0" styleClass="product-card" stylesheets="@iMatMini.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.ProductCard">
+
+<AnchorPane prefHeight="120.0" prefWidth="162.0" styleClass="product-card" stylesheets="@iMatMini.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.ProductCard">
    <children>
       <ImageView fx:id="foodImage" fitHeight="78.0" fitWidth="77.0" layoutX="41.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
          <image>
