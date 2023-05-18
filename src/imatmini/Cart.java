@@ -11,6 +11,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
@@ -18,6 +19,8 @@ import java.util.List;
 
 public class Cart extends AnchorPane {
     private final iMatMiniController mainController;
+
+    private final Model model = Model.getInstance();
 
     @FXML
     private FlowPane cartFlowPane;
@@ -42,8 +45,6 @@ public class Cart extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.mainController = mainController;
-
-        fillCartFlowPane();
     }
     @FXML
     public void handleShowCheckoutAction(ActionEvent event) {openCheckout();}
@@ -61,8 +62,13 @@ public class Cart extends AnchorPane {
 
     public void fillCartFlowPane() {
         cartFlowPane.getChildren().clear();
+        if(Model.getInstance().getShoppingCart().getItems().isEmpty()) {
+            System.out.println("Kundvagn Tom");
+            return;
+        }
         for(ShoppingItem item : Model.getInstance().getShoppingCart().getItems()) {
-            cartFlowPane.getChildren().add(new CartItem(item.getProduct()));
+            Product product = item.getProduct();
+            cartFlowPane.getChildren().add(new CartItem(item,this));
         }
     }
 
