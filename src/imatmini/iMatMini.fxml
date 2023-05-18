@@ -17,12 +17,6 @@
    <children>
       <StackPane prefHeight="720.0" prefWidth="1080.0">
          <children>
-
-            <ScrollPane hbarPolicy="NEVER" prefHeight="366.0" prefWidth="938.0" style="-fx-background-color: #FFFFFF;" vbarPolicy="ALWAYS">
-               <content>
-                  <FlowPane fx:id="productsFlowPane" prefHeight="364.0" prefWidth="923.0" prefWrapLength="1100.0" style="-fx-background-color: #5e6d70;" vgap="4.0" />
-               </content>
-            </ScrollPane>
             <AnchorPane fx:id="checkoutPane" prefHeight="623.0" prefWidth="1080.0" />
             <AnchorPane fx:id="cartPane" prefHeight="623.0" prefWidth="1080.0" />
             <AnchorPane fx:id="favoritesPane" prefHeight="623.0" prefWidth="1080.0" />
@@ -216,8 +210,6 @@
                         <Font name="Arial Bold" size="30.0" />
                      </font>
                   </Label>
-
-
                </children>
             </AnchorPane>
          </children>
