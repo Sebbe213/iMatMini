@@ -121,7 +121,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         ProductsPane.toFront();
 
     }
-@FXML
+    @FXML
     private void backButton(ActionEvent event){
         ProductsPane.toBack();
     }
@@ -224,8 +224,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
 
     public void openShoppingCart() {
+        cart.fillCartFlowPane();
         cartPane.toFront();
     }
+    public void closeCartPane() {cartPane.toBack();}
 
     public void closeNameView() {
         shopPane.toFront();

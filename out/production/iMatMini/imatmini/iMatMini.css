@@ -162,3 +162,56 @@
     -fx-background-color : #CBDCCB;
 
 }
+
+.to-checkout-button {
+    -fx-background-color: #AED4C0;
+    -fx-pref-height:45px;
+    -fx-pref-width:175px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width:2px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 20px;
+    -fx-font-style: italic;
+    -fx-font-weight: bolder;
+    -fx-text-fill: #000000;
+}
+
+.cart-anchorpane-style {
+    -fx-background-color: #FCF6F6;
+    -fx-border-radius: 10px;
+    -fx-border-color: #DADAE0;
+    -fx-border-width: 1px;
+    -fx-pref-height: 524px;
+    -fx-pref-width: 602px;
+}
+
+.cart-prices-box {
+        -fx-background-color: #FFFEFE;
+        -fx-pref-height:84px;
+        -fx-pref-width:560px;
+        -fx-border-radius: 20px;
+        -fx-border-color: #DADAE0;
+        -fx-border-width:1px;
+        -fx-background-radius: 10px;
+}
+
+.cart-prices-text {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3C3C50;
+    -fx-font-family: 'Montserrat';
+}
+
+.cart-prices-text-non-bold {
+    -fx-font-size: 30px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #3C3C50;
+    -fx-font-family: 'Montserrat';
+}
+
+.cart-item-circle {
+    -fx-fill: #FFFFFF;
+    -fx-stroke: #92929B;
+    -fx-stroke-type: outside;
+}
