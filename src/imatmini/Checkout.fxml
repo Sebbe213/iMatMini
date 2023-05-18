@@ -88,11 +88,11 @@
             </AnchorPane>
             <ScrollPane layoutX="14.0" layoutY="61.0" prefHeight="561.0" prefWidth="303.0">
                <content>
-                  <FlowPane fx:id="cartFlowPane" prefHeight="570.0" prefWidth="288.0" />
+                  <FlowPane fx:id="cartFlowPane" prefHeight="570.0" prefWidth="427.0" />
                </content>
             </ScrollPane>
          </children>
       </AnchorPane>
-      <Button layoutX="364.0" layoutY="693.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="367.0" text="Betala" />
+      <Button layoutX="364.0" layoutY="693.0" mnemonicParsing="false" onAction="#completePurchase" prefHeight="92.0" prefWidth="367.0" text="Betala" />
     </children>
 </fx:root>

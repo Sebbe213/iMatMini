@@ -14,8 +14,16 @@
             </image>
         </ImageView>
         <Label fx:id="productNameLabel" layoutX="115.0" layoutY="28.0" text="Lax 100g" />
-        <Label fx:id="productCostLabel" layoutX="433.0" layoutY="28.0" text="70kr" />
-        <Button layoutX="463.0" layoutY="94.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;" />
+        <Label fx:id="productCostLabel" layoutX="340.0" layoutY="28.0" text="70kr" />
+        <Button layoutX="333.0" layoutY="85.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;">
+         <graphic>
+                <ImageView fx:id="trashCanImage" fitHeight="25.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
+                    </image>
+                </ImageView>
+         </graphic>
+        </Button>
         <Button layoutX="107.0" layoutY="49.0" mnemonicParsing="false" onAction="#removeProduct" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #FFFEFE;">
          <graphic>
                 <ImageView fx:id="minusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
@@ -34,11 +42,6 @@
                 </ImageView>
          </graphic>
         </Button>
-          <ImageView fx:id="trashCanImage" fitHeight="25.0" fitWidth="22.0" layoutX="446.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                  <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
-              </image>
-          </ImageView>
         <Label fx:id="amountLabel" layoutX="185.0" layoutY="55.0" styleClass="cart-prices-text" text="1" />
     </children>
 </fx:root>

@@ -9,18 +9,15 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 import java.util.List;
 
-public class Cart extends AnchorPane {
+public class Cart extends AnchorPane implements ShoppingCartListener {
     private final iMatMiniController mainController;
 
-    private final Model model = Model.getInstance();
+    private final IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @FXML
     private FlowPane cartFlowPane;
@@ -45,6 +42,9 @@ public class Cart extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.mainController = mainController;
+        this.priceLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()));
+
+        dataHandler.getShoppingCart().addShoppingCartListener(this);
     }
     @FXML
     public void handleShowCheckoutAction(ActionEvent event) {openCheckout();}
@@ -74,4 +74,11 @@ public class Cart extends AnchorPane {
         }
     }
 
+    public void updatePriceLabel() {
+        this.priceLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()));
+    }
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        updatePriceLabel();
+    }
 }

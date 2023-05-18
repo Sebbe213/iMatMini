@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.Flow;
 
-public class Checkout extends AnchorPane {
+public class Checkout extends AnchorPane implements ShoppingCartListener {
     iMatMiniController mainController;
 
     IMatDataHandler dataHandler = IMatDataHandler.getInstance();
@@ -40,6 +40,8 @@ public class Checkout extends AnchorPane {
         this.mainController = mainController;
 
         this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()));
+
+        dataHandler.getShoppingCart().addShoppingCartListener(this);
     }
 
     @FXML
@@ -62,4 +64,17 @@ public class Checkout extends AnchorPane {
         }
     }
 
+    private void updatePriceLabel() {
+        this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()));
+    }
+
+    @FXML
+    private void completePurchase() {
+        mainController.handleBuyItemsAction();
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        updatePriceLabel();
+    }
 }
