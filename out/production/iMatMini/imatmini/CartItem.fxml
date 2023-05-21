@@ -5,26 +5,27 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<fx:root fx:id="mainAnchor" prefHeight="162.0" prefWidth="560.0" style="-fx-background-color: #FFFEFE; -fx-border-color: #DADAE0; -fx-border-width: 1;" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="mainAnchor" prefHeight="157.0" prefWidth="651.0" style="-fx-background-color: transparent;" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="productImage" fitHeight="114.0" fitWidth="174.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="152.0" layoutX="-1.0" layoutY="3.0" stroke="#dadae0" strokeType="INSIDE" width="653.0" />
+      <ImageView fx:id="productImage" fitHeight="107.0" fitWidth="157.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../.dat215/imat/images/product_50.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="productNameLabel" layoutX="211.0" layoutY="24.0" text="Lax 100g" />
-      <Label fx:id="productCostLabel" layoutX="463.0" layoutY="24.0" text="70kr" />
+      <Label fx:id="productNameLabel" layoutX="201.0" layoutY="24.0" text="Lax 100g">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></Label>
+      <Label fx:id="productCostLabel" layoutX="463.0" layoutY="26.0" text="70kr">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font></Label>
       <Label fx:id="amountLabel" layoutX="262.0" layoutY="72.0" styleClass="cart-prices-text" text="1" />
-      <Button layoutX="463.0" layoutY="94.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;">
-         <graphic>
-            <ImageView fx:id="trashCanImage" fitHeight="43.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Button layoutX="463.0" layoutY="68.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;" styleClass="header-color" />
       <Button layoutX="179.0" layoutY="66.0" mnemonicParsing="false" onAction="#removeProduct" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #FFFEFE;">
          <graphic>
             <ImageView fx:id="minusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
@@ -34,14 +35,16 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="294.0" layoutY="69.0" mnemonicParsing="false" onAction="#addProduct" style="-fx-background-color: #FFFEFE;">
-         <graphic>
-            <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Button layoutX="307.0" layoutY="72.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #FFFEFE;" />
+      <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" layoutX="306.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="trashCanImage" fitHeight="43.0" fitWidth="43.0" layoutX="458.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
+         </image>
+      </ImageView>
    </children>
 </fx:root>

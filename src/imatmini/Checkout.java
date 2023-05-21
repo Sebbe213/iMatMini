@@ -39,7 +39,7 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         }
         this.mainController = mainController;
 
-        this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()));
+        this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()) + "kr");
 
         dataHandler.getShoppingCart().addShoppingCartListener(this);
     }
