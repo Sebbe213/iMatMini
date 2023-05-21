@@ -1,30 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="1024.0" prefWidth="1440.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="810.0" prefWidth="1440.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="1024.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
-        <Label layoutX="169.0" layoutY="14.0" styleClass="navigation-bar-text-bold" text="Min kundvagn" />
-      <Button fx:id="toCheckoutButton" layoutX="1148.0" layoutY="873.0" mnemonicParsing="false" onAction="#openCheckout" styleClass="to-checkout-button" text="Till betalning" AnchorPane.bottomAnchor="103.0" AnchorPane.rightAnchor="117.0" />
-      <Button fx:id="backButton" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#handlePressBackButton" prefHeight="29.0" prefWidth="82.0" styleClass="back-button" text="Tillbaka" />
-      <AnchorPane layoutX="349.0" layoutY="158.0" prefHeight="624.0" prefWidth="702.0" styleClass="cart-anchorpane-style">
+      <DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="480.0">
+          <header>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </header>
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </content>
+          <expandableContent>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </expandableContent>
+      </DialogPane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
+        <Label layoutX="240.0" layoutY="33.0" text="Min kundvagn" textFill="#3c3c50">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font></Label>
+      <Button fx:id="toCheckoutButton" layoutX="1155.0" layoutY="690.0" mnemonicParsing="false" onAction="#openCheckout" styleClass="to-checkout-button" text="Till betalning" textFill="#3c3c50" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="110.0">
+         <font>
+            <Font name="Arial Italic" size="17.0" />
+         </font></Button>
+      <Button fx:id="backButton" layoutX="64.0" layoutY="36.0" mnemonicParsing="false" onAction="#handlePressBackButton" prefHeight="29.0" prefWidth="82.0" styleClass="back-button" text="Tillbaka" textFill="#3c3c50">
+         <font>
+            <Font name="Arial Italic" size="17.0" />
+         </font></Button>
+      <AnchorPane layoutX="353.0" layoutY="96.0" prefHeight="655.0" prefWidth="695.0" styleClass="cart-anchorpane-style">
          <children>
-            <ScrollPane layoutX="14.0" layoutY="14.0" prefHeight="500.0" prefWidth="679.0">
+            <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="14.0" prefHeight="500.0" prefWidth="679.0" style="-fx-background-color: #FCF6F6;" vbarPolicy="ALWAYS">
                <content>
-                  <FlowPane fx:id="cartFlowPane" prefHeight="503.0" prefWidth="663.0" />
+                  <FlowPane fx:id="cartFlowPane" prefHeight="503.0" prefWidth="663.0" style="-fx-background-color: #FCF6F6;">
+                     <children>
+                        <FlowPane hgap="20.0" prefHeight="506.0" prefWidth="669.0" vgap="20.0" />
+                     </children></FlowPane>
                </content>
             </ScrollPane>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffefe" height="84.0" layoutX="59.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" styleClass="cart-prices-box" width="589.0" />
-            <Label layoutX="65.0" layoutY="520.0" styleClass="cart-prices-text" text="Frakt:" />
-            <Label fx:id="priceLabel" layoutX="151.0" layoutY="520.0" styleClass="cart-prices-text-non-bold" text="70kr" />
-            <Label fx:id="priceLabel" layoutX="180.0" layoutY="560.0" styleClass="cart-prices-text-non-bold" text="0kr" />
-            <Label layoutX="65.0" layoutY="560.0" styleClass="cart-prices-text" text="Summa:" />
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#fffefe" height="118.0" layoutX="195.0" layoutY="518.0" stroke="#dadae0" strokeType="INSIDE" styleClass="cart-prices-box" width="281.0" />
+            <Label layoutX="269.0" layoutY="543.0" text="Frakt:" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font></Label>
+            <Label fx:id="priceLabel" layoutX="350.0" layoutY="543.0" text="40kr" textFill="#3c3c50">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
+            <Label fx:id="priceLabel" layoutX="353.0" layoutY="581.0" text="0kr" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial" size="25.0" />
+               </font></Label>
+            <Label layoutX="262.0" layoutY="581.0" text="Totalt:" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font></Label>
          </children>
       </AnchorPane>
     </children>

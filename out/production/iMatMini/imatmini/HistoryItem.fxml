@@ -4,12 +4,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <fx:root prefHeight="75.0" prefWidth="656.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" stroke="BLACK" strokeType="INSIDE" width="656.0" />
-        <Label fx:id="orderDateLabel" layoutX="31.0" layoutY="29.0" text="2023-04-13" />
-        <Label fx:id="adressLabel" layoutX="328.0" layoutY="29.0" text="Drottninggatan 40 Göteborg" />
-        <Button fx:id="showOrderButton" layoutX="560.0" layoutY="25.0" mnemonicParsing="false" onAction="#selectTheOrder" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #FCF6F6;" text="Visa" />
+        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="75.0" stroke="#dadae0" strokeType="INSIDE" width="770.0" />
+        <Label fx:id="orderDateLabel" layoutX="31.0" layoutY="25.0" text="2023-04-13" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font></Label>
+        <Label fx:id="adressLabel" layoutX="382.0" layoutY="24.0" text="Drottninggatan 40 Göteborg" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font></Label>
+        <Button fx:id="showOrderButton" layoutX="688.0" layoutY="24.0" mnemonicParsing="false" onAction="#selectTheOrder" prefHeight="29.0" prefWidth="67.0" styleClass="show-button" text="Visa" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font></Button>
     </children>
 </fx:root>

@@ -12,87 +12,176 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="1024.0" prefWidth="1440.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="810.0" prefWidth="1440.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="1024.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
-        <Label layoutX="183.0" layoutY="20.0" styleClass="navigation-bar-text-bold" text="Betalning" />
-      <Button fx:id="backButton" layoutX="14.0" layoutY="29.0" mnemonicParsing="false" onAction="#handlePressBackButton" prefHeight="29.0" prefWidth="82.0" styleClass="back-button" text="Tillbaka" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="315.0" layoutX="254.0" layoutY="63.0" stroke="#dadae0" strokeType="OUTSIDE" width="583.0" />
-      <Label layoutX="277.0" layoutY="72.0" prefHeight="43.0" prefWidth="236.0" styleClass="sub-title" text="Personuppgifter:">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
+        <Label layoutX="240.0" layoutY="33.0" text="Betalning" textFill="#3c3c50">
          <font>
-            <Font name="Arial Bold" size="13.0" />
+            <Font name="Arial Bold" size="30.0" />
+         </font></Label>
+      <Button fx:id="backButton" layoutX="64.0" layoutY="35.0" mnemonicParsing="false" onAction="#handlePressBackButton" prefHeight="29.0" prefWidth="82.0" styleClass="back-button" text="Tillbaka" textFill="#3c3c50">
+         <font>
+            <Font name="Arial Italic" size="17.0" />
+         </font></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="331.0" layoutX="179.0" layoutY="101.0" stroke="#dadae0" strokeType="OUTSIDE" width="660.0" />
+      <Label layoutX="215.0" layoutY="107.0" prefHeight="43.0" prefWidth="236.0" styleClass="sub-title" text="Personuppgifter:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
          </font>
       </Label>
-      <TextField cache="true" layoutX="397.0" layoutY="126.0" prefHeight="33.0" prefWidth="195.0" promptText="Förnamn" styleClass="my-pages-fill-text" />
-      <Label layoutX="338.0" layoutY="132.0" prefHeight="20.0" prefWidth="54.0" styleClass="my-pages-small-text" text="Namn:" />
-      <Label layoutX="332.0" layoutY="184.0" prefHeight="23.0" prefWidth="61.0" styleClass="my-pages-small-text" text="Adress:" />
-      <Label layoutX="349.0" layoutY="237.0" prefHeight="23.0" prefWidth="45.0" styleClass="my-pages-small-text" text="Stad:" />
-      <Label layoutX="272.0" layoutY="286.0" prefHeight="33.0" prefWidth="128.0" styleClass="my-pages-small-text" text="Telefonnummer:" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="197.0" layoutX="257.0" layoutY="392.0" stroke="#dadae0" strokeType="OUTSIDE" width="581.0" />
-      <TextField layoutX="611.0" layoutY="126.0" prefHeight="33.0" prefWidth="195.0" promptText="Efternamn" styleClass="my-pages-fill-text" />
-      <TextField layoutX="397.0" layoutY="178.0" prefHeight="33.0" prefWidth="409.0" promptText="Skriv din leveransadress här" styleClass="my-pages-fill-text" />
-      <TextField layoutX="402.0" layoutY="232.0" prefHeight="33.0" prefWidth="177.0" promptText="Tex: Göteborg" styleClass="my-pages-fill-text" />
-      <Label layoutX="592.0" layoutY="235.0" prefHeight="25.0" prefWidth="101.0" styleClass="my-pages-small-text" text="Postnummer:" />
-      <TextField layoutX="692.0" layoutY="232.0" prefHeight="33.0" prefWidth="113.0" promptText="12345" styleClass="my-pages-fill-text" />
-      <TextField layoutX="397.0" layoutY="285.0" prefHeight="33.0" prefWidth="409.0" promptText="+46 123 456 789" styleClass="my-pages-fill-text" />
-      <Label layoutX="277.0" layoutY="401.0" prefHeight="43.0" prefWidth="236.0" styleClass="sub-title" text="Betalningsuppgifter:">
+      <TextField cache="true" layoutX="347.0" layoutY="156.0" prefHeight="33.0" prefWidth="195.0" promptText="Förnamn" styleClass="my-pages-fill-text">
          <font>
-            <Font name="Arial Bold" size="13.0" />
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="199.0" layoutX="182.0" layoutY="461.0" stroke="#dadae0" strokeType="OUTSIDE" width="657.0" />
+      <TextField layoutX="561.0" layoutY="156.0" prefHeight="33.0" prefWidth="195.0" promptText="Efternamn" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <TextField layoutX="349.0" layoutY="208.0" prefHeight="33.0" prefWidth="407.0" promptText="Skriv din leveransadress här" styleClass="my-pages-fill-text">
+         <font>
+            <Font size="17.0" />
+         </font></TextField>
+      <TextField layoutX="350.0" layoutY="262.0" prefHeight="33.0" prefWidth="179.0" promptText="Tex: Göteborg" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <Label layoutX="546.0" layoutY="263.0" prefHeight="25.0" prefWidth="119.0" styleClass="my-pages-small-text" text="Postnummer:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></Label>
+      <TextField layoutX="668.0" layoutY="262.0" prefHeight="33.0" prefWidth="86.0" promptText="12345" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <TextField layoutX="352.0" layoutY="315.0" prefHeight="33.0" prefWidth="404.0" promptText="+46 123 456 789" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <Label layoutX="217.0" layoutY="466.0" prefHeight="43.0" prefWidth="236.0" styleClass="sub-title" text="Betalningsuppgifter:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="cardNumber1" cache="true" layoutX="458.0" layoutY="451.0" prefHeight="33.0" prefWidth="58.0" promptText="1234" styleClass="my-pages-fill-text" />
-      <Label layoutX="305.0" layoutY="457.0" prefHeight="20.0" prefWidth="96.0" styleClass="my-pages-small-text" text="Kortnummer:" />
-      <TextField fx:id="cardNumber2" cache="true" layoutX="535.0" layoutY="451.0" prefHeight="33.0" prefWidth="58.0" promptText="5678" styleClass="my-pages-fill-text" />
-      <TextField fx:id="cardNumber3" cache="true" layoutX="612.0" layoutY="451.0" prefHeight="33.0" prefWidth="58.0" promptText="1234" styleClass="my-pages-fill-text" />
-      <TextField fx:id="cardNumber4" cache="true" layoutX="689.0" layoutY="451.0" prefHeight="33.0" prefWidth="58.0" promptText="5678" styleClass="my-pages-fill-text" />
-      <ImageView fitHeight="29.0" fitWidth="44.0" layoutX="413.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="cardNumber1" alignment="CENTER" cache="true" layoutX="408.0" layoutY="521.0" prefHeight="33.0" prefWidth="58.0" promptText="1234" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <Label layoutX="245.0" layoutY="527.0" prefHeight="20.0" prefWidth="106.0" styleClass="my-pages-small-text" text="Kortnummer:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></Label>
+      <TextField fx:id="cardNumber2" alignment="CENTER" cache="true" layoutX="486.0" layoutY="521.0" prefHeight="33.0" prefWidth="58.0" promptText="5678" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <TextField fx:id="cardNumber3" alignment="CENTER" cache="true" layoutX="569.0" layoutY="521.0" prefHeight="33.0" prefWidth="58.0" promptText="1234" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <TextField fx:id="cardNumber4" alignment="CENTER" cache="true" layoutX="649.0" layoutY="521.0" prefHeight="33.0" prefWidth="58.0" promptText="5678" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <ImageView fitHeight="29.0" fitWidth="44.0" layoutX="363.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pics/credit-card.png" />
          </image>
       </ImageView>
-      <Label layoutX="344.0" layoutY="524.0" prefHeight="20.0" prefWidth="56.0" styleClass="my-pages-small-text" text="Datum:" />
-      <ImageView fitHeight="29.0" fitWidth="44.0" layoutX="414.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="290.0" layoutY="594.0" prefHeight="20.0" prefWidth="56.0" styleClass="my-pages-small-text" text="Datum:" textFill="#3c3c50">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <ImageView fitHeight="29.0" fitWidth="44.0" layoutX="364.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pics/date(1).png" />
          </image>
       </ImageView>
-      <TextField fx:id="cardMonth" cache="true" layoutX="458.0" layoutY="517.0" prefHeight="33.0" prefWidth="58.0" promptText="MM" styleClass="my-pages-fill-text">
+      <TextField fx:id="cardMonth" alignment="CENTER" cache="true" layoutX="408.0" layoutY="587.0" prefHeight="33.0" prefWidth="58.0" promptText="MM" styleClass="my-pages-fill-text">
          <font>
-            <Font name="Arial" size="13.0" />
+            <Font name="Arial" size="17.0" />
          </font>
       </TextField>
-      <TextField fx:id="cardYear" cache="true" layoutX="535.0" layoutY="518.0" prefHeight="33.0" prefWidth="58.0" promptText="ÅR" styleClass="my-pages-fill-text">
+      <TextField fx:id="cardYear" alignment="CENTER" cache="true" layoutX="485.0" layoutY="588.0" prefHeight="33.0" prefWidth="58.0" promptText="ÅR" styleClass="my-pages-fill-text">
          <font>
-            <Font name="Arial" size="13.0" />
+            <Font name="Arial" size="17.0" />
          </font>
       </TextField>
-      <Label layoutX="609.0" layoutY="524.0" prefHeight="20.0" prefWidth="47.0" styleClass="my-pages-small-text" text="CVC:" />
-      <ImageView fitHeight="29.0" fitWidth="44.0" layoutX="654.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="559.0" layoutY="594.0" prefHeight="20.0" prefWidth="47.0" styleClass="my-pages-small-text" text="CVC:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></Label>
+      <ImageView fitHeight="29.0" fitWidth="44.0" layoutX="609.0" layoutY="588.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pics/unlock.png" />
          </image>
       </ImageView>
-      <TextField fx:id="cardCVC" cache="true" layoutX="689.0" layoutY="517.0" prefHeight="33.0" prefWidth="58.0" promptText="567" styleClass="my-pages-fill-text" />
-      <Label layoutX="305.0" layoutY="337.0" text="Leveranstid" />
-      <ComboBox layoutX="392.0" layoutY="333.0" prefWidth="150.0" />
-      <AnchorPane layoutX="1073.0" layoutY="80.0" prefHeight="742.0" prefWidth="333.0" styleClass="checkout-anchorpane-style">
+      <TextField fx:id="cardCVC" alignment="CENTER" cache="true" layoutX="649.0" layoutY="588.0" prefHeight="33.0" prefWidth="58.0" promptText="567" styleClass="my-pages-fill-text">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></TextField>
+      <Label layoutX="249.0" layoutY="377.0" text="Leveranstid:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></Label>
+      <ComboBox layoutX="352.0" layoutY="373.0" prefWidth="150.0" promptText="Välj en tid" />
+      <AnchorPane layoutX="876.0" layoutY="99.0" prefHeight="644.0" prefWidth="399.0" styleClass="checkout-anchorpane-style">
          <children>
-            <Label layoutX="78.0" layoutY="14.0" styleClass="navigation-bar-text-bold" text="Min Varukorg" />
-            <AnchorPane layoutX="8.0" layoutY="636.0" prefHeight="92.0" prefWidth="318.0" styleClass="checkout-price-anchor">
-               <children>
-                  <Label layoutX="14.0" layoutY="14.0" text="Frakt:" />
-                  <Label layoutX="15.0" layoutY="46.0" text="Summa:" />
-                  <Label layoutX="73.0" layoutY="14.0" text="40kr" />
-                  <Label fx:id="totalCostLabel" layoutX="71.0" layoutY="46.0" text="0kr" />
-               </children>
-            </AnchorPane>
-            <ScrollPane layoutX="14.0" layoutY="61.0" prefHeight="561.0" prefWidth="303.0">
+            <Label layoutX="116.0" layoutY="14.0" text="Min Varukorg" textAlignment="CENTER" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font></Label>
+            <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="61.0" prefHeight="478.0" prefWidth="383.0" style="-fx-background-color: #fcf6f6;" vbarPolicy="ALWAYS">
                <content>
-                  <FlowPane fx:id="cartFlowPane" prefHeight="570.0" prefWidth="427.0" />
+                  <FlowPane fx:id="cartFlowPane" hgap="10.0" prefHeight="477.0" prefWidth="367.0" style="-fx-background-color: #fcf6f6;" vgap="10.0" />
                </content>
             </ScrollPane>
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="70.0" layoutX="95.0" layoutY="559.0" stroke="#dadae0" strokeType="INSIDE" width="215.0" />
+            <Label layoutX="154.0" layoutY="566.0" text="Frakt:" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="230.0" layoutY="567.0" text="40kr" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="132.0" layoutY="591.0" text="Summa:" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalCostLabel" layoutX="235.0" layoutY="594.0" text="0kr" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="364.0" layoutY="693.0" mnemonicParsing="false" onAction="#completePurchase" prefHeight="92.0" prefWidth="367.0" text="Betala" />
+      <Button alignment="CENTER" layoutX="318.0" layoutY="678.0" mnemonicParsing="false" onAction="#completePurchase" prefHeight="65.0" prefWidth="371.0" styleClass="pay-button" text="Betala">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font></Button>
+      <Label layoutX="226.0" layoutY="321.0" text="Telefonummer:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="298.0" layoutY="268.0" text="Stad:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="214.0" layoutY="215.0" text="Leveransadress:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="288.0" layoutY="163.0" text="Namn:" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font>
+      </Label>
     </children>
 </fx:root>

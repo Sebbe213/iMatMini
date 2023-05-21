@@ -88,8 +88,8 @@
     -fx-pref-height:20px;
     -fx-pref-width:140px;
     -fx-border-radius: 20px;
-    -fx-border-color: #000000;
-    -fx-border-width:2px;
+    -fx-border-color: #dadae0;
+    -fx-border-width:1px;
     -fx-background-radius: 20px;
 }
 
@@ -154,13 +154,29 @@
     -fx-pref-height:45px;
     -fx-pref-width:175px;
     -fx-border-radius: 20px;
-    -fx-border-color: #000000;
-    -fx-border-width:2px;
+    -fx-border-color: #dadae0;
+    -fx-border-width:1px;
     -fx-background-radius: 20px;
-    -fx-font-size: 20px;
-    -fx-font-style: italic;
-    -fx-font-weight: bolder;
-    -fx-text-fill: #000000;
+}
+
+.pay-button {
+    -fx-background-color: #AED4C0;
+    -fx-pref-height:65px;
+    -fx-pref-width:371px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #dadae0;
+    -fx-border-width:1px;
+    -fx-background-radius: 20px;
+}
+
+.show-button {
+    -fx-background-color: #FCF6F6;
+    -fx-pref-height:29px;
+    -fx-pref-width:67px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #dadae0;
+    -fx-border-width:1px;
+    -fx-background-radius: 20px;
 }
 
 .cart-anchorpane-style {
@@ -187,13 +203,13 @@
 }
 
 .cart-prices-box {
-        -fx-background-color: #FFFEFE;
-        -fx-pref-height:84px;
-        -fx-pref-width:560px;
-        -fx-border-radius: 20px;
-        -fx-border-color: #DADAE0;
-        -fx-border-width:1px;
-        -fx-background-radius: 10px;
+    -fx-background-color: #FFFEFE;
+    -fx-pref-height:84px;
+    -fx-pref-width:560px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #DADAE0;
+    -fx-border-width:1px;
+    -fx-background-radius: 10px;
 }
 
 .cart-prices-text {
@@ -215,3 +231,4 @@
     -fx-stroke: #92929B;
     -fx-stroke-type: outside;
 }
+

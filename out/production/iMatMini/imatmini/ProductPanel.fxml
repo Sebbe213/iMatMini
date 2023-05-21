@@ -19,9 +19,9 @@
             <ImageView fx:id="imageView" fitHeight="133.0" fitWidth="131.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER" />
          </top>
          <center>
-            <Label fx:id="nameLabel" alignment="BOTTOM_CENTER" contentDisplay="RIGHT" prefHeight="62.0" prefWidth="193.0" text="Mellanmjök fin produkt för allt möjligt" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+            <Label fx:id="nameLabel" alignment="BOTTOM_CENTER" contentDisplay="RIGHT" prefHeight="62.0" prefWidth="193.0" text="Mellanmjök fin produkt för allt möjligt" textAlignment="CENTER" textFill="#3c3c50" wrapText="true" BorderPane.alignment="CENTER">
                <font>
-                  <Font size="26.0" />
+                  <Font name="Arial" size="26.0" />
                </font>
             </Label>
          </center>
@@ -80,12 +80,12 @@
                         <Rectangle arcHeight="30.0" arcWidth="30.0" disable="true" fill="WHITE" height="34.0" opacity="0.15" stroke="BLACK" strokeDashOffset="1.0" strokeLineJoin="BEVEL" strokeMiterLimit="1.0" strokeType="INSIDE" width="36.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <Button fx:id="buyButton" contentDisplay="CENTER" maxWidth="1.0E7" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#sendBuyButtonBack" prefHeight="64.0" prefWidth="100.0" style="-fx-background-color: #40aa54;" styleClass="buy-button" stylesheets="@iMatMini.css" text="Köp" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Button fx:id="buyButton" contentDisplay="CENTER" maxWidth="1.0E7" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#sendBuyButtonBack" prefHeight="64.0" prefWidth="193.0" style="-fx-background-color: #40aa54;" styleClass="buy-button" stylesheets="@iMatMini.css" text="Köp" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                   </Button>
-                  <Label fx:id="prizeLabel" alignment="TOP_CENTER" prefHeight="116.0" prefWidth="193.0" text="437,50 per förpackning" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                  <Label fx:id="prizeLabel" alignment="TOP_CENTER" prefHeight="116.0" prefWidth="193.0" text="437,50 per förpackning" textFill="#3c3c50" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <font>
                         <Font size="20.0" />
                      </font>
