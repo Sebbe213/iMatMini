@@ -24,7 +24,14 @@
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font></Label>
-        <Button layoutX="308.0" layoutY="62.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;" />
+        <Button layoutX="308.0" layoutY="62.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;">
+         <graphic>
+                <ImageView fx:id="trashCanImage" fitHeight="25.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
+                    </image>
+                </ImageView>
+         </graphic></Button>
         <Button layoutX="107.0" layoutY="49.0" mnemonicParsing="false" onAction="#removeProduct" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #FFFEFE;">
          <graphic>
                 <ImageView fx:id="minusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
@@ -34,17 +41,14 @@
                 </ImageView>
          </graphic>
         </Button>
-        <Button layoutX="220.0" layoutY="50.0" mnemonicParsing="false" onAction="#addProduct" style="-fx-background-color: #FFFEFE;" />
+        <Button layoutX="220.0" layoutY="49.0" mnemonicParsing="false" onAction="#addProduct" style="-fx-background-color: #FFFEFE;">
+         <graphic>
+                <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
+                    </image>
+                </ImageView>
+         </graphic></Button>
         <Label fx:id="amountLabel" layoutX="185.0" layoutY="55.0" styleClass="cart-prices-text" text="1" />
-          <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" layoutX="220.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                  <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
-              </image>
-          </ImageView>
-          <ImageView fx:id="trashCanImage" fitHeight="25.0" fitWidth="22.0" layoutX="306.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                  <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
-              </image>
-          </ImageView>
     </children>
 </fx:root>

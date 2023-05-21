@@ -25,7 +25,14 @@
             <Font name="Arial Bold" size="17.0" />
          </font></Label>
       <Label fx:id="amountLabel" layoutX="262.0" layoutY="72.0" styleClass="cart-prices-text" text="1" />
-      <Button layoutX="463.0" layoutY="68.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;" styleClass="header-color" />
+      <Button layoutX="463.0" layoutY="68.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;" styleClass="header-color">
+         <graphic>
+            <ImageView fx:id="trashCanImage" fitHeight="43.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Button layoutX="179.0" layoutY="66.0" mnemonicParsing="false" onAction="#removeProduct" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #FFFEFE;">
          <graphic>
             <ImageView fx:id="minusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
@@ -35,16 +42,13 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="307.0" layoutY="72.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #FFFEFE;" />
-      <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" layoutX="306.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="trashCanImage" fitHeight="43.0" fitWidth="43.0" layoutX="458.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../out/production/iMatMini/imatmini/pics/deleteIcon.png" />
-         </image>
-      </ImageView>
+      <Button layoutX="307.0" layoutY="66.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #FFFEFE;">
+         <graphic>
+            <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </fx:root>
