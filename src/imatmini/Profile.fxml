@@ -15,7 +15,7 @@
             <font>
                 <Font name="Arial Bold" size="30.0" />
             </font></Label>
-        <TextField cache="true" layoutX="508.0" layoutY="158.0" prefHeight="40.0" prefWidth="275.0" promptText="Förnamn" styleClass="my-pages-fill-text">
+        <TextField fx:id="firstNameField" cache="true" layoutX="508.0" layoutY="158.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="275.0" promptText="Förnamn" styleClass="my-pages-fill-text">
          <font>
             <Font size="17.0" />
          </font></TextField>
@@ -36,15 +36,15 @@
             <Font size="20.0" />
          </font></Label>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="255.0" layoutX="280.0" layoutY="495.0" stroke="#dadae0" strokeType="OUTSIDE" width="902.0" />
-        <TextField layoutX="813.0" layoutY="158.0" prefHeight="40.0" prefWidth="275.0" promptText="Efternamn" styleClass="my-pages-fill-text" AnchorPane.rightAnchor="352.0">
+        <TextField fx:id="lastNameField" layoutX="813.0" layoutY="158.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="275.0" promptText="Efternamn" styleClass="my-pages-fill-text" AnchorPane.rightAnchor="352.0">
          <font>
             <Font size="17.0" />
          </font></TextField>
-        <TextField layoutX="506.0" layoutY="229.0" prefHeight="40.0" prefWidth="583.0" promptText="Skriv din leveransadress här" styleClass="my-pages-fill-text">
+        <TextField fx:id="addressField" layoutX="506.0" layoutY="229.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="583.0" promptText="Skriv din leveransadress här" styleClass="my-pages-fill-text">
          <font>
             <Font size="17.0" />
          </font></TextField>
-        <TextField layoutX="509.0" layoutY="310.0" prefHeight="40.0" prefWidth="215.0" promptText="Tex: Göteborg" styleClass="my-pages-fill-text">
+        <TextField fx:id="cityField" layoutX="509.0" layoutY="310.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="215.0" promptText="Tex: Göteborg" styleClass="my-pages-fill-text">
          <font>
             <Font name="Arial" size="17.0" />
          </font></TextField>
@@ -52,11 +52,11 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-        <TextField layoutX="905.0" layoutY="310.0" prefHeight="40.0" prefWidth="185.0" promptText="12345" styleClass="my-pages-fill-text" AnchorPane.rightAnchor="350.0">
+        <TextField fx:id="postalCodeField" layoutX="905.0" layoutY="310.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="185.0" promptText="12345" styleClass="my-pages-fill-text" AnchorPane.rightAnchor="350.0">
          <font>
             <Font size="17.0" />
          </font></TextField>
-        <TextField layoutX="509.0" layoutY="390.0" prefHeight="40.0" prefWidth="581.0" promptText="+46 123 456 789" styleClass="my-pages-fill-text">
+        <TextField fx:id="phoneNumberField" layoutX="509.0" layoutY="390.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="581.0" promptText="+46 123 456 789" styleClass="my-pages-fill-text">
          <font>
             <Font size="17.0" />
          </font></TextField>
@@ -65,7 +65,7 @@
                 <Font name="Arial Bold" size="25.0" />
             </font>
         </Label>
-        <TextField fx:id="cardNumber1" alignment="CENTER" cache="true" layoutX="590.0" layoutY="570.0" prefHeight="40.0" prefWidth="80.0" promptText="1234" styleClass="my-pages-fill-text">
+        <TextField fx:id="cardNumber1" alignment="CENTER" cache="true" layoutX="590.0" layoutY="570.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="80.0" promptText="1234" styleClass="my-pages-fill-text">
          <font>
             <Font name="Arial" size="17.0" />
          </font></TextField>
@@ -73,15 +73,15 @@
          <font>
             <Font name="Arial" size="20.0" />
          </font></Label>
-        <TextField fx:id="cardNumber2" alignment="CENTER" cache="true" layoutX="711.0" layoutY="570.0" prefHeight="40.0" prefWidth="80.0" promptText="5678" styleClass="my-pages-fill-text">
+        <TextField fx:id="cardNumber2" alignment="CENTER" cache="true" layoutX="711.0" layoutY="570.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="80.0" promptText="5678" styleClass="my-pages-fill-text">
          <font>
             <Font name="Arial" size="17.0" />
          </font></TextField>
-        <TextField fx:id="cardNumber3" alignment="CENTER" cache="true" layoutX="831.0" layoutY="570.0" prefHeight="40.0" prefWidth="80.0" promptText="1234" styleClass="my-pages-fill-text">
+        <TextField fx:id="cardNumber3" alignment="CENTER" cache="true" layoutX="831.0" layoutY="570.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="80.0" promptText="1234" styleClass="my-pages-fill-text">
          <font>
             <Font name="Arial" size="17.0" />
          </font></TextField>
-        <TextField fx:id="cardNumber4" alignment="CENTER" cache="true" layoutX="952.0" layoutY="570.0" prefHeight="40.0" prefWidth="80.0" promptText="5678" styleClass="my-pages-fill-text">
+        <TextField fx:id="cardNumber4" alignment="CENTER" cache="true" layoutX="952.0" layoutY="570.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="80.0" promptText="5678" styleClass="my-pages-fill-text">
          <font>
             <Font name="Arial" size="17.0" />
          </font></TextField>
@@ -95,7 +95,7 @@
                 <Image url="@pics/date(1).png" />
             </image>
         </ImageView>
-        <TextField fx:id="cardMonth" alignment="CENTER" cache="true" layoutX="590.0" layoutY="651.0" prefHeight="40.0" prefWidth="80.0" promptText="MM" styleClass="my-pages-fill-text">
+        <TextField fx:id="cardMonth" alignment="CENTER" cache="true" layoutX="590.0" layoutY="651.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="80.0" promptText="MM" styleClass="my-pages-fill-text">
             <font>
                 <Font name="Arial" size="17.0" />
             </font>
@@ -105,7 +105,7 @@
                 <Font size="20.0" />
             </font>
         </Label>
-        <TextField fx:id="cardYear" alignment="CENTER" cache="true" layoutX="711.0" layoutY="651.0" prefHeight="40.0" prefWidth="80.0" promptText="ÅR" styleClass="my-pages-fill-text">
+        <TextField fx:id="cardYear" alignment="CENTER" cache="true" layoutX="711.0" layoutY="651.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="80.0" promptText="ÅR" styleClass="my-pages-fill-text">
             <font>
                 <Font name="Arial" size="17.0" />
             </font>
@@ -119,7 +119,7 @@
                 <Image url="@pics/unlock.png" />
             </image>
         </ImageView>
-        <TextField fx:id="cardCVC" alignment="CENTER" cache="true" layoutX="952.0" layoutY="651.0" prefHeight="40.0" prefWidth="80.0" promptText="567" styleClass="my-pages-fill-text">
+        <TextField fx:id="cardCVC" alignment="CENTER" cache="true" layoutX="952.0" layoutY="651.0" onKeyReleased="#saveInfo" prefHeight="40.0" prefWidth="80.0" promptText="567" styleClass="my-pages-fill-text">
          <font>
             <Font name="Arial" size="17.0" />
          </font></TextField>

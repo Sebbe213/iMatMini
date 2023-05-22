@@ -6,7 +6,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.CreditCard;
+import se.chalmers.cse.dat216.project.Customer;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Profile extends AnchorPane {
 
@@ -18,8 +23,16 @@ public class Profile extends AnchorPane {
     @FXML TextField cardMonth;
     @FXML TextField cardYear;
     @FXML TextField cardCVC;
+    @FXML TextField firstNameField;
+    @FXML TextField lastNameField;
+    @FXML TextField addressField;
+    @FXML TextField cityField;
+    @FXML TextField postalCodeField;
+    @FXML TextField phoneNumberField;
 
     iMatMiniController mainController;
+    Customer customer;
+    CreditCard creditcard;
     public Profile(iMatMiniController mainController) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Profile.fxml"));
@@ -49,7 +62,33 @@ public class Profile extends AnchorPane {
 
 
         this.mainController = mainController;
+        this.customer = IMatDataHandler.getInstance().getCustomer();
+        this.creditcard = IMatDataHandler.getInstance().getCreditCard();
 
+        init();
+    }
+
+    private void init() {
+        firstNameField.setText(customer.getFirstName());
+        lastNameField.setText(customer.getLastName());
+        addressField.setText(customer.getAddress());
+        postalCodeField.setText(customer.getPostCode());
+        cityField.setText(customer.getPostAddress());
+        phoneNumberField.setText(customer.getMobilePhoneNumber());
+
+        ArrayList<Integer> cardNumberList = new ArrayList<>();
+        for(int i=0;i<16;i++) {cardNumberList.add(creditcard.getCardNumber().indexOf(i));}
+
+        for(int i=0;i<4;i++) {cardNumber1.setText(String.join(cardNumber1.getText(),cardNumberList.get(i).toString()));}
+        for(int i=4;i<8;i++) {cardNumber2.setText(cardNumberList.get(i).toString());}
+        for(int i=8;i<12;i++) {cardNumber3.setText(cardNumberList.get(i).toString());}
+        for(int i=12;i<16;i++) {cardNumber4.setText(cardNumberList.get(i).toString());}
+
+        cardNumber1.setText(String.join(cardNumberList.get(0).toString(),cardNumberList.get(1).toString(),cardNumberList.get(2).toString(),cardNumberList.get(3).toString()));
+
+        cardYear.setText(String.format("%d",creditcard.getValidYear()));
+        cardMonth.setText(String.format("%d",creditcard.getValidMonth()));
+        cardCVC.setText(String.format("%d",creditcard.getVerificationCode()));
     }
 
     @FXML
@@ -94,5 +133,21 @@ public class Profile extends AnchorPane {
                 }
             }
         });
+    }
+    @FXML
+    public void saveInfo() {
+        customer.setFirstName(firstNameField.getText());
+        customer.setLastName(lastNameField.getText());
+        customer.setAddress(addressField.getText());
+        customer.setPostCode(postalCodeField.getText());
+        customer.setPostAddress(cityField.getText());
+        customer.setMobilePhoneNumber(phoneNumberField.getText());
+
+        creditcard.setCardNumber(cardNumber1.getText() + cardNumber2.getText() + cardNumber3.getText() + cardNumber4.getText());
+        System.out.println(creditcard.getCardNumber());
+        creditcard.setHoldersName(customer.getFirstName() + " " + customer.getLastName());
+        creditcard.setValidYear(Integer.parseInt(cardYear.getText()));
+        creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));
+        creditcard.setVerificationCode(Integer.parseInt(cardCVC.getText()));
     }
 }
