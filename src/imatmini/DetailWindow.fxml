@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root type="javafx.scene.layout.AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0" styleClass="navigation-bar-text" stylesheets="@../../out/production/iMatMini/imatmini/iMatMini.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="180.0" layoutY="101.0" prefHeight="608.0" prefWidth="1080.0" style="-fx-background-color: #FCF6F6;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Product Name" />
+            <ImageView fitHeight="437.0" fitWidth="534.0" layoutX="96.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../.dat215/imat/images/product_1.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="686.0" layoutY="61.0" text="0kr" />
+            <Label layoutX="686.0" layoutY="145.0" text="kg" />
+            <Label layoutX="704.0" layoutY="281.0" text="label" />
+            <Label layoutX="749.0" layoutY="169.0" text="annan" />
+            <GridPane layoutX="260.0" layoutY="489.0" prefHeight="68.0" prefWidth="193.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.57141876220703" minWidth="0.0" prefWidth="0.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="192.57142857142856" minWidth="10.0" prefWidth="192.57142857142856" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="10000.0" minHeight="10.0" prefHeight="31.428543363298687" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.428608213152202" minHeight="10.0" prefHeight="29.714313779558452" valignment="CENTER" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <GridPane prefHeight="50.0" prefWidth="137.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="addButton1" contentDisplay="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="30.0" prefWidth="30.0" styleClass="add-button" stylesheets="@../../out/production/iMatMini/imatmini/iMatMini.css" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../out/production/iMatMini/imatmini/pics/minus-2-16.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="addButton" contentDisplay="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="30.0" prefWidth="20.0" styleClass="add-button" stylesheets="@../../out/production/iMatMini/imatmini/iMatMini.css" text="+" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../out/production/iMatMini/imatmini/pics/plus-2-16.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="howLabel" alignment="CENTER" prefHeight="30.0" prefWidth="36.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" disable="true" fill="WHITE" height="34.0" opacity="0.15" stroke="BLACK" strokeDashOffset="1.0" strokeLineJoin="BEVEL" strokeMiterLimit="1.0" strokeType="INSIDE" width="36.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Button fx:id="buyButton1" contentDisplay="CENTER" maxWidth="1.0E7" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#sendBuyButtonBack" prefHeight="64.0" prefWidth="193.0" style="-fx-background-color: #40aa54;" styleClass="buy-button" stylesheets="@../../out/production/iMatMini/imatmini/iMatMini.css" text="Köp" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#40aa54" height="40.0" layoutX="10.0" layoutY="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="94.0" />
+            <Button fx:id="addButton1" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="30.0" maxWidth="30.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="30.0" prefWidth="30.0" styleClass="add-button" stylesheets="@../../out/production/iMatMini/imatmini/iMatMini.css" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../out/production/iMatMini/imatmini/pics/minus-2-16.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="addButton" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="30.0" maxWidth="30.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="30.0" prefWidth="20.0" styleClass="add-button" stylesheets="@../../out/production/iMatMini/imatmini/iMatMini.css" text="+" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../out/production/iMatMini/imatmini/pics/plus-2-16.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="howLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="36.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="30.0" arcWidth="30.0" disable="true" fill="WHITE" height="34.0" layoutX="10.0" layoutY="10.0" opacity="0.15" stroke="BLACK" strokeDashOffset="1.0" strokeLineJoin="BEVEL" strokeMiterLimit="1.0" strokeType="INSIDE" width="36.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="buyButton" contentDisplay="CENTER" maxWidth="1.0E7" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#sendBuyButtonBack" prefHeight="64.0" prefWidth="193.0" style="-fx-background-color: #40aa54;" styleClass="buy-button" stylesheets="@../../out/production/iMatMini/imatmini/iMatMini.css" text="Köp" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</fx:root>

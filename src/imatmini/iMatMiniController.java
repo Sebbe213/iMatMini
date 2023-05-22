@@ -6,7 +6,9 @@
 package imatmini;
 
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -81,6 +83,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     protected AnchorPane checkoutPane;
     @FXML
     private AnchorPane favoritesPane;
+    @FXML
+    private AnchorPane detailPanel;
 
     @FXML
     private AnchorPane main;
@@ -91,6 +95,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private final Cart  cart = new Cart(this);
     private final Checkout checkout = new Checkout(this);
     private final Carousel carousel = new Carousel(this);
+
+    private final iMatMiniController mainController = this;
+
+    public Map<String, Product> productMap = new HashMap<String, Product>();
 
 
     // Other variables
@@ -116,7 +124,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private void handleSearchAction(ActionEvent event) {
         List<Product> matches = model.findProducts(searchField.getText());
-        updateProductList(matches);
+        updateProductList(matches,this);
         System.out.println("# matching products: " + matches.size());
         ProductsPane.toFront();
 
@@ -156,9 +164,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+
+        for(Product product : Model.getInstance().getProducts()) {
+            productMap.put(product.getName(), product);
+        }
+
         model.getShoppingCart().addShoppingCartListener(this);
 
-        updateProductList(model.getProducts());
+        updateProductList(model.getProducts(),this);
 
         updateBottomPanel();
         
@@ -184,6 +197,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         checkoutPane.getChildren().add(checkout);
 
         flowCarousel.getChildren().add(carousel);
+
+        openDetailWindow(productMap.get());
 
         historyPane.setTranslateY(94);
         profilePane.setTranslateY(94);
@@ -246,7 +261,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
    
     
-    private void updateProductList(List<Product> products) {
+    private void updateProductList(List<Product> products, iMatMiniController mainController) {
 
         System.out.println("updateProductList " + products.size());
         productsFlowPane.getChildren().clear();
@@ -254,7 +269,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         for (Product product : products) {
 
-            productsFlowPane.getChildren().add(new ProductPanel(product));
+            productsFlowPane.getChildren().add(new ProductPanel(product,mainController));
 
 
         }
@@ -331,5 +346,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         yearCombo.getItems().addAll(model.getYears());
         
+    }
+
+    public iMatMiniController getMainController() {
+        return mainController;
+    }
+
+    public void openDetailWindow(String product) {
+        detailPanel.getChildren().clear();
+        detailPanel.getChildren().add( new DetailWindow(productMap.get(product)) );
+        detailPanel.toFront();
     }
 }

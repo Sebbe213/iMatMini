@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package imatmini;
 
-
-import java.io.IOException;
-import java.util.List;
-
+import imatmini.iMatMiniController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,16 +9,21 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Rectangle;
 import se.chalmers.cse.dat216.project.*;
 
-/**
- *
- * @author oloft
- */
-public class ProductPanel extends AnchorPane {
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-    @FXML ImageView imageView;
-    @FXML Label nameLabel;
+public class DetailWindow extends AnchorPane {
+    iMatMiniController mainController;
+    @FXML
+    ImageView imageView;
+    @FXML
+    Label nameLabel;
     @FXML Label prizeLabel;
     @FXML Label ecoLabel;
 
@@ -41,43 +38,24 @@ public class ProductPanel extends AnchorPane {
     @FXML Button favorite;
     @FXML ImageView favImage;
 
-    
     private Model model = Model.getInstance();
-    private iMatMiniController matMiniController;
 
     private Product product;
 
-    
-    private final static double kImageWidth = 200.0;
-    private final static double kImageRatio = 0.75;
+    public DetailWindow(Product product) {
 
-
-    public ProductPanel(Product product, iMatMiniController mainController) {
-        
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ProductPanel.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Favourites.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
+            System.out.println("Favourites");
             throw new RuntimeException(exception);
         }
-        addButton.setText("+");
         this.product = product;
-        nameLabel.setText(product.getName());
-        prizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
-        imageView.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
-        if (!product.isEcological()) {
-            ecoLabel.setText("");
-        }
-        if (model.isFavorite(product)){
-            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
-        }
-
-        this.matMiniController = mainController;
     }
-
 
     @FXML
     public void addProduct() {
@@ -126,12 +104,12 @@ public class ProductPanel extends AnchorPane {
 
 
 
-   @FXML
+    @FXML
     public void handleRemoveAction(ActionEvent event) {
         List<ShoppingItem> items = model.getShoppingCart().getItems();      //en lista med alla våra varor
 
-       for (int i = 0; i < items.size(); i++) {
-           ShoppingItem item = items.get(i);
+        for (int i = 0; i < items.size(); i++) {
+            ShoppingItem item = items.get(i);
             if (item.getProduct().equals(product)) {
                 if (item.getAmount() > 1) {
                     item.setAmount(item.getAmount() - 1);
@@ -143,7 +121,10 @@ public class ProductPanel extends AnchorPane {
                 model.getShoppingCart().fireShoppingCartChanged(item ,true);
                 break;
             }
+
+
         }
+
         removeProduct();
     }
 
@@ -152,11 +133,7 @@ public class ProductPanel extends AnchorPane {
         System.out.println("Add " + product.getName());
         model.addToShoppingCart(product);
         addProduct();
-        }
 
-    @FXML
-    private void openDetailView() {
-        matMiniController.getMainController().openDetailWindow(product.getName());
+
     }
 }
-
