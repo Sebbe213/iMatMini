@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.CreditCard;
+import se.chalmers.cse.dat216.project.Customer;
+
 import java.io.IOException;
 
 public class Profile extends AnchorPane {
@@ -26,6 +29,8 @@ public class Profile extends AnchorPane {
     @FXML TextField phoneNumberField;
 
     iMatMiniController mainController;
+    Customer customer;
+    CreditCard creditcard;
     public Profile(iMatMiniController mainController) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Profile.fxml"));
