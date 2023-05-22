@@ -8,8 +8,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Customer;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Profile extends AnchorPane {
 
@@ -60,7 +62,30 @@ public class Profile extends AnchorPane {
 
 
         this.mainController = mainController;
+        this.customer = IMatDataHandler.getInstance().getCustomer();
+        this.creditcard = IMatDataHandler.getInstance().getCreditCard();
 
+        init();
+    }
+
+    private void init() {
+        firstNameField.setText(customer.getFirstName());
+        lastNameField.setText(customer.getLastName());
+        addressField.setText(customer.getAddress());
+        postalCodeField.setText(customer.getPostCode());
+        cityField.setText(customer.getPostAddress());
+        phoneNumberField.setText(customer.getMobilePhoneNumber());
+
+        ArrayList<Integer> cardNumberList = new ArrayList<>();
+        for(int i=0;i<16;i++) {cardNumberList.add(creditcard.getCardNumber().indexOf(i));}
+        for(int i=0;i<4;i++) {cardNumber1.setText(cardNumberList.get(i).toString());}
+        for(int i=4;i<8;i++) {cardNumber2.setText(cardNumberList.get(i).toString());}
+        for(int i=8;i<12;i++) {cardNumber3.setText(cardNumberList.get(i).toString());}
+        for(int i=12;i<16;i++) {cardNumber4.setText(cardNumberList.get(i).toString());}
+
+        cardYear.setText(String.format("%d",creditcard.getValidYear()));
+        cardMonth.setText(String.format("%d",creditcard.getValidMonth()));
+        cardCVC.setText(String.format("%d",creditcard.getVerificationCode()));
     }
 
     @FXML
