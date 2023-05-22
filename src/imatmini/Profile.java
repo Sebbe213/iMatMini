@@ -18,6 +18,12 @@ public class Profile extends AnchorPane {
     @FXML TextField cardMonth;
     @FXML TextField cardYear;
     @FXML TextField cardCVC;
+    @FXML TextField firstNameField;
+    @FXML TextField lastNameField;
+    @FXML TextField addressField;
+    @FXML TextField cityField;
+    @FXML TextField postalCodeField;
+    @FXML TextField phoneNumberField;
 
     iMatMiniController mainController;
     public Profile(iMatMiniController mainController) {
