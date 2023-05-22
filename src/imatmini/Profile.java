@@ -78,10 +78,13 @@ public class Profile extends AnchorPane {
 
         ArrayList<Integer> cardNumberList = new ArrayList<>();
         for(int i=0;i<16;i++) {cardNumberList.add(creditcard.getCardNumber().indexOf(i));}
-        for(int i=0;i<4;i++) {cardNumber1.setText(cardNumberList.get(i).toString());}
+
+        for(int i=0;i<4;i++) {cardNumber1.setText(String.join(cardNumber1.getText(),cardNumberList.get(i).toString()));}
         for(int i=4;i<8;i++) {cardNumber2.setText(cardNumberList.get(i).toString());}
         for(int i=8;i<12;i++) {cardNumber3.setText(cardNumberList.get(i).toString());}
         for(int i=12;i<16;i++) {cardNumber4.setText(cardNumberList.get(i).toString());}
+
+        cardNumber1.setText(String.join(cardNumberList.get(0).toString(),cardNumberList.get(1).toString(),cardNumberList.get(2).toString(),cardNumberList.get(3).toString()));
 
         cardYear.setText(String.format("%d",creditcard.getValidYear()));
         cardMonth.setText(String.format("%d",creditcard.getValidMonth()));
@@ -141,6 +144,7 @@ public class Profile extends AnchorPane {
         customer.setMobilePhoneNumber(phoneNumberField.getText());
 
         creditcard.setCardNumber(cardNumber1.getText() + cardNumber2.getText() + cardNumber3.getText() + cardNumber4.getText());
+        System.out.println(creditcard.getCardNumber());
         creditcard.setHoldersName(customer.getFirstName() + " " + customer.getLastName());
         creditcard.setValidYear(Integer.parseInt(cardYear.getText()));
         creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));
