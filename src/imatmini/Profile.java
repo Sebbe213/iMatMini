@@ -131,4 +131,19 @@ public class Profile extends AnchorPane {
             }
         });
     }
+    @FXML
+    public void saveInfo() {
+        customer.setFirstName(firstNameField.getText());
+        customer.setLastName(lastNameField.getText());
+        customer.setAddress(addressField.getText());
+        customer.setPostCode(postalCodeField.getText());
+        customer.setPostAddress(cityField.getText());
+        customer.setMobilePhoneNumber(phoneNumberField.getText());
+
+        creditcard.setCardNumber(cardNumber1.getText() + cardNumber2.getText() + cardNumber3.getText() + cardNumber4.getText());
+        creditcard.setHoldersName(customer.getFirstName() + " " + customer.getLastName());
+        creditcard.setValidYear(Integer.parseInt(cardYear.getText()));
+        creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));
+        creditcard.setVerificationCode(Integer.parseInt(cardCVC.getText()));
+    }
 }
