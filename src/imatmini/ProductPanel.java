@@ -47,11 +47,13 @@ public class ProductPanel extends AnchorPane {
 
     private Product product;
 
+    private iMatMiniController mainController;
+
     
     private final static double kImageWidth = 200.0;
     private final static double kImageRatio = 0.75;
 
-    public ProductPanel(Product product) {
+    public ProductPanel(Product product, iMatMiniController mainController) {
         
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ProductPanel.fxml"));
         fxmlLoader.setRoot(this);
@@ -73,6 +75,8 @@ public class ProductPanel extends AnchorPane {
         if (model.isFavorite(product)){
             favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
         }
+
+        this.mainController = mainController;
     }
 
 
@@ -155,5 +159,11 @@ public class ProductPanel extends AnchorPane {
 
 
         }
+    @FXML
+    private void openDetailView() {
+        mainController.getDetailPane().getChildren().clear();
+        mainController.getDetailPane().getChildren().add(mainController.detailedViewMap.get(product.getName()));
+        mainController.getDetailPane().toFront();
     }
+}
 

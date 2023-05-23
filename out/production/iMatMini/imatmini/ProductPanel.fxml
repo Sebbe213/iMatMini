@@ -16,7 +16,7 @@
    <children>
       <BorderPane layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <top>
-            <ImageView fx:id="imageView" fitHeight="133.0" fitWidth="131.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER" />
+            <ImageView fx:id="imageView" fitHeight="133.0" fitWidth="131.0" layoutY="100.0" onMousePressed="#openDetailView" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER" />
          </top>
          <center>
             <Label fx:id="nameLabel" alignment="BOTTOM_CENTER" contentDisplay="RIGHT" prefHeight="62.0" prefWidth="193.0" text="Mellanmjök fin produkt för allt möjligt" textAlignment="CENTER" textFill="#3c3c50" wrapText="true" BorderPane.alignment="CENTER">
@@ -99,6 +99,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+      <AnchorPane fx:id="detailedPane" onMousePressed="#openDetailView" prefHeight="201.0" prefWidth="217.0" />
       <Button fx:id="favorite" mnemonicParsing="false" onMouseClicked="#addFavorite" prefHeight="33.0" prefWidth="34.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fx:id="favImage" fitHeight="40.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">

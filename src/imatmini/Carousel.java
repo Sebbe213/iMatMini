@@ -41,7 +41,7 @@ public class Carousel extends AnchorPane {
 
 
     private double currentPos;
-    iMatMiniController mainController;
+    private final iMatMiniController mainController;
     Random rand = new Random();
 
     private Model model = Model.getInstance();
@@ -52,14 +52,14 @@ public class Carousel extends AnchorPane {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("carousel.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
+        this.mainController = mainController;
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
             System.out.println("Här");
             throw new RuntimeException(exception);
         }
-        this.mainController = mainController;
+
     }
 
 
@@ -92,7 +92,7 @@ public class Carousel extends AnchorPane {
             int randomIndex= rand.nextInt(products.size());
             Product product = (products.get(randomIndex));
 
-            productBox.getChildren().add(new ProductPanel(product));
+            productBox.getChildren().add(new ProductPanel(product,mainController));
 
 
         }

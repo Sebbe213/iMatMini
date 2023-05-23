@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
@@ -13,49 +15,48 @@ import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.util.List;
 
-public class HistoryItem extends AnchorPane {
-    @FXML
-    private Label orderDateLabel;
-    @FXML
-    private Label adressLabel;
-    @FXML
-    private Button showOrderButton;
-    @FXML
-    private Rectangle rect;
+public class DetailedView extends AnchorPane {
+    private Product product;
 
+    @FXML
+    private ImageView productImage;
 
-    protected Order order;
+    @FXML
+    private Label priceLabel;
+
+    @FXML
+    private Label nameLabel;
+
+    @FXML
+    private ImageView closeImage;
+
     private final iMatMiniController mainController;
 
-    public HistoryItem(Order order, iMatMiniController mainController) {
+    public DetailedView(Product product, iMatMiniController mainController) {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HistoryItem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DetailedView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
+            System.out.println("DetailedView");
             throw new RuntimeException(exception);
         }
-
-        this.order = order;
+        this.product = product;
         this.mainController = mainController;
-        this.orderDateLabel.setText(order.getDate().toString());
-        this.adressLabel.setText("EN ADRESS");
 
-        List<ShoppingItem> orderList = order.getItems();
+        this.priceLabel.setText(String.format("%.2f", product.getPrice()));
+        this.nameLabel.setText(product.getName());
+        this.productImage.setImage(IMatDataHandler.getInstance().getFXImage(product));
     }
 
     @FXML
-    public void selectTheOrder(ActionEvent event) {
-        History history = mainController.getHistory();
-        history.fillHistoryProduct(order);
+    private void closeDetailView() {
+        mainController.getDetailPane().toBack();
     }
-
-
 }

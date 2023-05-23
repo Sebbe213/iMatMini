@@ -32,6 +32,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private AnchorPane shopPane;
     @FXML
+    private AnchorPane detailPane;
+    @FXML
     private TextField searchField;
     @FXML
     private Label itemsLabel;
@@ -129,6 +131,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private final Cart  cart = new Cart(this);
     private final Checkout checkout = new Checkout(this);
     private final Carousel carousel = new Carousel(this);
+    Map<String, DetailedView> detailedViewMap = new HashMap<String, DetailedView>();
 
     @FXML
     private ImageView redDotImageView;
@@ -202,6 +205,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         updateProductList(model.getProducts());
 
+        for(Product product : Model.getInstance().getProducts()) {
+            detailedViewMap.put(product.getName(), new DetailedView(product,this));
+        }
+
         updateBottomPanel();
         
         setupAccountPane();
@@ -264,6 +271,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         return history;
     }
 
+    public AnchorPane getDetailPane() {
+        return detailPane;
+    }
+
     public void openFavourites() {
        favourites.fillGridPane();
        favoritesPane.toFront();
@@ -298,7 +309,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         for (Product product : products) {
 
-            productsFlowPane.getChildren().add(new ProductPanel(product));
+            productsFlowPane.getChildren().add(new ProductPanel(product,this));
 
 
         }
@@ -338,7 +349,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         for (Product product : products) {
             if (selectedCategory.contains(product.getCategory())) {
-                CategoryFlowpane.getChildren().add(new ProductPanel(product));
+                CategoryFlowpane.getChildren().add(new ProductPanel(product,this));
             }
 
         }

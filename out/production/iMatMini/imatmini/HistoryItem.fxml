@@ -8,7 +8,7 @@
 
 <fx:root prefHeight="75.0" prefWidth="656.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="75.0" stroke="#dadae0" strokeType="INSIDE" width="770.0" />
+        <Rectangle fx:id="rect" arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="75.0" stroke="#dadae0" strokeType="INSIDE" styleClass="history-showing-green" width="770.0" />
         <Label fx:id="orderDateLabel" layoutX="31.0" layoutY="25.0" text="2023-04-13" textFill="#3c3c50">
          <font>
             <Font name="Arial" size="20.0" />

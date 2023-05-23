@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Favourites extends AnchorPane {
-    iMatMiniController mainController;
+    private final iMatMiniController mainController;
 
     @FXML
     private GridPane favoritesGridPane;
@@ -42,7 +42,7 @@ public class Favourites extends AnchorPane {
         int i = 0;
         for(int col = 0; col<3; col++) {
             for(int row = 0; row<favoritesList.size()/3; row++) {
-                favoritesGridPane.add(new ProductPanel(favoritesList.get(i)),col,row);
+                favoritesGridPane.add(new ProductPanel(favoritesList.get(i),mainController),col,row);
                         i++;
             }
         }
