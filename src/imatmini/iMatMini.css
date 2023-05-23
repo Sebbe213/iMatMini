@@ -93,6 +93,16 @@
     -fx-background-radius: 20px;
 }
 
+.close-category-button{
+    -fx-background-color: #FCF6F6;
+    -fx-pref-height:20px;
+    -fx-pref-width:160px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #dadae0;
+    -fx-border-width:1px;
+    -fx-background-radius: 20px;
+}
+
 .product-card{
     -fx-border-radius: 10px;
     -fx-background-radius:10px;

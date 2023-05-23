@@ -6,8 +6,8 @@
 package imatmini;
 
 import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -84,6 +84,36 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML
     private AnchorPane main;
+
+    @FXML
+    private Button fiskButton;
+
+    @FXML
+    private Button köttButton;
+
+    @FXML
+    private Button mejeriButton;
+
+    @FXML
+    private Button grönsaksButton;
+
+    @FXML
+    private Button dryckButton;
+
+    @FXML
+    private Button fruktButton;
+
+    @FXML
+    private Button skafferiButton;
+
+    @FXML
+    private AnchorPane CategoryAnchorpane;
+
+    @FXML
+    private FlowPane CategoryFlowpane;
+
+    @FXML
+    private Label categoryId;
 
     private final Favourites favourites = new Favourites(this);
     private final History history = new History(this);
@@ -170,8 +200,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         // There is an fxml file NamePanel.fxml and a corresponding class NamePanel.java
         // Simply create a new NamePanel object and add it as a child of dynamicPane
         // The NamePanel holds a reference to the main controller (this class)
-        AnchorPane namePane = new NamePanel(this);
-        dynamicPane.getChildren().add(namePane);
 
         historyPane.getChildren().add(history);
 
@@ -203,6 +231,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void closeAccountView() {
         updateCreditCard();
         shopPane.toFront();
+    }
+
+    public void closeCategory() {
+        CategoryAnchorpane.toBack();
     }
 
     public void openMyProfile() { profilePane.toFront(); }
@@ -274,6 +306,33 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     }*/
 
+    @FXML
+    public void openCategory(ActionEvent event) {
+        List<Product> products = model.getProducts();
+        Map<Button, List<ProductCategory>> categoryMap = new HashMap<>();
+
+        categoryMap.put(fiskButton,  Arrays.asList(ProductCategory.FISH));
+        categoryMap.put(köttButton, Arrays.asList(ProductCategory.MEAT));
+        categoryMap.put(grönsaksButton, Arrays.asList(ProductCategory.ROOT_VEGETABLE, ProductCategory.VEGETABLE_FRUIT));
+        categoryMap.put(fruktButton, Arrays.asList(ProductCategory.BERRY, ProductCategory.CITRUS_FRUIT, ProductCategory.EXOTIC_FRUIT, ProductCategory.MELONS));
+        categoryMap.put(mejeriButton, Arrays.asList(ProductCategory.DAIRIES));
+        categoryMap.put(skafferiButton, Arrays.asList(ProductCategory.FLOUR_SUGAR_SALT, ProductCategory.BREAD, ProductCategory.PASTA, ProductCategory.POTATO_RICE, ProductCategory.NUTS_AND_SEEDS));
+        categoryMap.put(dryckButton, Arrays.asList(ProductCategory.COLD_DRINKS));
+
+
+        Button clickedButton = (Button) event.getSource();
+        List<ProductCategory> selectedCategory = categoryMap.get(clickedButton);
+        CategoryFlowpane.getChildren().clear();
+
+        for (Product product : products) {
+            if (selectedCategory.contains(product.getCategory())) {
+                CategoryFlowpane.getChildren().add(new ProductPanel(product));
+            }
+
+        }
+
+        CategoryAnchorpane.toFront();
+    }
 
 
     
