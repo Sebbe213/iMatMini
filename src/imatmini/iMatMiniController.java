@@ -22,7 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import se.chalmers.cse.dat216.project.*;
-
+import javafx.scene.control.Tooltip;
 import  imatmini.ProductPanel;
 
 
@@ -187,6 +187,17 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateProductList(matches);
         System.out.println("# matching products: " + matches.size());
         ProductsPane.toFront();
+
+    }
+
+    @FXML
+    private void allProducts(ActionEvent event){
+        List<Product> products = model.getProducts();
+
+        for (Product product : products) {
+            ProductsPane.getChildren().add(new ProductPanel(product));
+            ProductsPane.toFront();
+        }
 
     }
     @FXML
