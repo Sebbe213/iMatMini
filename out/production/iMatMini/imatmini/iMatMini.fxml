@@ -196,13 +196,13 @@
                         <Font name="Arial" size="25.0" />
                      </font>
                   </Label>
-                  <AnchorPane fx:id="carouselPane" layoutX="233.0" layoutY="552.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="1143.0" style="-fx-background-color: #FEFEFE;">
+                  <AnchorPane fx:id="carouselPane" layoutX="325.0" layoutY="552.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="888.0" style="-fx-background-color: #FEFEFE;">
                      <children>
-                        <FlowPane fx:id="flowCarousel" layoutX="1.0" layoutY="-12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="1146.0">
-                           <children>
-                              <AnchorPane fx:id="carouselContainer" prefHeight="200.0" prefWidth="200.0" />
-                           </children>
-                        </FlowPane>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="92.0" prefHeight="300.0" prefWidth="888.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER" AnchorPane.leftAnchor="0.0">
+                           <content>
+                              <FlowPane fx:id="flowCarousel" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="888.0" />
+                           </content>
+                        </ScrollPane>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="782.0" layoutY="929.0" prefHeight="65.0" prefWidth="488.0" style="-fx-background-color: #ff6600;">
