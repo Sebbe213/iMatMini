@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import se.chalmers.cse.dat216.project.*;
 
@@ -105,6 +106,11 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML
     private Button skafferiButton;
+
+    @FXML
+    private ImageView redDotImageView;
+    @FXML
+    private Label numberInCartLabel;
 
     @FXML
     private AnchorPane CategoryAnchorpane;
@@ -219,7 +225,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         favoritesPane.setTranslateY(94);
         checkoutPane.setTranslateY(94);
 
-
+        updateNumberInCart();
     }    
     
     // Navigation
@@ -279,7 +285,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Shope pane methods
     @Override
      public void shoppingCartChanged(CartEvent evt) {
-        updateBottomPanel();
+        updateNumberInCart();
     }
    
     
@@ -395,5 +401,21 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         yearCombo.getItems().addAll(model.getYears());
         
+    }
+
+    private void updateNumberInCart() {
+        if(Model.getInstance().getShoppingCart().getItems().isEmpty()) {
+            redDotImageView.setVisible(false);
+            numberInCartLabel.setVisible(false);
+        }
+        else {
+            redDotImageView.setVisible(true);
+            numberInCartLabel.setVisible(true);
+            int amount = 0;
+            for(ShoppingItem item : Model.getInstance().getShoppingCart().getItems()) {
+                amount += item.getAmount();
+            }
+            numberInCartLabel.setText(String.format("%d",amount));
+        }
     }
 }
