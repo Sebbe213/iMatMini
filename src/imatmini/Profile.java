@@ -75,7 +75,7 @@ public class Profile extends AnchorPane {
         init();
     }
 
-    private void init() {
+    void init() {
         firstNameField.setText(customer.getFirstName());
         lastNameField.setText(customer.getLastName());
         addressField.setText(customer.getAddress());
@@ -147,7 +147,7 @@ public class Profile extends AnchorPane {
         });
     }
     @FXML
-    public void saveInfo() {
+    private void saveInfo() {
         customer.setFirstName(firstNameField.getText());
         customer.setLastName(lastNameField.getText());
         customer.setAddress(addressField.getText());
