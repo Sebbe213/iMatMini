@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import se.chalmers.cse.dat216.project.*;
 
@@ -129,6 +130,11 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private final Checkout checkout = new Checkout(this);
     private final Carousel carousel = new Carousel(this);
 
+    @FXML
+    private ImageView redDotImageView;
+    @FXML
+    private Label numberInCartLabel;
+
 
     // Other variables
     private final Model model = Model.getInstance();
@@ -225,6 +231,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         favoritesPane.setTranslateY(94);
         checkoutPane.setTranslateY(94);
 
+        updateNumberInCart();
     }    
     
     // Navigation
@@ -280,6 +287,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @Override
      public void shoppingCartChanged(CartEvent evt) {
         updateBottomPanel();
+        updateNumberInCart();
     }
 
     private void updateProductList(List<Product> products) {
@@ -414,5 +422,23 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         yearCombo.getItems().addAll(model.getYears());
         
+    }
+
+    private void updateNumberInCart() {
+        if(Model.getInstance().getShoppingCart().getItems().isEmpty()) {
+        }
+        else {
+            redDotImageView.setVisible(true);
+            numberInCartLabel.setVisible(true);
+            int amount = 0;
+            for(ShoppingItem item : Model.getInstance().getShoppingCart().getItems()) {
+                amount += item.getAmount();
+            }
+            if(amount == 0) {
+                redDotImageView.setVisible(false);
+                numberInCartLabel.setVisible(false);
+            }
+            numberInCartLabel.setText(String.format("%d",amount));
+        }
     }
 }
