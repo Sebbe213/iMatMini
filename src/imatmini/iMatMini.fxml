@@ -26,12 +26,34 @@
                         <FlowPane fx:id="CategoryFlowpane" columnHalignment="CENTER" hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="1183.0" style="-fx-background-color: FFFFFF;" vgap="20.0" />
                      </content>
                   </ScrollPane>
-                  <Button layoutX="1207.0" layoutY="137.0" mnemonicParsing="false" onAction="#closeCategory" prefHeight="25.0" prefWidth="90.0" styleClass="close-category-button" text="Stäng kategori" textFill="#3c3c50">
+                  <Button layoutX="1186.0" layoutY="140.0" mnemonicParsing="false" onAction="#closeCategory" prefHeight="25.0" prefWidth="90.0" styleClass="close-category-button" text="Stäng kategori" textFill="#3c3c50">
                      <font>
                         <Font name="Arial Italic" size="17.0" />
                      </font>
                   </Button>
-                  <Label fx:id="categoryId" layoutX="90.0" layoutY="140.0" text="Kategori" textFill="#3c3c50">
+                  <Label fx:id="categoryId" layoutX="100.0" layoutY="140.0" text="Kategori" textFill="#3c3c50">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="ProductsPane" prefHeight="810.0" prefWidth="1440.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="858.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
+                  <ScrollPane hbarPolicy="NEVER" layoutX="121.0" layoutY="183.0" prefHeight="689.0" prefWidth="1192.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="183.0">
+
+                     <content>
+                        <FlowPane fx:id="productsFlowPane" columnHalignment="CENTER" hgap="10.0" prefHeight="689.0" prefWidth="1171.0" style="-fx-background-color: #FFFFFF;" vgap="10.0" />
+                     </content>
+
+                  </ScrollPane>
+                  <Button fx:id="backButton" layoutX="1185.0" layoutY="128.0" mnemonicParsing="false" onAction="#backButton" prefWidth="68.0" style="-fx-background-color: 00FFFFFF;" styleClass="back-button" stylesheets="@iMatMini.css" text="Stäng">
+                     <font>
+                        <Font name="Arial Italic" size="17.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="123.0" layoutY="125.0" text="Sökresultat" textFill="#3c3c50">
                      <font>
                         <Font name="Arial Bold" size="30.0" />
                      </font>
@@ -206,28 +228,6 @@
                      </children>
                   </AnchorPane>
                   <Label layoutX="354.0" layoutY="482.0" prefHeight="74.0" prefWidth="239.0" text="Populära varor" textFill="#3c3c50">
-                     <font>
-                        <Font name="Arial Bold" size="30.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="ProductsPane" prefHeight="810.0" prefWidth="1440.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="858.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
-                  <ScrollPane hbarPolicy="NEVER" layoutX="121.0" layoutY="183.0" prefHeight="689.0" prefWidth="1192.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="183.0">
-
-                     <content>
-                        <FlowPane fx:id="productsFlowPane" columnHalignment="CENTER" hgap="10.0" prefHeight="689.0" prefWidth="1171.0" style="-fx-background-color: #FFFFFF;" vgap="10.0" />
-                     </content>
-
-                  </ScrollPane>
-                  <Button fx:id="backButton" layoutX="52.0" layoutY="127.0" mnemonicParsing="false" onAction="#backButton" prefWidth="68.0" style="-fx-background-color: 00FFFFFF;" styleClass="back-button" stylesheets="@iMatMini.css" text="Tillbaka">
-                     <font>
-                        <Font name="Arial Italic" size="17.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="243.0" layoutY="125.0" text="Sökresultat" textFill="#3c3c50">
                      <font>
                         <Font name="Arial Bold" size="30.0" />
                      </font>
