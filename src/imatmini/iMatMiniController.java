@@ -298,7 +298,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         for (Product product : products) {
 
-            productsFlowPane.getChildren().add(new ProductPanel(product));
+            productsFlowPane.getChildren().add(new ProductPanel(product,this));
 
 
         }
@@ -338,7 +338,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         for (Product product : products) {
             if (selectedCategory.contains(product.getCategory())) {
-                CategoryFlowpane.getChildren().add(new ProductPanel(product));
+                CategoryFlowpane.getChildren().add(new ProductPanel(product,this));
             }
 
         }

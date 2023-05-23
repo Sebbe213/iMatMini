@@ -92,7 +92,7 @@ public class Carousel extends AnchorPane {
             int randomIndex= rand.nextInt(products.size());
             Product product = (products.get(randomIndex));
 
-            productBox.getChildren().add(new ProductPanel(product));
+            productBox.getChildren().add(new ProductPanel(product,mainController));
 
 
         }
