@@ -16,15 +16,18 @@
             <Image url="@../../../../../.dat215/imat/images/product_50.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="productNameLabel" layoutX="201.0" layoutY="24.0" text="Lax 100g">
+      <Label fx:id="productNameLabel" layoutX="201.0" layoutY="24.0" text="Lax 100g" textFill="#3c3c50">
          <font>
-            <Font name="Arial" size="17.0" />
+            <Font name="Arial" size="20.0" />
          </font></Label>
-      <Label fx:id="productCostLabel" layoutX="463.0" layoutY="26.0" text="70kr">
+      <Label fx:id="productCostLabel" layoutX="483.0" layoutY="26.0" text="70kr" textFill="#3c3c50">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font></Label>
-      <Label fx:id="amountLabel" layoutX="262.0" layoutY="72.0" styleClass="cart-prices-text" text="1" />
+      <Label fx:id="amountLabel" layoutX="252.0" layoutY="72.0" styleClass="cart-prices-text" text="1" textFill="#3c3c50">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font></Label>
       <Button layoutX="463.0" layoutY="68.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;" styleClass="header-color">
          <graphic>
             <ImageView fx:id="trashCanImage" fitHeight="43.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">

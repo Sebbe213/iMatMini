@@ -14,6 +14,31 @@
 
 <fx:root prefHeight="810.0" prefWidth="1440.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
+      <AnchorPane fx:id="receiptPane" prefHeight="810.0" prefWidth="1440.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
+            <Label layoutX="480.0" layoutY="290.0" text="Tack för din beställning!" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="525.0" layoutY="360.0" text="Din leverans kommer fram:" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="635.0" layoutY="408.0" text="Leveranstid" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Italic" size="30.0" />
+               </font>
+            </Label>
+            <Button layoutX="522.0" layoutY="625.0" mnemonicParsing="false" onAction="#keepShopping" styleClass="pay-button" text="Fortsätt handla" textAlignment="CENTER" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
         <Label layoutX="240.0" layoutY="33.0" text="Betalning" textFill="#3c3c50">
          <font>
@@ -136,23 +161,23 @@
                   <FlowPane fx:id="cartFlowPane" hgap="10.0" prefHeight="477.0" prefWidth="367.0" style="-fx-background-color: #fcf6f6;" vgap="10.0" />
                </content>
             </ScrollPane>
-            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="70.0" layoutX="95.0" layoutY="559.0" stroke="#dadae0" strokeType="INSIDE" width="215.0" />
-            <Label layoutX="154.0" layoutY="566.0" text="Frakt:" textFill="#3c3c50">
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="83.0" layoutX="46.0" layoutY="546.0" stroke="#dadae0" strokeType="INSIDE" width="306.0" />
+            <Label layoutX="77.0" layoutY="561.0" text="Frakt:" textFill="#3c3c50">
                <font>
                   <Font name="Arial Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="230.0" layoutY="567.0" text="40kr" textFill="#3c3c50">
+            <Label layoutX="160.0" layoutY="561.0" text="40kr" textFill="#3c3c50">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="132.0" layoutY="591.0" text="Summa:" textFill="#3c3c50">
+            <Label layoutX="72.0" layoutY="591.0" text="Totalt:" textFill="#3c3c50">
                <font>
                   <Font name="Arial Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="totalCostLabel" layoutX="235.0" layoutY="594.0" text="0kr" textFill="#3c3c50">
+            <Label fx:id="totalCostLabel" layoutX="161.0" layoutY="591.0" text="0kr" textFill="#3c3c50">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>

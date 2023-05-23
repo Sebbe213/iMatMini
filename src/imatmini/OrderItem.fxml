@@ -19,7 +19,7 @@
          <font>
             <Font name="Arial" size="17.0" />
          </font></Label>
-      <Label fx:id="productPriceLabel" layoutX="265.0" layoutY="53.0" text="50kr" textFill="#3c3c50">
+      <Label fx:id="productPriceLabel" layoutX="315.0" layoutY="53.0" text="50kr" textFill="#3c3c50">
          <font>
             <Font size="17.0" />
          </font></Label>
@@ -28,7 +28,7 @@
          <font>
             <Font size="17.0" />
          </font></Label>
-      <Label fx:id="productWeightLabel" layoutX="267.0" layoutY="14.0" text="30g" textFill="#3c3c50">
+      <Label fx:id="productWeightLabel" layoutX="317.0" layoutY="14.0" text="30g" textFill="#3c3c50">
          <font>
             <Font size="17.0" />
          </font></Label>

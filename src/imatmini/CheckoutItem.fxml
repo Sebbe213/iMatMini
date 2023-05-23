@@ -16,15 +16,15 @@
                 <Image url="@../../../../../.dat215/imat/images/product_50.jpg" />
             </image>
         </ImageView>
-        <Label fx:id="productNameLabel" layoutX="119.0" layoutY="19.0" text="Lax 100g">
+        <Label fx:id="productNameLabel" layoutX="119.0" layoutY="19.0" text="Lax 100g" textFill="#3c3c50">
          <font>
             <Font name="Arial" size="17.0" />
          </font></Label>
-        <Label fx:id="productCostLabel" layoutX="296.0" layoutY="20.0" text="70kr">
+        <Label fx:id="productCostLabel" layoutX="266.0" layoutY="20.0" text="70kr" textFill="#3c3c50">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font></Label>
-        <Button layoutX="308.0" layoutY="62.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;">
+        <Button layoutX="273.0" layoutY="58.0" mnemonicParsing="false" onAction="#removeProductFromCart" style="-fx-background-color: #FFFEFE;">
          <graphic>
                 <ImageView fx:id="trashCanImage" fitHeight="25.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -34,21 +34,24 @@
          </graphic></Button>
         <Button layoutX="107.0" layoutY="49.0" mnemonicParsing="false" onAction="#removeProduct" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #FFFEFE;">
          <graphic>
-                <ImageView fx:id="minusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="minusImage" fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../out/production/iMatMini/imatmini/pics/Ellipse%203removeButton.png" />
                     </image>
                 </ImageView>
          </graphic>
         </Button>
-        <Button layoutX="220.0" layoutY="49.0" mnemonicParsing="false" onAction="#addProduct" style="-fx-background-color: #FFFEFE;">
+        <Button layoutX="189.0" layoutY="55.0" mnemonicParsing="false" onAction="#addProduct" style="-fx-background-color: #FFFEFE;">
          <graphic>
-                <ImageView fx:id="plusImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="plusImage" fitHeight="36.0" fitWidth="28.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../out/production/iMatMini/imatmini/pics/plusButtonImage.png" />
                     </image>
                 </ImageView>
          </graphic></Button>
-        <Label fx:id="amountLabel" layoutX="185.0" layoutY="55.0" styleClass="cart-prices-text" text="1" />
+        <Label fx:id="amountLabel" layoutX="151.0" layoutY="60.0" prefHeight="26.0" prefWidth="40.0" text="1" textFill="#3c3c50">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
     </children>
 </fx:root>
