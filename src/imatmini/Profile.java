@@ -94,10 +94,11 @@ public class Profile extends AnchorPane {
         if(creditcard.getValidYear() < 10) {cardYear.setText("0" + String.format("%d",creditcard.getValidYear()));}
         else {cardYear.setText(String.format("%d",creditcard.getValidYear()));}
 
-        if(creditcard.getVerificationCode() < 100 && creditcard.getVerificationCode() > 10) {cardCVC.setText("0" + String.format("%d",creditcard.getVerificationCode()));}
+        System.out.println(creditcard.getVerificationCode() + "FÖRE");
+        if((creditcard.getVerificationCode() < 100) && (creditcard.getVerificationCode() >= 10)) {cardCVC.setText("0" + String.format("%d",creditcard.getVerificationCode()));}
         else if (creditcard.getVerificationCode() < 10) {cardCVC.setText("00" + String.format("%d",creditcard.getVerificationCode()));}
         else {cardCVC.setText(String.format("%d",creditcard.getVerificationCode()));}
-
+        System.out.println(creditcard.getVerificationCode());
         cardCVC.setText(String.format("%d",creditcard.getVerificationCode()));
     }
 
@@ -128,6 +129,7 @@ public class Profile extends AnchorPane {
         tf.textProperty().addListener((obs, oldText, newText) -> {
             if (!tf.getText().isEmpty()) {
                 if (oldText.length() < 3 && newText.length() >= 3) {
+                    if(!cardCVC.getText().isBlank()) {creditcard.setVerificationCode(Integer.parseInt(newText));}
                     pane.requestFocus();
                 }
             }
@@ -159,7 +161,7 @@ public class Profile extends AnchorPane {
         creditcard.setHoldersName(customer.getFirstName() + " " + customer.getLastName());
         if(!cardYear.getText().isBlank()) {creditcard.setValidYear(Integer.parseInt(cardYear.getText()));}
         if(!cardMonth.getText().isBlank()) {creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));}
-        if(!cardCVC.getText().isBlank()) {creditcard.setVerificationCode(Integer.parseInt(cardCVC.getText()));}
+
 
     }
 }
