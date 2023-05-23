@@ -44,21 +44,28 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private AnchorPane accountPane;
     @FXML 
     ComboBox cardTypeCombo;
+
     @FXML
     private TextField numberTextField;
+
     @FXML
     private TextField nameTextField;
+
     @FXML 
     private ComboBox monthCombo;
+
     @FXML
     private ComboBox yearCombo;
+
     @FXML
     private TextField cvcField;
+
     @FXML
     private Label purchasesLabel;
 
     @FXML
     private AnchorPane dynamicPane;
+
     @FXML
     private AnchorPane historyPane;
 
@@ -149,7 +156,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateProductList(matches);
         System.out.println("# matching products: " + matches.size());
         ProductsPane.toFront();
-
     }
     @FXML
     private void backButton(ActionEvent event){
@@ -219,7 +225,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         favoritesPane.setTranslateY(94);
         checkoutPane.setTranslateY(94);
 
-
     }    
     
     // Navigation
@@ -232,7 +237,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateCreditCard();
         shopPane.toFront();
     }
-
     public void closeCategory() {
         CategoryAnchorpane.toBack();
     }
@@ -257,7 +261,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
        favoritesPane.toFront();
     }
 
-
     public void openShoppingCart() {
         cart.fillCartFlowPane();
         cartPane.toFront();
@@ -276,8 +279,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
      public void shoppingCartChanged(CartEvent evt) {
         updateBottomPanel();
     }
-   
-    
+
     private void updateProductList(List<Product> products) {
 
         System.out.println("updateProductList " + products.size());
@@ -334,7 +336,27 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         CategoryAnchorpane.toFront();
     }
 
-
+    @FXML
+    public void categoryLabel() {
+        if(fiskButton.isPressed()) {
+            categoryId.setText("Fisk");
+        }
+        if(köttButton.isPressed()) {
+            categoryId.setText("Kött");
+        }
+        if(grönsaksButton.isPressed()) {
+            categoryId.setText("Grönsaker");
+        }
+        if(fruktButton.isPressed()) {
+            categoryId.setText("Frukt");
+        }
+        if(mejeriButton.isPressed()) {
+            categoryId.setText("Mejeri");
+        }
+        if(skafferiButton.isPressed()) {
+            categoryId.setText("Skafferi");
+        }
+    }
     
     private void updateBottomPanel() {
         

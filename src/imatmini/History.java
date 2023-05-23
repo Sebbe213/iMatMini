@@ -83,6 +83,6 @@ public class History extends AnchorPane {
         }
         selectedOrderDateLabel.setText("Order " + order.getDate().toString());
         System.out.println(selectedOrderDateLabel);
-        orderPriceLabel.setText("Totalt: " + String.format("%.2f", totalCost) + "kr");
+        orderPriceLabel.setText( String.format("%.2f", totalCost + 40) + "kr");
     }
 }

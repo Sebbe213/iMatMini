@@ -24,6 +24,10 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
     private FlowPane cartFlowPane;
     @FXML
     private Label totalCostLabel;
+    @FXML
+    private AnchorPane receiptPane;
+    @FXML
+    private Label orderDate;
 
     public Checkout(iMatMiniController mainController) {
 
@@ -39,7 +43,7 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         }
         this.mainController = mainController;
 
-        this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()) + "kr");
+        this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal() + 40) + "kr");
 
         dataHandler.getShoppingCart().addShoppingCartListener(this);
     }
@@ -65,12 +69,18 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
     }
 
     private void updatePriceLabel() {
-        this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()));
+        this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal() + 40) + "kr");
     }
 
     @FXML
     private void completePurchase() {
         mainController.handleBuyItemsAction();
+        receiptPane.toFront();
+    }
+
+    @FXML
+    private void keepShopping() {;
+        mainController.closeNameView();
     }
 
     @Override

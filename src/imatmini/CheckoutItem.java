@@ -59,8 +59,8 @@ public class CheckoutItem extends AnchorPane implements ShoppingCartListener {
         this.plusImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/plusButtonImage.png")));
 
         this.productNameLabel.setText(item.getProduct().getName());
-        this.productCostLabel.setText(String.format("%.2f", item.getTotal()));
-        this.amountLabel.setText(String.format("%d",(int)item.getAmount()));
+        this.productCostLabel.setText(String.format("%.2f", item.getTotal()) + "kr");
+        this.amountLabel.setText(String.format("%d",(int)item.getAmount()) + "st");
 
         dataHandler.getShoppingCart().addShoppingCartListener(this);
     }
@@ -87,8 +87,8 @@ public class CheckoutItem extends AnchorPane implements ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         if(this.item.getAmount()<=0) {this.amountLabel.setText("0");}
-        else {this.amountLabel.setText(String.format("%d", (int)this.item.getAmount()));}
+        else {this.amountLabel.setText(String.format("%d", (int)this.item.getAmount()) + "st");}
 
-        this.productCostLabel.setText(String.format("%.2f", item.getTotal()));
+        this.productCostLabel.setText(String.format("%.2f", item.getTotal()) + "kr");
     }
 }

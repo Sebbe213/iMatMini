@@ -42,7 +42,7 @@ public class Cart extends AnchorPane implements ShoppingCartListener {
             throw new RuntimeException(exception);
         }
         this.mainController = mainController;
-        this.priceLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()));
+        this.priceLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal() + 40) + "kr");
 
         dataHandler.getShoppingCart().addShoppingCartListener(this);
     }
@@ -75,7 +75,7 @@ public class Cart extends AnchorPane implements ShoppingCartListener {
     }
 
     public void updatePriceLabel() {
-        this.priceLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal()));
+        this.priceLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal() + 40) + "kr");
     }
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {

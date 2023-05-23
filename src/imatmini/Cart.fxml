@@ -45,20 +45,20 @@
                      </children></FlowPane>
                </content>
             </ScrollPane>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#fffefe" height="118.0" layoutX="195.0" layoutY="518.0" stroke="#dadae0" strokeType="INSIDE" styleClass="cart-prices-box" width="281.0" />
-            <Label layoutX="269.0" layoutY="543.0" text="Frakt:" textFill="#3c3c50">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#fffefe" height="118.0" layoutX="120.0" layoutY="518.0" stroke="#dadae0" strokeType="INSIDE" styleClass="cart-prices-box" width="444.0" />
+            <Label layoutX="169.0" layoutY="543.0" text="Frakt:" textFill="#3c3c50">
                <font>
                   <Font name="Arial Bold" size="25.0" />
                </font></Label>
-            <Label fx:id="priceLabel" layoutX="350.0" layoutY="543.0" text="40kr" textFill="#3c3c50">
+            <Label fx:id="priceLabel" layoutX="270.0" layoutY="543.0" text="40kr" textFill="#3c3c50">
                <font>
                   <Font size="25.0" />
                </font></Label>
-            <Label fx:id="priceLabel" layoutX="353.0" layoutY="581.0" text="0kr" textFill="#3c3c50">
+            <Label fx:id="priceLabel" layoutX="273.0" layoutY="580.0" text="0kr" textFill="#3c3c50">
                <font>
                   <Font name="Arial" size="25.0" />
                </font></Label>
-            <Label layoutX="262.0" layoutY="581.0" text="Totalt:" textFill="#3c3c50">
+            <Label layoutX="162.0" layoutY="581.0" text="Totalt:" textFill="#3c3c50">
                <font>
                   <Font name="Arial Bold" size="25.0" />
                </font></Label>

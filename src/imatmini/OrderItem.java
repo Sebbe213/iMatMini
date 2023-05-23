@@ -47,7 +47,7 @@ public class OrderItem extends AnchorPane {
 
         this.productImage.setImage(model.getImage(item.getProduct()));
         this.productNameLabel.setText(item.getProduct().getName());
-        this.productPriceLabel.setText(String.format("%d", (int)item.getTotal()));
+        this.productPriceLabel.setText(String.format("%d", (int)item.getTotal()) + "kr");
         this.productWeightLabel.setText(item.getProduct().getUnitSuffix());
         this.amountLabel.setText(String.format("%d", (int)item.getAmount()) + "st");
     }
