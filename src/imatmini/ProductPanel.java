@@ -159,9 +159,11 @@ public class ProductPanel extends AnchorPane {
 
 
         }
-
+    @FXML
     private void openDetailView() {
-
+        mainController.getDetailPane().getChildren().clear();
+        mainController.getDetailPane().getChildren().add(mainController.detailedViewMap.get(product.getName()));
+        mainController.getDetailPane().toFront();
     }
 }
 

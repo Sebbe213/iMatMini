@@ -6,18 +6,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<fx:root prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #B3B3B3;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #B3B3B3;" styleClass="navigation-bar-text" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="180.0" layoutY="152.0" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <ImageView fitHeight="365.0" fitWidth="543.0" layoutX="98.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="productImage" fitHeight="365.0" fitWidth="543.0" layoutX="98.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../.dat215/imat/images/product_1.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="98.0" layoutY="43.0" text="Namn" />
-            <Label layoutX="733.0" layoutY="108.0" text="Pris" />
+            <Label fx:id="nameLabel" layoutX="98.0" layoutY="43.0" text="Namn" />
+            <Label fx:id="priceLabel" layoutX="733.0" layoutY="108.0" text="Pris" />
          </children>
       </AnchorPane>
+      <ImageView fx:id="closeImage" fitHeight="68.0" fitWidth="80.0" layoutX="1260.0" layoutY="91.0" onMousePressed="#closeDetailView" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pics/close.png" />
+         </image>
+      </ImageView>
    </children>
 </fx:root>

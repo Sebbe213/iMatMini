@@ -206,7 +206,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateProductList(model.getProducts());
 
         for(Product product : Model.getInstance().getProducts()) {
-            detailedViewMap.put(product.getName(), new DetailedView(product));
+            detailedViewMap.put(product.getName(), new DetailedView(product,this));
         }
 
         updateBottomPanel();
@@ -269,6 +269,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public History getHistory() {
         return history;
+    }
+
+    public AnchorPane getDetailPane() {
+        return detailPane;
     }
 
     public void openFavourites() {
