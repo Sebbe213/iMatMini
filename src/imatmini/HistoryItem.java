@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.shape.Rectangle;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
@@ -23,6 +24,8 @@ public class HistoryItem extends AnchorPane {
     private Label adressLabel;
     @FXML
     private Button showOrderButton;
+    @FXML
+    private Rectangle rect;
 
 
     protected Order order;
@@ -52,5 +55,9 @@ public class HistoryItem extends AnchorPane {
     public void selectTheOrder(ActionEvent event) {
         History history = mainController.getHistory();
         history.fillHistoryProduct(order);
+        rect.getStyleClass().clear();
+        rect.getStyleClass().add("history-showing-green");
     }
+
+
 }
