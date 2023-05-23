@@ -8,6 +8,8 @@ package imatmini;
 import java.net.URL;
 import java.util.*;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +20,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Circle;
 import se.chalmers.cse.dat216.project.*;
+
+import  imatmini.ProductPanel;
 
 
 /**
@@ -115,6 +120,17 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private Label categoryId;
 
+    @FXML
+    private Label kundvagnLabel;
+
+    @FXML private Circle circle;
+
+   public int quantity =0;
+
+
+
+
+
     private final Favourites favourites = new Favourites(this);
     private final History history = new History(this);
     private final Profile  profile = new Profile(this);
@@ -125,6 +141,28 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     // Other variables
     private final Model model = Model.getInstance();
+
+
+
+
+    public void KundVagnLable() {
+        circle.toBack();
+        kundvagnLabel.toBack();
+        int totalQuantity = 0;
+        List<ShoppingItem> items = model.getShoppingCart().getItems();
+        for (ShoppingItem item : items) {
+            if(item.getAmount() >= 1){
+                circle.toFront();
+                kundvagnLabel.toFront();
+            }
+            totalQuantity += item.getAmount();
+        }
+
+        kundvagnLabel.setText(String.valueOf(totalQuantity));
+    }
+
+
+
 
     // Shop pane actions
     @FXML
@@ -194,6 +232,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         setupAccountPane();
 
+        //KundVagnLable();
+
+
+
         // Load the NamePanel and add it to dynamicPane
         // This shows how one can develop a view in a separate
         // FXML-file and then load it into on of the panes in the main interface
@@ -220,7 +262,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         checkoutPane.setTranslateY(94);
 
 
-    }    
+    }
+
+
     
     // Navigation
     public void openAccountView() {
@@ -333,6 +377,21 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         CategoryAnchorpane.toFront();
     }
+   /* @FXML
+    public void updatLable(){
+        kundvagnLabel.toBack();
+        for (Node node : productsFlowPane.getChildren()) {
+            if (node instanceof ProductPanel) {
+                ProductPanel productPanel = (ProductPanel) node;
+                Button button = productPanel.buyButton;
+                    if()
+                    kundvagnLabel.toFront();
+                    quantity++;
+                    kundvagnLabel.setText(String.valueOf(quantity));
+                    break;
+                }
+            }
+        }*/
 
 
     
@@ -342,7 +401,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         itemsLabel.setText("Antal varor: " + shoppingCart.getItems().size());
         costLabel.setText("Kostnad: " + String.format("%.2f",shoppingCart.getTotal()));
-        
+
+        KundVagnLable();
     }
     
     private void updateAccountPanel() {

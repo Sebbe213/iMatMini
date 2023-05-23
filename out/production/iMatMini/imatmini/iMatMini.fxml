@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -264,7 +265,7 @@
                   <String fx:value="button" />
                </styleClass>
             </Button>
-            <Button layoutX="1163.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleShowShoppingCartAction" prefHeight="61.0" prefWidth="211.0" styleClass="header-color" stylesheets="@iMatMini.css" text="Kundvagn" textAlignment="CENTER" textFill="#3c3c5000">
+            <Button layoutX="1162.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleShowShoppingCartAction" prefHeight="74.0" prefWidth="211.0" styleClass="header-color" stylesheets="@iMatMini.css" text="Kundvagn" textAlignment="CENTER" textFill="#3c3c5000">
                <font>
                   <Font name="Arial" size="13.0" />
                </font></Button>
@@ -277,11 +278,13 @@
                   </ImageView>
                </graphic>
             </Button>
-            <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="1178.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="1178.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@pics/shopping-cart(1).png" />
                </image>
             </ImageView>
+            <Circle fx:id="circle" fill="#f85252" layoutX="1340.0" layoutY="30.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="kundvagnLabel" alignment="CENTER" layoutX="1327.0" layoutY="15.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #f85252;" text="0" textAlignment="CENTER" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>
