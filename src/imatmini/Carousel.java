@@ -41,7 +41,7 @@ public class Carousel extends AnchorPane {
 
 
     private double currentPos;
-    iMatMiniController mainController;
+    private final iMatMiniController mainController;
     Random rand = new Random();
 
     private Model model = Model.getInstance();

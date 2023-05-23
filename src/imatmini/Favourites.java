@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Favourites extends AnchorPane {
-    iMatMiniController mainController;
+    private final iMatMiniController mainController;
 
     @FXML
     private GridPane favoritesGridPane;

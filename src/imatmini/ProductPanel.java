@@ -161,6 +161,7 @@ public class ProductPanel extends AnchorPane {
         }
 
     private void openDetailView() {
+
     }
 }
 
