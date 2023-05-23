@@ -112,9 +112,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private FlowPane CategoryFlowpane;
 
-
-
-
+    @FXML
+    private Label categoryId;
 
     private final Favourites favourites = new Favourites(this);
     private final History history = new History(this);
@@ -201,8 +200,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         // There is an fxml file NamePanel.fxml and a corresponding class NamePanel.java
         // Simply create a new NamePanel object and add it as a child of dynamicPane
         // The NamePanel holds a reference to the main controller (this class)
-        AnchorPane namePane = new NamePanel(this);
-        dynamicPane.getChildren().add(namePane);
 
         historyPane.getChildren().add(history);
 
@@ -234,6 +231,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void closeAccountView() {
         updateCreditCard();
         shopPane.toFront();
+    }
+
+    public void closeCategory() {
+        CategoryAnchorpane.toBack();
     }
 
     public void openMyProfile() { profilePane.toFront(); }
@@ -325,7 +326,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         for (Product product : products) {
             if (selectedCategory.contains(product.getCategory())) {
-
                 CategoryFlowpane.getChildren().add(new ProductPanel(product));
             }
 
