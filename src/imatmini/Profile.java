@@ -12,14 +12,21 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Profile extends AnchorPane {
 
     @FXML AnchorPane pane;
     @FXML TextField cardNumber1;
+
+    private String cardNumber1String;
     @FXML TextField cardNumber2;
+    private String cardNumber2String;
     @FXML TextField cardNumber3;
+    private String cardNumber3String;
     @FXML TextField cardNumber4;
+    private String cardNumber4String;
     @FXML TextField cardMonth;
     @FXML TextField cardYear;
     @FXML TextField cardCVC;
@@ -76,18 +83,21 @@ public class Profile extends AnchorPane {
         cityField.setText(customer.getPostAddress());
         phoneNumberField.setText(customer.getMobilePhoneNumber());
 
-        ArrayList<Integer> cardNumberList = new ArrayList<>();
-        for(int i=0;i<16;i++) {cardNumberList.add(creditcard.getCardNumber().indexOf(i));}
+        String[] number = creditcard.getCardNumber().split("-");
+        if(!(number[1].equals(""))) {cardNumber1.setText(number[1]);}
+        if(!(number[2].equals(""))) {cardNumber2.setText(number[2]);}
+        if(!(number[3].equals(""))) {cardNumber3.setText(number[3]);}
+        if(!(number[4].equals(""))) {cardNumber4.setText(number[4]);}
 
-        for(int i=0;i<4;i++) {cardNumber1.setText(String.join(cardNumber1.getText(),cardNumberList.get(i).toString()));}
-        for(int i=4;i<8;i++) {cardNumber2.setText(cardNumberList.get(i).toString());}
-        for(int i=8;i<12;i++) {cardNumber3.setText(cardNumberList.get(i).toString());}
-        for(int i=12;i<16;i++) {cardNumber4.setText(cardNumberList.get(i).toString());}
+        if(creditcard.getValidMonth() < 10) {cardMonth.setText("0" + String.format("%d",creditcard.getValidMonth()));}
+        else {cardMonth.setText(String.format("%d",creditcard.getValidMonth()));}
+        if(creditcard.getValidYear() < 10) {cardYear.setText("0" + String.format("%d",creditcard.getValidYear()));}
+        else {cardYear.setText(String.format("%d",creditcard.getValidYear()));}
 
-        cardNumber1.setText(String.join(cardNumberList.get(0).toString(),cardNumberList.get(1).toString(),cardNumberList.get(2).toString(),cardNumberList.get(3).toString()));
+        if(creditcard.getVerificationCode() < 100 && creditcard.getVerificationCode() > 10) {cardCVC.setText("0" + String.format("%d",creditcard.getVerificationCode()));}
+        else if (creditcard.getVerificationCode() < 10) {cardCVC.setText("00" + String.format("%d",creditcard.getVerificationCode()));}
+        else {cardCVC.setText(String.format("%d",creditcard.getVerificationCode()));}
 
-        cardYear.setText(String.format("%d",creditcard.getValidYear()));
-        cardMonth.setText(String.format("%d",creditcard.getValidMonth()));
         cardCVC.setText(String.format("%d",creditcard.getVerificationCode()));
     }
 
@@ -143,11 +153,13 @@ public class Profile extends AnchorPane {
         customer.setPostAddress(cityField.getText());
         customer.setMobilePhoneNumber(phoneNumberField.getText());
 
-        creditcard.setCardNumber(cardNumber1.getText() + cardNumber2.getText() + cardNumber3.getText() + cardNumber4.getText());
+        creditcard.setCardNumber( "start-" + cardNumber1.getText() + "-" + cardNumber2.getText() + "-" + cardNumber3.getText() + "-" + cardNumber4.getText() + "-end");
         System.out.println(creditcard.getCardNumber());
+
         creditcard.setHoldersName(customer.getFirstName() + " " + customer.getLastName());
-        creditcard.setValidYear(Integer.parseInt(cardYear.getText()));
-        creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));
-        creditcard.setVerificationCode(Integer.parseInt(cardCVC.getText()));
+        if(!cardYear.getText().isBlank()) {creditcard.setValidYear(Integer.parseInt(cardYear.getText()));}
+        if(!cardMonth.getText().isBlank()) {creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));}
+        if(!cardCVC.getText().isBlank()) {creditcard.setVerificationCode(Integer.parseInt(cardCVC.getText()));}
+
     }
 }
