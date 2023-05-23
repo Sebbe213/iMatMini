@@ -242,12 +242,5 @@
     -fx-stroke-type: outside;
 }
 
-.history-showing {
-    -fx-background-color: #FFFFFF;
-}
-
-.history-showing-green {
-    -fx-background-color: #AACDC1;
-}
 
 

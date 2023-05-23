@@ -55,8 +55,6 @@ public class HistoryItem extends AnchorPane {
     public void selectTheOrder(ActionEvent event) {
         History history = mainController.getHistory();
         history.fillHistoryProduct(order);
-        rect.getStyleClass().clear();
-        rect.getStyleClass().add("history-showing-green");
     }
 
 
