@@ -75,7 +75,7 @@ public class Profile extends AnchorPane {
         init();
     }
 
-   private void init() {
+   void init() {
         firstNameField.setText(customer.getFirstName());
         lastNameField.setText(customer.getLastName());
         addressField.setText(customer.getAddress());

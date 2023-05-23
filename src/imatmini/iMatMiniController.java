@@ -230,6 +230,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Navigation
     public void openAccountView() {
         updateAccountPanel();
+        profile.init();
         profilePane.toFront();
     }
 
@@ -268,6 +269,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void closeCartPane() {cartPane.toBack();}
 
     public void updateCheckoutPane() {
+        checkout.init();
         checkout.fillCartFlowPane();
     }
 
