@@ -53,5 +53,10 @@
                </image>
             </ImageView>
          </graphic></Button>
+      <Label fx:id="styckPrisLabel" layoutX="483.0" layoutY="47.0" text="10kr/st" textFill="#3c3c50">
+         <font>
+            <Font name="Arial Italic" size="17.0" />
+         </font>
+      </Label>
    </children>
 </fx:root>

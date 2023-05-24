@@ -121,7 +121,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private AnchorPane CategoryAnchorpane;
 
     @FXML
-    private FlowPane CategoryFlowpane;
+    private GridPane categoryGridPane;
+    //private FlowPane CategoryFlowpane;
 
     @FXML
     private Label categoryId;
@@ -359,13 +360,23 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         Button clickedButton = (Button) event.getSource();
         List<ProductCategory> selectedCategory = categoryMap.get(clickedButton);
-        CategoryFlowpane.getChildren().clear();
+        categoryGridPane.getChildren().clear();
 
-        for (Product product : products) {
+/*        for (Product product : products) {
             if (selectedCategory.contains(product.getCategory())) {
-                CategoryFlowpane.getChildren().add(new ProductPanel(product,this));
+                categoryGridPane.getChildren().add(new ProductPanel(product,this));
             }
-
+        }*/
+        int col = 0; int row = 0;
+        for(Product product : products) {
+            if(selectedCategory.contains(product.getCategory())) {
+                categoryGridPane.add(new ProductPanel(product, this), col, row);
+                col++;
+                if (col % 4 == 0) {
+                    col = 0;
+                    row++;
+                }
+            }
         }
 
         CategoryAnchorpane.toFront();

@@ -33,6 +33,8 @@ public class CartItem extends AnchorPane implements ShoppingCartListener {
     @FXML
     private Label productCostLabel;
     @FXML
+    private Label styckPrisLabel;
+    @FXML
     private Label amountLabel;
     @FXML
     private AnchorPane mainAnchor;
@@ -60,6 +62,7 @@ public class CartItem extends AnchorPane implements ShoppingCartListener {
 
         this.productNameLabel.setText(item.getProduct().getName());
         this.productCostLabel.setText(String.format("%.2f", item.getTotal()) + "kr");
+        this.styckPrisLabel.setText(String.format("%.2f",item.getProduct().getPrice()) + item.getProduct().getUnitSuffix());
         this.amountLabel.setText(String.format("%d",(int)item.getAmount()) + "st");
 
         dataHandler.getShoppingCart().addShoppingCartListener(this);
