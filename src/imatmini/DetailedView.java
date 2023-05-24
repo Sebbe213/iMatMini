@@ -96,6 +96,11 @@ public class DetailedView extends AnchorPane {
     }
 
     @FXML
+    private void favoriteHover() {
+        favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite_hover.png")));
+    }
+
+    @FXML
     public void addProduct() {
         int quantity = Integer.parseInt(howLabel.getText());
         quantity++;
