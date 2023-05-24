@@ -111,6 +111,7 @@ public class ProductPanel extends AnchorPane {
             model.addFavorite(product);
             favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
         }
+        favImage.setOpacity(1);
     }
 
     @FXML
