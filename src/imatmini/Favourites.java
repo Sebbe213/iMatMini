@@ -39,12 +39,16 @@ public class Favourites extends AnchorPane {
         List<Product> favoritesList = IMatDataHandler.getInstance().favorites();
         favoritesGridPane.getChildren().clear();
         if(favoritesList.isEmpty()) {return;}
-        int i = 0;
-        for(int col = 0; col<3; col++) {
-            for(int row = 0; row<favoritesList.size()/3; row++) {
-                favoritesGridPane.add(new ProductPanel(favoritesList.get(i),mainController),col,row);
-                        i++;
+
+        int col = 0; int row = 0;
+        for(Product product : favoritesList) {
+            favoritesGridPane.add( new ProductPanel(product, mainController),col,row);
+            col++;
+            if(col%3 == 0) {
+                col = 0;
+                row++;
             }
         }
+
     }
 }
