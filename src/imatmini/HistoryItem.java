@@ -55,6 +55,13 @@ public class HistoryItem extends AnchorPane {
     public void selectTheOrder(ActionEvent event) {
         History history = mainController.getHistory();
         history.fillHistoryProduct(order);
+        this.rect.getStyleClass().add("green");
+        history.updateActiveHistoryItem(this);
+    }
+
+    public  void unselectOrder() {
+        this.rect.getStyleClass().remove("green");
+
     }
 
 
