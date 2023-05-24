@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -21,6 +22,8 @@ import java.util.concurrent.Flow;
 
 public class Checkout extends AnchorPane implements ShoppingCartListener {
     @FXML AnchorPane pane;
+    @FXML
+    private ComboBox<String> timeCombo;
     @FXML
     TextField cardNumber1;
 
@@ -55,6 +58,9 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
     private AnchorPane receiptPane;
     @FXML
     private Label orderDate;
+
+    @FXML
+    private Label orderId;
 
     @FXML private Button buyButton;
 
@@ -96,8 +102,17 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         this.creditcard = dataHandler.getCreditCard();
 
         this.totalCostLabel.setText(String.format("%.2f", dataHandler.getShoppingCart().getTotal() + 40) + "kr");
+        this.timeCombo.getItems().addAll("imorgon 9:00-12:00", "imorgon 13:00-16:00","imorgon 17:00-20:00");
 
         dataHandler.getShoppingCart().addShoppingCartListener(this);
+
+        timeCombo.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                orderId.setText(newValue);
+            }
+        });
 
         init();
     }
@@ -176,6 +191,7 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
             }
         });
     }
+
     @FXML
     public void saveInfo() {
         customer.setFirstName(firstNameField.getText());
