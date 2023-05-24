@@ -54,6 +54,7 @@ public class Cart extends AnchorPane implements ShoppingCartListener {
 
     public void goBack() {
         mainController.closeCartPane();
+        mainController.checkoutPane.toBack();
     }
 
     public void openCheckout() {

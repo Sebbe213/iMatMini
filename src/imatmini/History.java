@@ -1,20 +1,21 @@
 package imatmini;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class History extends AnchorPane {
     iMatMiniController mainController;
@@ -30,6 +31,10 @@ public class History extends AnchorPane {
     private Label selectedOrderDateLabel;
     @FXML
     private Label orderPriceLabel;
+
+    private HistoryItem activeItem;
+
+    private final Map<String, HistoryItem> historyItemMap = new HashMap<String, HistoryItem>();
 
 
     private List<Order> orderList;
@@ -48,6 +53,7 @@ public class History extends AnchorPane {
         this.mainController = mainController;
         System.out.print("hehhahaha");
         this.orderList = IMatDataHandler.getInstance().getOrders();
+        this.activeItem = null;
 
         fillHistory();
     }
@@ -59,13 +65,19 @@ public class History extends AnchorPane {
 
     public void fillHistory() {
         this.orderList = IMatDataHandler.getInstance().getOrders();
-        System.out.println(IMatDataHandler.getInstance().getOrders());
+        System.out.println(IMatDataHandler.getInstance().getOrders().size());
         orderPane.getChildren().clear();
-        for (Order order : orderList) {
 
+        for (int i = orderList.size()-1; i>0; i--) {
+            HistoryItem item = new HistoryItem(orderList.get(i), mainController);
+            orderPane.getChildren().add(item);
+            historyItemMap.put(item.order.getDate().toString(), item);
+        }
+
+        /*for (Order order : orderList) {
             HistoryItem item = new HistoryItem(order, mainController);
             orderPane.getChildren().add(item);
-        }
+        }*/
     }
 
     public void fillHistoryProduct(Order order) {
@@ -84,6 +96,11 @@ public class History extends AnchorPane {
         selectedOrderDateLabel.setText("Order " + order.getDate().toString());
         System.out.println(selectedOrderDateLabel);
         orderPriceLabel.setText( String.format("%.2f", totalCost + 40) + "kr");
+    }
+
+    public void updateActiveHistoryItem(HistoryItem item) {
+        if(this.activeItem != null) {this.activeItem.unselectOrder();}
+        this.activeItem = item;
     }
 
 }

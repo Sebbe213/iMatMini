@@ -12,6 +12,7 @@
 <fx:root prefHeight="810.0" prefWidth="1440.0" style="-fx-background-color: #FFFFFF;" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d5f0db" height="810.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #FFFFFF;" width="1440.0" />
+      <AnchorPane layoutX="224.0" layoutY="74.0" prefHeight="723.0" prefWidth="1023.0" styleClass="checkout-price-anchor" />
         <Label layoutX="60.0" layoutY="33.0" text="Mina favoriter" textFill="#3c3c50">
          <font>
             <Font name="Arial Bold" size="30.0" />
@@ -25,6 +26,7 @@
                   <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
+                <RowConstraints minHeight="252.0" prefHeight="30.0" />
                 <RowConstraints minHeight="252.0" prefHeight="30.0" />
                 <RowConstraints minHeight="252.0" prefHeight="30.0" />
               </rowConstraints>

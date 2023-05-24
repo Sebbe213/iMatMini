@@ -242,5 +242,7 @@
     -fx-stroke-type: outside;
 }
 
-
+.green {
+    -fx-fill: #AACDC1;
+}
 
