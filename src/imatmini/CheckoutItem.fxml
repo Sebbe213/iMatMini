@@ -16,10 +16,6 @@
                 <Image url="@../../../../../.dat215/imat/images/product_50.jpg" />
             </image>
         </ImageView>
-        <Label fx:id="productNameLabel" layoutX="119.0" layoutY="19.0" text="Lax 100g" textFill="#3c3c50">
-         <font>
-            <Font name="Arial" size="17.0" />
-         </font></Label>
         <Label fx:id="productCostLabel" layoutX="266.0" layoutY="20.0" text="70kr" textFill="#3c3c50">
          <font>
             <Font name="Arial Bold" size="17.0" />
@@ -49,9 +45,18 @@
                     </image>
                 </ImageView>
          </graphic></Button>
-        <Label fx:id="amountLabel" layoutX="151.0" layoutY="60.0" prefHeight="26.0" prefWidth="40.0" text="1" textFill="#3c3c50">
+        <Label fx:id="amountLabel" alignment="CENTER" layoutX="151.0" layoutY="60.0" prefHeight="26.0" prefWidth="40.0" text="1" textFill="#3c3c50">
          <font>
             <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="styckPrisLabel" layoutX="266.0" layoutY="39.0" text="10kr/st" textFill="#3c3c50">
+         <font>
+            <Font name="Arial Italic" size="17.0" />
+         </font>
+      </Label>
+        <Label fx:id="productNameLabel" alignment="TOP_LEFT" layoutX="119.0" layoutY="20.0" prefHeight="48.0" prefWidth="141.0" text="Lax 100g" textFill="#3c3c50" wrapText="true">
+         <font>
+            <Font name="Arial" size="17.0" />
          </font></Label>
     </children>
 </fx:root>
