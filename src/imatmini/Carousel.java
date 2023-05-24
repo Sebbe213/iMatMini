@@ -59,14 +59,13 @@ public class Carousel extends AnchorPane {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("carousel.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
+        this.mainController = mainController;
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
             System.out.println("Här");
             throw new RuntimeException(exception);
         }
-        this.mainController = mainController;
     }
 
 

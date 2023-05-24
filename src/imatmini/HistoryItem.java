@@ -46,7 +46,6 @@ public class HistoryItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        Calendar calendar;
         this.order = order;
         this.mainController = mainController;
 
@@ -54,7 +53,7 @@ public class HistoryItem extends AnchorPane {
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Stockholm"));
         cal.setTime(date);
         int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
+        int month = cal.get(Calendar.MONTH)+1;
         String monthString = String.valueOf(month);
         if(month < 10) {monthString = "0" + String.valueOf(month);}
         int day = cal.get(Calendar.DAY_OF_MONTH);
@@ -65,7 +64,6 @@ public class HistoryItem extends AnchorPane {
 
         this.adressLabel.setText(Model.getInstance().getCustomer().getAddress());
 
-        List<ShoppingItem> orderList = order.getItems();
     }
 
 
