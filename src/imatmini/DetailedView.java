@@ -83,6 +83,19 @@ public class DetailedView extends AnchorPane {
     }
 
     @FXML
+    private void closeImageHover() {
+        closeImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/close_hover.png")));
+    }
+    @FXML
+    private void closeImageExited() {
+        closeImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/close.png")));
+    }
+    @FXML
+    private void closeImagePressed() {
+        closeImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/close.png")));
+    }
+
+    @FXML
     public void addProduct() {
         int quantity = Integer.parseInt(howLabel.getText());
         quantity++;

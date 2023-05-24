@@ -24,7 +24,7 @@
             </ImageView>
             <Label fx:id="nameLabel" layoutX="98.0" layoutY="43.0" text="Namn" />
             <Label fx:id="priceLabel" layoutX="678.0" layoutY="116.0" text="999,99" />
-            <ImageView fx:id="closeImage" fitHeight="68.0" fitWidth="80.0" layoutX="1015.0" onMousePressed="#closeDetailView" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="closeImage" fitHeight="68.0" fitWidth="80.0" layoutX="1015.0" onMouseClicked="#closeImagePressed" onMouseEntered="#closeImageHover" onMouseExited="#closeImageExited" onMousePressed="#closeDetailView" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@pics/close.png" />
                </image>
