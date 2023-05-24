@@ -6,6 +6,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -54,6 +55,14 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
     private AnchorPane receiptPane;
     @FXML
     private Label orderDate;
+
+    @FXML private Button buyButton;
+
+    @FXML private Label errorLabel;
+
+    @FXML private Label errorLabel2;
+
+    boolean purchaseCompleted = false;
 
     public Checkout(iMatMiniController mainController) {
 
@@ -121,6 +130,7 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
     private void completePurchase() {
         mainController.handleBuyItemsAction();
         receiptPane.toFront();
+        purchaseCompleted = true;
     }
 
     @FXML
@@ -182,7 +192,104 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         if(!cardYear.getText().isBlank()) {creditcard.setValidYear(Integer.parseInt(cardYear.getText()));}
         if(!cardMonth.getText().isBlank()) {creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));}
     }
+    @FXML
+    public void errorMessage(ActionEvent event) {
+        boolean hasError = false;
+        for (Node node : pane.getChildren()) {
+            if (node instanceof TextField) {
+                TextField textField = (TextField) node;
 
+                textField.setOnMouseClicked(e -> {
+                    if (textField.getStyleClass().contains("error-textfield")) {
+                        textField.clear();
+                        textField.getStyleClass().remove("error-textfield");
+                    }
+                });
+
+                textField.textProperty().addListener((obs, oldValue, newValue) -> {
+                    buyButton.setDisable(false);
+                });
+
+                if (textField.getText().isEmpty()) {
+                    System.out.println("empty");
+                    textField.getStyleClass().add("error-textfield");
+                    textField.setText("Fyll i denna rutan");
+                    errorLabel.toFront();
+                    hasError = true;
+                    buyButton.setDisable(true);
+                }
+                else {
+                    errorLabel.toBack();
+                }
+
+
+                if (textField == cardNumber1 && !textField.getText().matches("\\d+")) {
+                    textField.getStyleClass().add("error-textfield");
+                    hasError = true;
+                    errorLabel2.toFront();
+                    buyButton.setDisable(true);
+                }
+                if (textField == cardNumber2 && !textField.getText().matches("\\d+")) {
+                    textField.getStyleClass().add("error-textfield");
+                    hasError = true;
+                    errorLabel2.toFront();
+                    buyButton.setDisable(true);
+
+
+                }
+                if (textField == cardNumber3 && !textField.getText().matches("\\d+")) {
+                    textField.getStyleClass().add("error-textfield");
+                    hasError = true;
+                    errorLabel2.toFront();
+                    buyButton.setDisable(true);
+
+
+                }
+                if (textField == cardNumber4 && !textField.getText().matches("\\d+")) {
+                    textField.getStyleClass().add("error-textfield");
+                    hasError = true;
+                    errorLabel2.toFront();
+                    buyButton.setDisable(true);
+
+
+                }
+
+                if (textField == cardCVC && !textField.getText().matches("\\d+")) {
+                    textField.getStyleClass().add("error-textfield");
+                    hasError = true;
+                    errorLabel2.toFront();
+                    buyButton.setDisable(true);
+
+
+                }
+                if (textField == cardYear && !textField.getText().matches("\\d+")) {
+                    textField.getStyleClass().add("error-textfield");
+                    hasError = true;
+                    errorLabel2.toFront();
+                    buyButton.setDisable(true);
+
+
+                }
+
+                if (textField == cardMonth && !textField.getText().matches("\\d+")) {
+                    textField.getStyleClass().add("error-textfield");
+                    hasError = true;
+                    errorLabel2.toFront();
+                    buyButton.setDisable(true);
+
+
+                }
+            }
+
+
+            }
+        if (!hasError && !purchaseCompleted) {
+            completePurchase();
+            errorLabel.toBack();
+            errorLabel2.toBack();
+        }
+
+    }
     void init() {
         firstNameField.setText(customer.getFirstName());
         lastNameField.setText(customer.getLastName());

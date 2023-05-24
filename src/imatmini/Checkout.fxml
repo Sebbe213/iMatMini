@@ -14,6 +14,16 @@
 
 <fx:root fx:id="pane" prefHeight="810.0" prefWidth="1440.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
+      <Label fx:id="errorLabel2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla i bokstäver!">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel" layoutX="413.0" layoutY="107.0" prefHeight="36.0" prefWidth="393.0" text="Du har glömt att fylla en textruta nedan!">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
       <AnchorPane fx:id="receiptPane" prefHeight="810.0" prefWidth="1440.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
@@ -184,7 +194,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button alignment="CENTER" layoutX="318.0" layoutY="678.0" mnemonicParsing="false" onAction="#completePurchase" prefHeight="65.0" prefWidth="371.0" styleClass="pay-button" text="Betala">
+      <Button fx:id="buyButton" alignment="CENTER" layoutX="318.0" layoutY="678.0" mnemonicParsing="false" onAction="#errorMessage" onMouseClicked="#errorMessage" prefHeight="65.0" prefWidth="371.0" styleClass="pay-button" text="Betala">
          <font>
             <Font name="Arial Bold Italic" size="25.0" />
          </font></Button>
