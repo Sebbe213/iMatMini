@@ -54,7 +54,7 @@
             <Font name="Arial Italic" size="17.0" />
          </font>
       </Label>
-        <Label fx:id="productNameLabel" alignment="TOP_LEFT" layoutX="119.0" layoutY="19.0" prefHeight="20.0" prefWidth="141.0" text="Lax 100g" textFill="#3c3c50" wrapText="true">
+        <Label fx:id="productNameLabel" alignment="TOP_LEFT" layoutX="119.0" layoutY="20.0" prefHeight="48.0" prefWidth="141.0" text="Lax 100g" textFill="#3c3c50" wrapText="true">
          <font>
             <Font name="Arial" size="17.0" />
          </font></Label>
