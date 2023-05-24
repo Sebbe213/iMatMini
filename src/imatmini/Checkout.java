@@ -208,9 +208,11 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         if(!cardYear.getText().isBlank()) {creditcard.setValidYear(Integer.parseInt(cardYear.getText()));}
         if(!cardMonth.getText().isBlank()) {creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));}
     }
+
     @FXML
     public void errorMessage(ActionEvent event) {
         boolean hasError = false;
+
         for (Node node : pane.getChildren()) {
             if (node instanceof TextField) {
                 TextField textField = (TextField) node;
@@ -222,89 +224,39 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
                     }
                 });
 
-                textField.textProperty().addListener((obs, oldValue, newValue) -> {
-                    buyButton.setDisable(false);
-                });
-
                 if (textField.getText().isEmpty()) {
                     System.out.println("empty");
                     textField.getStyleClass().add("error-textfield");
                     textField.setText("Fyll i denna rutan");
-                    errorLabel.toFront();
                     hasError = true;
-                    buyButton.setDisable(true);
-                }
-                else {
-                    errorLabel.toBack();
-                }
-
-
-                if (textField == cardNumber1 && !textField.getText().matches("\\d+")) {
-                    textField.getStyleClass().add("error-textfield");
-                    hasError = true;
-                    errorLabel2.toFront();
-                    buyButton.setDisable(true);
-                }
-                if (textField == cardNumber2 && !textField.getText().matches("\\d+")) {
-                    textField.getStyleClass().add("error-textfield");
-                    hasError = true;
-                    errorLabel2.toFront();
-                    buyButton.setDisable(true);
-
-
-                }
-                if (textField == cardNumber3 && !textField.getText().matches("\\d+")) {
-                    textField.getStyleClass().add("error-textfield");
-                    hasError = true;
-                    errorLabel2.toFront();
-                    buyButton.setDisable(true);
-
-
-                }
-                if (textField == cardNumber4 && !textField.getText().matches("\\d+")) {
-                    textField.getStyleClass().add("error-textfield");
-                    hasError = true;
-                    errorLabel2.toFront();
-                    buyButton.setDisable(true);
-
-
-                }
-
-                if (textField == cardCVC && !textField.getText().matches("\\d+")) {
-                    textField.getStyleClass().add("error-textfield");
-                    hasError = true;
-                    errorLabel2.toFront();
-                    buyButton.setDisable(true);
-
-
-                }
-                if (textField == cardYear && !textField.getText().matches("\\d+")) {
-                    textField.getStyleClass().add("error-textfield");
-                    hasError = true;
-                    errorLabel2.toFront();
-                    buyButton.setDisable(true);
-
-
-                }
-
-                if (textField == cardMonth && !textField.getText().matches("\\d+")) {
-                    textField.getStyleClass().add("error-textfield");
-                    hasError = true;
-                    errorLabel2.toFront();
-                    buyButton.setDisable(true);
-
-
+                } else if (textField == cardNumber1 || textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4 || textField == cardCVC || textField == cardYear || textField == cardMonth) {
+                    if (textField.getText().matches("[a-zA-Z]+")) {
+                        textField.getStyleClass().add("error-textfield");
+                        textField.setText("fel");
+                        hasError = true;
+                    }
                 }
             }
-
-
-            }
-        if (!hasError && !purchaseCompleted) {
-            completePurchase();
-            errorLabel.toBack();
-            errorLabel2.toBack();
         }
 
+        if (!hasError) {
+            completePurchase();
+            check();
+
+        }
+    }
+
+    @FXML
+    public void check() {
+        for (Node node : pane.getChildren()) {
+            if (node instanceof TextField) {
+                TextField textField = (TextField) node;
+                if (textField.getText().equals("Fyll i denna rutan") || textField.getText().equals("fel") || textField.getText().isBlank()) {
+                    textField.clear();
+                    textField.getStyleClass().remove("error-textfield");
+                }
+            }
+        }
     }
     void init() {
         firstNameField.setText(customer.getFirstName());
