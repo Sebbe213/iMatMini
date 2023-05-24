@@ -73,11 +73,6 @@ public class History extends AnchorPane {
             orderPane.getChildren().add(item);
             historyItemMap.put(item.order.getDate().toString(), item);
         }
-
-        /*for (Order order : orderList) {
-            HistoryItem item = new HistoryItem(order, mainController);
-            orderPane.getChildren().add(item);
-        }*/
     }
 
     public void fillHistoryProduct(Order order) {

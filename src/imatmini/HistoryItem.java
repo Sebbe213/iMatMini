@@ -15,7 +15,10 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 public class HistoryItem extends AnchorPane {
     @FXML
@@ -43,13 +46,28 @@ public class HistoryItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        Calendar calendar;
         this.order = order;
         this.mainController = mainController;
-        this.orderDateLabel.setText(order.getDate().toString());
-        this.adressLabel.setText("EN ADRESS");
+
+        Date date = order.getDate();
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Stockholm"));
+        cal.setTime(date);
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        String monthString = String.valueOf(month);
+        if(month < 10) {monthString = "0" + String.valueOf(month);}
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        String dayString = String.valueOf(day);
+        if(day < 10) {dayString = "0" + String.valueOf(day);}
+        String dateS = (String.valueOf(String.valueOf(year) + "-" + monthString + "-" + dayString));
+        this.orderDateLabel.setText(dateS);
+
+        this.adressLabel.setText(Model.getInstance().getCustomer().getAddress());
 
         List<ShoppingItem> orderList = order.getItems();
     }
+
 
     @FXML
     public void selectTheOrder(ActionEvent event) {
@@ -61,7 +79,6 @@ public class HistoryItem extends AnchorPane {
 
     public  void unselectOrder() {
         this.rect.getStyleClass().remove("green");
-
     }
 
 
