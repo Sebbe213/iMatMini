@@ -96,11 +96,6 @@ public class DetailedView extends AnchorPane {
     }
 
     @FXML
-    private void favoriteHover() {
-        favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite_hover.png")));
-    }
-
-    @FXML
     public void addProduct() {
         int quantity = Integer.parseInt(howLabel.getText());
         quantity++;
@@ -139,6 +134,9 @@ public class DetailedView extends AnchorPane {
         if(!model.isFavorite((product))){
             favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
             favImage.setOpacity(0.5);
+        } else if(model.isFavorite(product)) {
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/unfavorite.png")));
+            favImage.setOpacity(0.5);
         }
     }
 
@@ -146,6 +144,9 @@ public class DetailedView extends AnchorPane {
     public void onMouseExitedFavorite(){
         if(!model.isFavorite(product)) {
             favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/unfavorite.png")));
+            favImage.setOpacity(1);
+        } else if (model.isFavorite(product)) {
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
             favImage.setOpacity(1);
         }
     }

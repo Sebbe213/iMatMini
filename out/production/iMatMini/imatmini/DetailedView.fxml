@@ -34,7 +34,7 @@
             <Label layoutX="611.0" layoutY="116.0" text="Pris:" />
             <Button fx:id="favorite" layoutX="99.0" layoutY="115.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" prefHeight="50.0" prefWidth="58.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fx:id="favImage" fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="favImage" fitHeight="23.0" fitWidth="24.0" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@pics/unfavorite.png" />
                      </image>
