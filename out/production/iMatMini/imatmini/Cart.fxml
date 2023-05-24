@@ -29,11 +29,11 @@
          </font></Label>
       <Button fx:id="toCheckoutButton" layoutX="1155.0" layoutY="690.0" mnemonicParsing="false" onAction="#openCheckout" styleClass="to-checkout-button" text="Till betalning" textFill="#3c3c50" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="110.0">
          <font>
-            <Font name="Arial Italic" size="17.0" />
+            <Font name="Arial Bold Italic" size="17.0" />
          </font></Button>
       <Button fx:id="backButton" layoutX="64.0" layoutY="36.0" mnemonicParsing="false" onAction="#handlePressBackButton" prefHeight="29.0" prefWidth="82.0" styleClass="back-button" text="Tillbaka" textFill="#3c3c50">
          <font>
-            <Font name="Arial Italic" size="17.0" />
+            <Font name="Arial Bold Italic" size="17.0" />
          </font></Button>
       <AnchorPane layoutX="353.0" layoutY="96.0" prefHeight="655.0" prefWidth="695.0" styleClass="cart-anchorpane-style">
          <children>

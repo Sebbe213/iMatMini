@@ -17,24 +17,24 @@
       <AnchorPane fx:id="receiptPane" prefHeight="810.0" prefWidth="1440.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
-            <Label layoutX="480.0" layoutY="290.0" text="Tack för din beställning!" textFill="#3c3c50">
+            <Label layoutX="490.0" layoutY="290.0" text="Tack för din beställning!" textFill="#3c3c50">
                <font>
                   <Font name="Arial Bold" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="525.0" layoutY="360.0" text="Din leverans kommer fram:" textFill="#3c3c50">
+            <Label layoutX="535.0" layoutY="360.0" text="Din leverans kommer fram:" textFill="#3c3c50">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
             </Label>
-            <Label layoutX="635.0" layoutY="408.0" text="Leveranstid" textFill="#3c3c50">
+            <Label fx:id="orderId" layoutX="645.0" layoutY="408.0" text="Leveranstid" textFill="#3c3c50">
                <font>
                   <Font name="Arial Italic" size="30.0" />
                </font>
             </Label>
-            <Button layoutX="522.0" layoutY="625.0" mnemonicParsing="false" onAction="#keepShopping" styleClass="pay-button" text="Fortsätt handla" textAlignment="CENTER" textFill="#3c3c50">
+            <Button layoutX="532.0" layoutY="625.0" mnemonicParsing="false" onAction="#keepShopping" styleClass="pay-button" text="Fortsätt handla" textAlignment="CENTER" textFill="#3c3c50">
                <font>
-                  <Font name="Arial Bold" size="25.0" />
+                  <Font name="Arial Bold Italic" size="25.0" />
                </font>
             </Button>
          </children>
@@ -46,7 +46,7 @@
          </font></Label>
       <Button fx:id="backButton" layoutX="64.0" layoutY="35.0" mnemonicParsing="false" onAction="#handlePressBackButton" prefHeight="29.0" prefWidth="82.0" styleClass="back-button" text="Tillbaka" textFill="#3c3c50">
          <font>
-            <Font name="Arial Italic" size="17.0" />
+            <Font name="Arial Bold Italic" size="17.0" />
          </font></Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf6f6" height="331.0" layoutX="179.0" layoutY="101.0" stroke="#dadae0" strokeType="OUTSIDE" width="660.0" />
       <Label layoutX="215.0" layoutY="107.0" prefHeight="43.0" prefWidth="236.0" styleClass="sub-title" text="Personuppgifter:" textFill="#3c3c50">
@@ -186,7 +186,7 @@
       </AnchorPane>
       <Button alignment="CENTER" layoutX="318.0" layoutY="678.0" mnemonicParsing="false" onAction="#completePurchase" prefHeight="65.0" prefWidth="371.0" styleClass="pay-button" text="Betala">
          <font>
-            <Font name="Arial Bold" size="25.0" />
+            <Font name="Arial Bold Italic" size="25.0" />
          </font></Button>
       <Label layoutX="226.0" layoutY="321.0" text="Telefonummer:" textFill="#3c3c50">
          <font>
