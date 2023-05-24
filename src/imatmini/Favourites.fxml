@@ -19,7 +19,7 @@
          </font></Label>
       <ScrollPane hbarPolicy="NEVER" layoutX="251.0" layoutY="94.0" prefHeight="687.0" prefWidth="975.0" style="-fx-background-color: #FFFFFF;">
          <content>
-            <GridPane fx:id="favoritesGridPane" hgap="70.0" prefHeight="686.0" prefWidth="958.0" style="-fx-background-color: #FFFFFF;" vgap="20.0">
+            <GridPane fx:id="favoritesGridPane" alignment="CENTER" hgap="70.0" prefHeight="686.0" prefWidth="958.0" style="-fx-background-color: #FFFFFF;" vgap="20.0">
               <columnConstraints>
                 <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
                 <ColumnConstraints minWidth="217.0" prefWidth="100.0" />

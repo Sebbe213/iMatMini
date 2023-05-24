@@ -152,7 +152,9 @@ public class Profile extends AnchorPane {
 
         creditcard.setHoldersName(customer.getFirstName() + " " + customer.getLastName());
         if(!cardYear.getText().isBlank()) {creditcard.setValidYear(Integer.parseInt(cardYear.getText()));}
+        else {cardYear.clear();}
         if(!cardMonth.getText().isBlank()) {creditcard.setValidMonth(Integer.parseInt(cardMonth.getText()));}
+        else {creditcard.setValidMonth(Integer.parseInt(""));}
 
 
     }
