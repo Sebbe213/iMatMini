@@ -114,6 +114,22 @@ public class ProductPanel extends AnchorPane {
     }
 
     @FXML
+    public void onMouseEnteredFavorite(){
+        if(!model.isFavorite((product))){
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
+            favImage.setOpacity(0.5);
+        }
+    }
+
+    @FXML
+    public void onMouseExitedFavorite(){
+        if(!model.isFavorite(product)) {
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/unfavorite.png")));
+            favImage.setOpacity(1);
+        }
+    }
+
+    @FXML
     public void sendBuyButtonBack(){
         buyButton.toBack();
         int quantity = Integer.parseInt(howLabel.getText());

@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import se.chalmers.cse.dat216.project.Product;
 
 import javax.swing.*;
@@ -41,10 +42,16 @@ public class Carousel extends AnchorPane {
 
 
     private double currentPos;
-    private final iMatMiniController mainController;
+    iMatMiniController mainController;
     Random rand = new Random();
 
+    private int offset;
+    private int dot = 1;
+    private Color lightGreen = Color.web("#aed4c0");
+
+    private ArrayList<Integer> productIndexList = new ArrayList<Integer>();
     private Model model = Model.getInstance();
+
 
 
     public Carousel(iMatMiniController mainController) {
@@ -52,52 +59,129 @@ public class Carousel extends AnchorPane {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("carousel.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-        this.mainController = mainController;
+
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
             System.out.println("Här");
             throw new RuntimeException(exception);
         }
-
+        this.mainController = mainController;
     }
 
 
 
+    @FXML
     public void moveRight(ActionEvent event) {
-        if(currentPos<0) {
-            currentPos += 720;
-            flowPane.setLayoutX(currentPos);
-            leftButton.setDisable(false);
+        dot--;
+        if(dot == 0){
+            dot = 6;
         }
+        offset--;
+        if(offset == (-1)) {
+            offset = 5;
+        }
+
+        populateCarousel(model.getProducts(), offset);
+        fillDots(dot);
     }
 
+    @FXML
     public void moveLeft(ActionEvent event) {
-        currentPos -= 720;
-
-        if (currentPos < -700*5) {
-            leftButton.setDisable(true);
+        dot++;
+        if(dot == 7){
+            dot = 1;
+        }
+        offset++;
+        if(offset == 6){
+            offset = 0;
         }
 
-        flowPane.setLayoutX(currentPos);
+        populateCarousel(model.getProducts(), offset);
+        fillDots(dot);
     }
+
 
     private void updateProductList(List<Product> products) {
 
         System.out.println("updateProductList " + products.size());
+
+
+        randomizeProducts(products);
+        populateCarousel(products,0);
+    }
+
+    public void fillDots(int dot){
+        switch (dot){
+            case 1:
+                mainController.dot1.setFill(lightGreen);
+                mainController.dot6.setFill(Color.WHITE);
+                mainController.dot2.setFill(Color.WHITE);
+                break;
+            case 2:
+                mainController.dot2.setFill(lightGreen);
+                mainController.dot1.setFill(Color.WHITE);
+                mainController.dot3.setFill(Color.WHITE);
+                break;
+            case 3:
+                mainController.dot3.setFill(lightGreen);
+                mainController.dot2.setFill(Color.WHITE);
+                mainController.dot4.setFill(Color.WHITE);
+                break;
+            case 4:
+                mainController.dot4.setFill(lightGreen);
+                mainController.dot3.setFill(Color.WHITE);
+                mainController.dot5.setFill(Color.WHITE);
+                break;
+            case 5:
+                mainController.dot5.setFill(lightGreen);
+                mainController.dot4.setFill(Color.WHITE);
+                mainController.dot6.setFill(Color.WHITE);
+                break;
+            case 6:
+                mainController.dot6.setFill(lightGreen);
+                mainController.dot5.setFill(Color.WHITE);
+                mainController.dot1.setFill(Color.WHITE);
+                break;
+        }
+    }
+    public void populateCarousel(List<Product> products,int offset) {
         productBox.getChildren().clear();
-
-
-        for (int i = 0; i<6; i++) {
-            int randomIndex= rand.nextInt(products.size());
+        if(offset == 4){
+            for (int i=0+offset; i<2+offset; i++){
+                int randomIndex = productIndexList.get(i);
+                Product product = (products.get(randomIndex));
+                productBox.getChildren().add(new ProductPanel(product, mainController));
+            }
+            int randomIndex = productIndexList.get(0);
             Product product = (products.get(randomIndex));
-
-            productBox.getChildren().add(new ProductPanel(product,mainController));
-
-
+            productBox.getChildren().add(new ProductPanel(product, mainController));
         }
 
+        else if (offset == 5) {
+            int randomIndex = productIndexList.get(5);
+            Product product = (products.get(randomIndex));
+            productBox.getChildren().add(new ProductPanel(product, mainController));
+            for (int i=0; i<2; i++){
+                randomIndex = productIndexList.get(i);
+                product = (products.get(randomIndex));
+                productBox.getChildren().add(new ProductPanel(product, mainController));
+            }
+        }
+        else {
+            for (int i = 0 + offset; i < 3 + offset; i++) {
+                int randomIndex = productIndexList.get(i);
+                Product product = (products.get(randomIndex));
+                productBox.getChildren().add(new ProductPanel(product, mainController));
+            }
+        }
+    }
 
+    private void randomizeProducts(List<Product> products) {
+        for (int i = 0; i<6; i++) {
+            int randomIndex= rand.nextInt(products.size());
+            productIndexList.add(randomIndex);
+        }
     }
 
     public void initialize() {
