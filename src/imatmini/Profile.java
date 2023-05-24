@@ -52,13 +52,13 @@ public class Profile extends AnchorPane {
             System.out.println("Profile");
             throw new RuntimeException(exception);
         }
-        cardNumberListener(cardNumber1,cardNumber2);
-        cardNumberListener(cardNumber2,cardNumber3);
-        cardNumberListener(cardNumber3,cardNumber4);
-        cardNumberListener(cardNumber4,cardMonth);
-        dateListener(cardMonth,cardYear);
-        dateListener(cardYear,cardCVC);
-        lastThreeNumbersListener(cardCVC);
+        cardListener(cardNumber1,cardNumber2, 4);
+        cardListener(cardNumber2,cardNumber3, 4);
+        cardListener(cardNumber3,cardNumber4, 4);
+        cardListener(cardNumber4,cardMonth, 4);
+        cardListener(cardMonth,cardYear, 2);
+        cardListener(cardYear,cardCVC, 2);
+        cardListener(cardCVC, 3);
         addTextLimiter(cardNumber1,4);
         addTextLimiter(cardNumber2,4);
         addTextLimiter(cardNumber3,4);
@@ -107,32 +107,24 @@ public class Profile extends AnchorPane {
         mainController.closeNameView();
     }
 
-    public void cardNumberListener(TextField tf1, TextField tf2) {
+    public void cardListener(TextField tf1, TextField tf2, int length) {
         tf1.textProperty().addListener((obs, oldText, newText) -> {
-            if (!tf1.getText().isEmpty()) {
-                if (oldText.length() < 4 && newText.length() >= 4) {
-                    tf2.requestFocus();
-                }
+
+            if (!tf1.getText().isEmpty() && oldText.length() < length && newText.length() >= length) {
+                tf2.requestFocus();
             }
+
         });
     }
-    public void dateListener(TextField tf1, TextField tf2) {
-        tf1.textProperty().addListener((obs, oldText, newText) -> {
-            if (!tf1.getText().isEmpty()) {
-                if (oldText.length() < 2 && newText.length() >= 2) {
-                    tf2.requestFocus();
-                }
-            }
-        });
-    }
-    public void lastThreeNumbersListener(TextField tf) {
+
+    public void cardListener(TextField tf, int length) {
         tf.textProperty().addListener((obs, oldText, newText) -> {
-            if (!tf.getText().isEmpty()) {
-                if (oldText.length() < 3 && newText.length() >= 3) {
-                    if(!cardCVC.getText().isBlank()) {creditcard.setVerificationCode(Integer.parseInt(newText));}
-                    pane.requestFocus();
-                }
+
+            if (!tf.getText().isEmpty() && oldText.length() < length && newText.length() >= length) {
+                if(!cardCVC.getText().isBlank()) {creditcard.setVerificationCode(Integer.parseInt(newText));}
+                pane.requestFocus();
             }
+
         });
     }
     public static void addTextLimiter(final TextField tf, final int maxLength) {
