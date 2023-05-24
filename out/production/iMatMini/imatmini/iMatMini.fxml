@@ -101,7 +101,7 @@
             <AnchorPane fx:id="profilePane" prefHeight="810.0" prefWidth="1080.0" />
             <AnchorPane fx:id="shopPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1440.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <TextField fx:id="searchField" layoutX="294.0" layoutY="138.0" prefHeight="46.0" prefWidth="965.0" stylesheets="@iMatMini.css" AnchorPane.rightAnchor="208.0">
+                  <TextField fx:id="searchField" layoutX="294.0" layoutY="138.0" onAction="#handleSearchAction" prefHeight="46.0" prefWidth="965.0" stylesheets="@iMatMini.css" AnchorPane.rightAnchor="208.0">
                      <font>
                         <Font size="18.0" />
                      </font>
