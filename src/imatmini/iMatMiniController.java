@@ -113,7 +113,18 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private FlowPane CategoryFlowpane;
 
-
+    @FXML
+    public Circle dot1;
+    @FXML
+    public Circle dot2;
+    @FXML
+    public Circle dot3;
+    @FXML
+    public Circle dot4;
+    @FXML
+    public Circle dot5;
+    @FXML
+    public Circle dot6;
 
 
     private final Favourites favourites = new Favourites(this);
@@ -304,6 +315,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
 
     }*/
+    
 
     @FXML
     public void openCategory(ActionEvent event) {
