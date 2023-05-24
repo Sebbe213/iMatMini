@@ -19,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Circle;
 import se.chalmers.cse.dat216.project.*;
 
 
@@ -124,6 +125,18 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML
     private Label categoryId;
+    @FXML
+    public Circle dot1;
+    @FXML
+    public Circle dot2;
+    @FXML
+    public Circle dot3;
+    @FXML
+    public Circle dot4;
+    @FXML
+    public Circle dot5;
+    @FXML
+    public Circle dot6;
 
     private final Favourites favourites = new Favourites(this);
     private final History history = new History(this);
