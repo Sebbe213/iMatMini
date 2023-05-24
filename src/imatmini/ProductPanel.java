@@ -64,6 +64,7 @@ public class ProductPanel extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        this.mainController = mainController;
         addButton.setText("+");
         this.product = product;
         nameLabel.setText(product.getName());
@@ -76,7 +77,6 @@ public class ProductPanel extends AnchorPane {
             favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
         }
 
-        this.mainController = mainController;
     }
 
 
@@ -119,6 +119,9 @@ public class ProductPanel extends AnchorPane {
         if(!model.isFavorite((product))){
             favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
             favImage.setOpacity(0.5);
+        } else if(model.isFavorite(product)) {
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/unfavorite.png")));
+            favImage.setOpacity(0.5);
         }
     }
 
@@ -126,6 +129,9 @@ public class ProductPanel extends AnchorPane {
     public void onMouseExitedFavorite(){
         if(!model.isFavorite(product)) {
             favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/unfavorite.png")));
+            favImage.setOpacity(1);
+        } else if (model.isFavorite(product)) {
+            favImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("imatmini/pics/favorite.png")));
             favImage.setOpacity(1);
         }
     }

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-
-<fx:root prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #B3B3B3;" styleClass="navigation-bar-text" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseClicked="#closeDetailView" prefHeight="810.0" prefWidth="1440.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);" styleClass="navigation-bar-text" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="180.0" layoutY="152.0" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFFFFF;">
+      <AnchorPane layoutX="180.0" layoutY="45.0" prefHeight="567.0" prefWidth="1083.0" styleClass="cart-anchorpane-style">
          <children>
             <ImageView fx:id="productImage" fitHeight="365.0" fitWidth="543.0" layoutX="98.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -16,13 +23,92 @@
                </image>
             </ImageView>
             <Label fx:id="nameLabel" layoutX="98.0" layoutY="43.0" text="Namn" />
-            <Label fx:id="priceLabel" layoutX="733.0" layoutY="108.0" text="Pris" />
+            <Label fx:id="priceLabel" layoutX="678.0" layoutY="116.0" text="999,99" />
+            <ImageView fx:id="closeImage" fitHeight="68.0" fitWidth="80.0" layoutX="1015.0" onMouseClicked="#closeImagePressed" onMouseEntered="#closeImageHover" onMouseExited="#closeImageExited" onMousePressed="#closeDetailView" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pics/close.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="suffixLabel" layoutX="772.0" layoutY="116.0" text="kr" />
+            <Line endX="785.0" layoutX="199.0" layoutY="90.0" startX="-100.0" />
+            <Label layoutX="611.0" layoutY="116.0" text="Pris:" />
+            <Button fx:id="favorite" layoutX="99.0" layoutY="115.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" prefHeight="50.0" prefWidth="58.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fx:id="favImage" fitHeight="23.0" fitWidth="24.0" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pics/unfavorite.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="ecoLabel" alignment="CENTER" layoutX="610.0" layoutY="173.0" prefHeight="40.0" prefWidth="137.0" stylesheets="@iMatMini.css" text="Ekologisk" textFill="#5cc343">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="608.0" layoutY="360.0" prefHeight="68.0" prefWidth="193.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.57141876220703" minWidth="0.0" prefWidth="0.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="192.57142857142856" minWidth="10.0" prefWidth="192.57142857142856" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="10000.0" minHeight="10.0" prefHeight="31.428543363298687" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.428608213152202" minHeight="10.0" prefHeight="29.714313779558452" valignment="CENTER" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#40aa54" height="40.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="94.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <GridPane prefHeight="50.0" prefWidth="137.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="addButton1" contentDisplay="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="30.0" prefWidth="30.0" styleClass="add-button" stylesheets="@iMatMini.css" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pics/minus-2-16.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="addButton" contentDisplay="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="30.0" prefWidth="20.0" styleClass="add-button" stylesheets="@iMatMini.css" text="+" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pics/plus-2-16.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="howLabel" alignment="CENTER" prefHeight="30.0" prefWidth="36.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" disable="true" fill="WHITE" height="34.0" opacity="0.15" stroke="BLACK" strokeDashOffset="1.0" strokeLineJoin="BEVEL" strokeMiterLimit="1.0" strokeType="INSIDE" width="36.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Button fx:id="buyButton" contentDisplay="CENTER" maxWidth="1.0E7" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#sendBuyButtonBack" prefHeight="64.0" prefWidth="193.0" style="-fx-background-color: #40aa54;" styleClass="buy-button" stylesheets="@iMatMini.css" text="Köp" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <TextArea editable="false" layoutX="611.0" layoutY="228.0" prefHeight="137.0" prefWidth="374.0" text="Lite allmän information om varan" wrapText="true" />
          </children>
       </AnchorPane>
-      <ImageView fx:id="closeImage" fitHeight="68.0" fitWidth="80.0" layoutX="1260.0" layoutY="91.0" onMousePressed="#closeDetailView" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pics/close.png" />
-         </image>
-      </ImageView>
    </children>
 </fx:root>
