@@ -246,3 +246,7 @@
     -fx-fill: #AACDC1;
 }
 
+.error-textfield{
+    -fx-border-color:#FF0000;
+    -fx-border-width:2px;
+}
