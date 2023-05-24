@@ -49,9 +49,6 @@ public class DetailedView extends AnchorPane {
     @FXML
     private Label suffixLabel;
 
-    @FXML
-    private Label suffixUnitLabel;
-
     public DetailedView(Product product, iMatMiniController mainController) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DetailedView.fxml"));
@@ -67,6 +64,7 @@ public class DetailedView extends AnchorPane {
         this.product = product;
         this.mainController = mainController;
 
+        this.suffixLabel.setText(product.getUnit());
         this.priceLabel.setText(String.format("%.2f", product.getPrice()));
         this.nameLabel.setText(product.getName());
         this.productImage.setImage(IMatDataHandler.getInstance().getFXImage(product));
