@@ -54,6 +54,7 @@
     -fx-effect: rgba(0,0,0,0.6);
     -fx-underline: true;
     -fx-font-weight: bold;
+    -fx-cursor: hand;
 }
 
 .button:pressed{
@@ -61,6 +62,21 @@
     -fx-effect: dropshadow(three-pass-box, #000000, 10, 0, 0, 0);
     -fx-padding: 0.5em 0.7em;
     -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+.button:focused{
+    -fx-underline: true;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 35px;
+    -fx-border-radius: 35px;
+    -fx-background-color: #80BEBEBE;
+}
+
+.combo:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #80BEBEBE;
 }
 
 .category-button{
@@ -87,6 +103,16 @@
     -fx-background-color: #FCF6F6;
     -fx-pref-height:20px;
     -fx-pref-width:140px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #dadae0;
+    -fx-border-width:1px;
+    -fx-background-radius: 20px;
+}
+
+.close-deatil-button{
+    -fx-background-color: #80BEBEBE;
+    -fx-pref-height:20px;
+    -fx-pref-width:160px;
     -fx-border-radius: 20px;
     -fx-border-color: #dadae0;
     -fx-border-width:1px;
@@ -237,9 +263,14 @@
 }
 
 .cart-item-circle {
-    -fx-fill: #FFFFFF;
-    -fx-stroke: #92929B;
-    -fx-stroke-type: outside;
+    -fx-background-color: #F57979;
+    -fx-stroke: #F57979;
+    -fx-background-radius: 50px;
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-text-align: center
+    -fx-font-family: 'Arial'
+    -fx-text-fill: #3C3C50;
 }
 
 .green {

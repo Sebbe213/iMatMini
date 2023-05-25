@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,6 +16,11 @@
    <children>
       <AnchorPane layoutX="180.0" layoutY="45.0" prefHeight="567.0" prefWidth="1083.0" styleClass="cart-anchorpane-style">
          <children>
+            <Button layoutX="733.0" layoutY="27.0" mnemonicParsing="false" onAction="#closeDetailView" prefHeight="34.0" prefWidth="99.0" styleClass="close-deatil-button" text="Stäng">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Button>
             <ImageView fx:id="productImage" fitHeight="365.0" fitWidth="543.0" layoutX="98.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../.dat215/imat/images/product_1.jpg" />
@@ -24,17 +28,21 @@
             </ImageView>
             <Label fx:id="nameLabel" layoutX="98.0" layoutY="43.0" text="Namn" textFill="#3c3c50">
                <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font></Label>
+            <Label fx:id="priceLabel" layoutX="759.0" layoutY="153.0" prefHeight="41.0" prefWidth="95.0" text="999,99" textFill="#3c3c50">
+               <font>
                   <Font name="Arial" size="30.0" />
                </font></Label>
-            <Label fx:id="priceLabel" layoutX="678.0" layoutY="116.0" text="999,99" textFill="#3c3c50" />
-            <ImageView fx:id="closeImage" fitHeight="68.0" fitWidth="80.0" layoutX="1015.0" onMouseClicked="#closeImagePressed" onMouseEntered="#closeImageHover" onMouseExited="#closeImageExited" onMousePressed="#closeDetailView" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@pics/close.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="suffixLabel" layoutX="772.0" layoutY="116.0" text="kr" textFill="#3c3c50" />
+            <Label fx:id="suffixLabel" layoutX="841.0" layoutY="155.0" text="kr" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font></Label>
             <Line endX="785.0" layoutX="199.0" layoutY="90.0" startX="-100.0" stroke="#3c3c50" />
-            <Label layoutX="611.0" layoutY="116.0" text="Pris:" textFill="#3c3c50" />
+            <Label layoutX="674.0" layoutY="155.0" text="Pris:" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font></Label>
             <Button fx:id="favorite" layoutX="99.0" layoutY="115.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" prefHeight="50.0" prefWidth="58.0" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fx:id="favImage" fitHeight="23.0" fitWidth="24.0" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" pickOnBounds="true" preserveRatio="true">
@@ -44,12 +52,12 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label fx:id="ecoLabel" alignment="CENTER" layoutX="610.0" layoutY="173.0" prefHeight="40.0" prefWidth="137.0" stylesheets="@iMatMini.css" text="Ekologisk" textFill="#5cc343">
+            <Label fx:id="ecoLabel" alignment="CENTER" layoutX="748.0" layoutY="219.0" prefHeight="40.0" prefWidth="137.0" stylesheets="@iMatMini.css" text="Ekologisk" textFill="#5cc343">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <GridPane layoutX="608.0" layoutY="360.0" prefHeight="68.0" prefWidth="193.0">
+            <GridPane layoutX="719.0" layoutY="330.0" prefHeight="68.0" prefWidth="193.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.57141876220703" minWidth="0.0" prefWidth="0.0" />
                   <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="192.57142857142856" minWidth="10.0" prefWidth="192.57142857142856" />
@@ -103,14 +111,13 @@
                         <Rectangle arcHeight="30.0" arcWidth="30.0" disable="true" fill="WHITE" height="34.0" opacity="0.15" stroke="BLACK" strokeDashOffset="1.0" strokeLineJoin="BEVEL" strokeMiterLimit="1.0" strokeType="INSIDE" width="36.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <Button fx:id="buyButton" contentDisplay="CENTER" maxWidth="1.0E7" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#sendBuyButtonBack" prefHeight="64.0" prefWidth="193.0" style="-fx-background-color: #40aa54;" styleClass="buy-button" stylesheets="@iMatMini.css" text="Köp" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Button fx:id="buyButton" contentDisplay="CENTER" maxWidth="1.0E7" minHeight="70.0" minWidth="100.0" mnemonicParsing="false" onAction="#sendBuyButtonBack" prefHeight="64.0" prefWidth="193.0" style="-fx-background-color: #40aa54;" styleClass="buy-button" stylesheets="@iMatMini.css" text="Köp" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
                   </Button>
                </children>
             </GridPane>
-            <TextArea editable="false" layoutX="611.0" layoutY="228.0" prefHeight="137.0" prefWidth="374.0" text="Lite allmän information om varan" wrapText="true" />
          </children>
       </AnchorPane>
    </children>
