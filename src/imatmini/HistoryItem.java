@@ -65,7 +65,11 @@ public class HistoryItem extends AnchorPane {
 
 
     @FXML
-    public void selectTheOrder(ActionEvent event) {
+    public void selectTheOrder() {
+        selectOrder();
+    }
+
+    public void selectOrder() {
         History history = mainController.getHistory();
         history.fillHistoryProduct(order);
         this.rect.getStyleClass().add("green");

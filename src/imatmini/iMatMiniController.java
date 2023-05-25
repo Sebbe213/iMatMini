@@ -292,6 +292,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void openHistoryView() {
         history.fillHistory();
+        history.selectTheFirstOrder();
         historyPane.toFront();
     }
 
