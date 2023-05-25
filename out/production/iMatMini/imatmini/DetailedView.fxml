@@ -22,16 +22,19 @@
                   <Image url="@../../../../../.dat215/imat/images/product_1.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="nameLabel" layoutX="98.0" layoutY="43.0" text="Namn" />
-            <Label fx:id="priceLabel" layoutX="678.0" layoutY="116.0" text="999,99" />
+            <Label fx:id="nameLabel" layoutX="98.0" layoutY="43.0" text="Namn" textFill="#3c3c50">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font></Label>
+            <Label fx:id="priceLabel" layoutX="678.0" layoutY="116.0" text="999,99" textFill="#3c3c50" />
             <ImageView fx:id="closeImage" fitHeight="68.0" fitWidth="80.0" layoutX="1015.0" onMouseClicked="#closeImagePressed" onMouseEntered="#closeImageHover" onMouseExited="#closeImageExited" onMousePressed="#closeDetailView" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@pics/close.png" />
                </image>
             </ImageView>
-            <Label fx:id="suffixLabel" layoutX="772.0" layoutY="116.0" text="kr" />
-            <Line endX="785.0" layoutX="199.0" layoutY="90.0" startX="-100.0" />
-            <Label layoutX="611.0" layoutY="116.0" text="Pris:" />
+            <Label fx:id="suffixLabel" layoutX="772.0" layoutY="116.0" text="kr" textFill="#3c3c50" />
+            <Line endX="785.0" layoutX="199.0" layoutY="90.0" startX="-100.0" stroke="#3c3c50" />
+            <Label layoutX="611.0" layoutY="116.0" text="Pris:" textFill="#3c3c50" />
             <Button fx:id="favorite" layoutX="99.0" layoutY="115.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" prefHeight="50.0" prefWidth="58.0" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fx:id="favImage" fitHeight="23.0" fitWidth="24.0" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" pickOnBounds="true" preserveRatio="true">

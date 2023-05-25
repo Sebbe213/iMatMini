@@ -124,8 +124,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private GridPane categoryGridPane;
     //private FlowPane CategoryFlowpane;
 
-    @FXML
-    private Label categoryId;
+   // @FXML
+    //private Label categoryId;
     @FXML
     public Circle dot1;
     @FXML
@@ -415,7 +415,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         CategoryAnchorpane.toFront();
     }
 
-    @FXML
+  /*  @FXML
     public void categoryLabel() {
         if(fiskButton.isPressed()) {
             categoryId.setText("Fisk");
@@ -435,7 +435,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         if(skafferiButton.isPressed()) {
             categoryId.setText("Skafferi");
         }
-    }
+    }*/
     
     private void updateBottomPanel() {
         
