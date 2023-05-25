@@ -327,10 +327,11 @@
                   <Image url="@../../out/production/iMatMini/imatmini/pics/redcircle.png" />
                </image>
             </ImageView>
-            <Label fx:id="numberInCartLabel" contentDisplay="RIGHT" layoutX="1298.0" layoutY="20.0" prefHeight="25.0" prefWidth="25.0" styleClass="cart-item-circle" text=" 1" textAlignment="RIGHT" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Label fx:id="numberInCartLabel" alignment="CENTER" contentDisplay="RIGHT" layoutX="1298.0" layoutY="20.0" prefHeight="25.0" prefWidth="25.0" styleClass="cart-item-circle" text="0" textAlignment="RIGHT" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Arial" size="25.0" />
-               </font></Label>
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
