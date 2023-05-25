@@ -42,13 +42,19 @@ public class Favourites extends AnchorPane {
 
         int col = 0; int row = 0;
         for(Product product : favoritesList) {
-            favoritesGridPane.add( new ProductPanel(product, mainController),col,row);
+            ProductPanel panel = new ProductPanel(product, mainController);
+            favoritesGridPane.add(panel,col,row);
             col++;
             if(col%3 == 0) {
                 col = 0;
                 row++;
             }
-            Model.getInstance().getShoppingCart().fireShoppingCartChanged(mainController.getShoppingItem(product),true);
+            if(mainController.getShoppingItem(product) != null) {
+                Model.getInstance().getShoppingCart().fireShoppingCartChanged(mainController.getShoppingItem(product), true);
+                if (mainController.getShoppingItem(product).getAmount() > 0) {
+                    panel.openWheProductInShoppingCart();
+                }
+            }
         }
 
     }

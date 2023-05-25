@@ -395,13 +395,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         int col = 0; int row = 0;
         for(Product product : products) {
             if(selectedCategory.contains(product.getCategory())) {
-                categoryGridPane.add(new ProductPanel(product, this), col, row);
+                ProductPanel panel = new ProductPanel(product, this);
+                categoryGridPane.add(panel, col, row);
                 col++;
                 if (col % 4 == 0) {
                     col = 0;
                     row++;
                 }
-                model.getShoppingCart().fireShoppingCartChanged();
+
             }
         }
 

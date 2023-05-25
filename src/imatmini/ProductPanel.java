@@ -84,22 +84,17 @@ public class ProductPanel extends AnchorPane implements ShoppingCartListener {
 
     @FXML
     public void addProduct() {
-        int quantity = Integer.parseInt(howLabel.getText());
-        quantity++;
-        howLabel.setText(String.valueOf(quantity));
+        howLabel.setText(String.valueOf((int)mainController.getShoppingItem(product).getAmount()));
     }
 
     @FXML
     public void removeProduct(){
 
-        int quantity = Integer.parseInt(howLabel.getText());
-        if(quantity>0) {
-            quantity--;
-            if(quantity==0){
-                buyButton.toFront();
-            }
-            howLabel.setText(String.valueOf(quantity));
+        int quantity = (int)mainController.getShoppingItem(product).getAmount();
+        if(quantity<=0){
+            buyButton.toFront();
         }
+        howLabel.setText(String.valueOf(quantity));
     }
 
     @FXML
@@ -181,7 +176,7 @@ public class ProductPanel extends AnchorPane implements ShoppingCartListener {
     @FXML
     private void handleAddAction(ActionEvent event) {
         System.out.println("Add " + product.getName());
-        model.addToShoppingCart(product);
+        model.getShoppingCart().addProduct(product);
         addProduct();
 
 
@@ -189,6 +184,11 @@ public class ProductPanel extends AnchorPane implements ShoppingCartListener {
     @FXML
     private void openDetailView() {
         mainController.openDetailView(product);
+    }
+
+    public void openWheProductInShoppingCart() {
+        howLabel.setText(String.format("%d",(int) mainController.getShoppingItem(product).getAmount()));
+        buyButton.toBack();
     }
 
 
