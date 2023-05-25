@@ -14,30 +14,20 @@
 
 <fx:root fx:id="pane" prefHeight="810.0" prefWidth="1440.0" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-      <Label fx:id="errorLabel2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla i bokstäver!">
-         <font>
-            <Font name="Arial" size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="errorLabel" layoutX="413.0" layoutY="107.0" prefHeight="36.0" prefWidth="393.0" text="Du har glömt att fylla en textruta nedan!">
-         <font>
-            <Font name="Arial" size="20.0" />
-         </font>
-      </Label>
       <AnchorPane fx:id="receiptPane" prefHeight="810.0" prefWidth="1440.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
-            <Label layoutX="490.0" layoutY="290.0" text="Tack för din beställning!" textFill="#3c3c50">
+            <Label layoutX="490.0" layoutY="260.0" text="Tack för din beställning!" textFill="#3c3c50">
                <font>
                   <Font name="Arial Bold" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="535.0" layoutY="360.0" text="Din leverans kommer fram:" textFill="#3c3c50">
+            <Label layoutX="535.0" layoutY="330.0" text="Din leverans kommer fram:" textFill="#3c3c50">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="orderId" layoutX="645.0" layoutY="408.0" text="Leveranstid" textFill="#3c3c50">
+            <Label fx:id="orderId" layoutX="575.0" layoutY="378.0" text="Leveranstid" textFill="#3c3c50">
                <font>
                   <Font name="Arial Italic" size="30.0" />
                </font>
@@ -49,6 +39,16 @@
             </Button>
          </children>
       </AnchorPane>
+      <Label fx:id="errorLabel2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla i bokstäver!">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel" layoutX="413.0" layoutY="107.0" prefHeight="36.0" prefWidth="393.0" text="Du har glömt att fylla en textruta nedan!">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
         <Label layoutX="240.0" layoutY="33.0" text="Betalning" textFill="#3c3c50">
          <font>
@@ -159,7 +159,7 @@
          <font>
             <Font name="Arial" size="17.0" />
          </font></Label>
-      <ComboBox fx:id="timeCombo" layoutX="352.0" layoutY="373.0" prefHeight="25.0" prefWidth="179.0" promptText="Välj en tid" />
+      <ComboBox fx:id="timeCombo" layoutX="352.0" layoutY="369.0" prefHeight="25.0" prefWidth="179.0" promptText="Välj en tid" styleClass="combo-promt-text" />
       <AnchorPane layoutX="876.0" layoutY="99.0" prefHeight="644.0" prefWidth="399.0" styleClass="checkout-anchorpane-style">
          <children>
             <Label layoutX="116.0" layoutY="14.0" text="Min Varukorg" textAlignment="CENTER" textFill="#3c3c50">
