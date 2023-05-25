@@ -39,12 +39,12 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label fx:id="errorLabel2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla i bokstäver!">
+      <Label fx:id="error2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla för få nummer!">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="errorLabel" layoutX="413.0" layoutY="107.0" prefHeight="36.0" prefWidth="393.0" text="Du har glömt att fylla en textruta nedan!">
+      <Label fx:id="error1" layoutX="413.0" layoutY="107.0" prefHeight="36.0" prefWidth="393.0" text="Du har glömt att fylla en textruta nedan!">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
