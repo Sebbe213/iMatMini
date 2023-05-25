@@ -34,7 +34,7 @@ public class History extends AnchorPane {
 
     private HistoryItem activeItem;
 
-    private final Map<String, HistoryItem> historyItemMap = new HashMap<String, HistoryItem>();
+    private final Map<Integer, HistoryItem> historyItemMap = new HashMap<Integer, HistoryItem>();
 
 
     private List<Order> orderList;
@@ -71,8 +71,13 @@ public class History extends AnchorPane {
         for (int i = orderList.size()-1; i>=0; i--) {
             HistoryItem item = new HistoryItem(orderList.get(i), mainController);
             orderPane.getChildren().add(item);
-            historyItemMap.put(item.order.getDate().toString(), item);
+            historyItemMap.put(i, item);
         }
+    }
+
+
+    public void selectTheFirstOrder() {
+        historyItemMap.get(Model.getInstance().getNumberOfOrders()-1).selectOrder();
     }
 
     public void fillHistoryProduct(Order order) {
