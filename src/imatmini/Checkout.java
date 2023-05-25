@@ -68,6 +68,8 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
 
     @FXML private Label error2;
 
+    @FXML private Label error3;
+
     private Model model = Model.getInstance();
     boolean purchaseCompleted = false;
 
@@ -265,18 +267,26 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
                 }
             }
 
+
+
             if (timeCombo.getValue() == null) {
                 timeCombo.getStyleClass().add("error-textfield");
                 hasError = true;
             } else {
                 timeCombo.getStyleClass().remove("error-textfield");
             }
+
+        }
+
+        if(model.getShoppingCart().getItems().isEmpty()){
+            error3.toFront();
         }
 
         if (!hasError && !model.getShoppingCart().getItems().isEmpty()) {
             completePurchase();
             error2.toBack();
             error1.toBack();
+            error3.toBack();
             check();
 
         }
