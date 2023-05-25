@@ -192,12 +192,21 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void handleBuyItemsAction() {
         for(ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()) {
-            if(item.getAmount() == 0) {IMatDataHandler.getInstance().getShoppingCart().removeItem(item);}
+            if(item.getAmount() == 0) {
+                model.getShoppingCart().fireShoppingCartChanged(item, true );
+                IMatDataHandler.getInstance().getShoppingCart().removeItem(item);}
         }
-        model.placeOrder();
+        for(ShoppingItem item: IMatDataHandler.getInstance().getShoppingCart().getItems()) {
+            double amount = item.getAmount();
+            item.setAmount(0);
+            model.getShoppingCart().fireShoppingCartChanged(item, true);
+            item.setAmount(amount);
+        }
+        IMatDataHandler.getInstance().placeOrder();
         history.fillHistory();
         cart.fillCartFlowPane();
         checkout.fillCartFlowPane();
+        updateNumberInCart();
         costLabel.setText("Köpet klart!");
     }
 
@@ -293,9 +302,22 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         return detailPane;
     }
 
+    public void openDetailView(Product product) {
+        detailPane.getChildren().clear();
+        detailPane.getChildren().add(detailedViewMap.get(product.getName()));
+        if(getShoppingItem(product) != null) {
+            detailedViewMap.get(product.getName()).openWheProductInShoppingCart();
+        }
+        detailPane.toFront();
+    }
+
     public void openFavourites() {
-       favourites.fillGridPane();
+        updateFavorites();
        favoritesPane.toFront();
+    }
+
+    public void updateFavorites() {
+        favourites.fillGridPane();
     }
 
     public void openShoppingCart() {
@@ -379,6 +401,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
                     col = 0;
                     row++;
                 }
+                model.getShoppingCart().fireShoppingCartChanged();
             }
         }
 
@@ -465,6 +488,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     private void updateNumberInCart() {
         if(Model.getInstance().getShoppingCart().getItems().isEmpty()) {
+            numberInCartLabel.setText("0");
+            numberInCartLabel.setVisible(false);
         }
         else {
             redDotImageView.setVisible(true);

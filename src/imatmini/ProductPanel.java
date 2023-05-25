@@ -164,6 +164,8 @@ public class ProductPanel extends AnchorPane implements ShoppingCartListener {
 
 
                 } else {
+                    item.setAmount(0);
+                    model.getShoppingCart().fireShoppingCartChanged(item,true);
                     model.getShoppingCart().removeProduct(product);
                 }
                 model.getShoppingCart().fireShoppingCartChanged(item ,true);
@@ -186,18 +188,26 @@ public class ProductPanel extends AnchorPane implements ShoppingCartListener {
         }
     @FXML
     private void openDetailView() {
-        mainController.getDetailPane().getChildren().clear();
-        mainController.getDetailPane().getChildren().add(mainController.detailedViewMap.get(product.getName()));
-        mainController.getDetailPane().toFront();
+        mainController.openDetailView(product);
     }
+
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         ShoppingItem item = mainController.getShoppingItem(this.product);
         if(item != null) {
-            if(item.getAmount()) {
-
-            System.out.println("jdaokd");
+            if(item.getAmount() <= 0) {
+                System.out.println("uppdaterar " + item.getProduct() + " mängd till 0");
+                howLabel.setText("0");
+                buyButton.toFront();
+            }
+            else if (Model.getInstance().isFavorite(product)) {
+                buyButton.toBack();
+                howLabel.setText(String.format("%d",(int)item.getAmount()));
+            }
+            if(item.getAmount() > 0) {
+                howLabel.setText(String.format("%d",(int)item.getAmount()));
+                buyButton.toBack();
             }
         }
     }

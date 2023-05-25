@@ -79,9 +79,16 @@ public class CheckoutItem extends AnchorPane implements ShoppingCartListener {
 
     @FXML
     private void removeProduct() {
-        if(this.item.getAmount() > 0) { this.item.setAmount(this.item.getAmount() - 1); }
-        else { this.item.setAmount(0); }
-        dataHandler.getShoppingCart().fireShoppingCartChanged(this.item, true);
+        if(this.item.getAmount() > 1) {
+            this.item.setAmount(this.item.getAmount() - 1);
+            dataHandler.getShoppingCart().fireShoppingCartChanged(this.item, true);
+        }
+        else {
+            this.item.setAmount(0);
+            dataHandler.getShoppingCart().fireShoppingCartChanged(this.item, true);
+            dataHandler.getShoppingCart().removeItem(this.item);
+            checkout.fillCartFlowPane();
+        }
     }
 
     @Override

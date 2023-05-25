@@ -48,6 +48,7 @@ public class Favourites extends AnchorPane {
                 col = 0;
                 row++;
             }
+            Model.getInstance().getShoppingCart().fireShoppingCartChanged(mainController.getShoppingItem(product),true);
         }
 
     }
