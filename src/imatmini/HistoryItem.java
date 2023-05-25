@@ -8,10 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -30,7 +27,7 @@ public class HistoryItem extends AnchorPane {
     @FXML
     private Rectangle rect;
 
-
+    private Model model = Model.getInstance();
     protected Order order;
     private final iMatMiniController mainController;
 
@@ -73,6 +70,23 @@ public class HistoryItem extends AnchorPane {
         history.fillHistoryProduct(order);
         this.rect.getStyleClass().add("green");
         history.updateActiveHistoryItem(this);
+    }
+
+    @FXML
+    public void addHistoryToCart(ActionEvent event) {
+
+        ShoppingCart shoppingCart = model.getShoppingCart();
+
+        List<ShoppingItem> items = order.getItems();
+        for (ShoppingItem item : items) {
+            Product product = item.getProduct();
+            int quantity = (int) item.getAmount();
+            shoppingCart.addItem(new ShoppingItem(product, quantity));
+
+        }
+
+        shoppingCart.fireShoppingCartChanged(null, true);
+
     }
 
     public  void unselectOrder() {

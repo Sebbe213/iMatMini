@@ -230,37 +230,42 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
                     textField.getStyleClass().add("error-textfield");
                     textField.setText("Fyll i denna rutan");
                     hasError = true;
-                } else if (textField == cardNumber1 || textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4 || textField == cardCVC || textField == cardYear || textField == cardMonth) {
-                    if (textField == cardNumber1 && cardNumber1.getText().length() < 4) {
-                        textField.getStyleClass().add("error-textfield");
-                        textField.setText("fel");
-                        hasError = true;
-                    } else if ((textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4) && textField.getText().length() != 4) {
-                        textField.getStyleClass().add("error-textfield");
-                        textField.setText("fel");
-                        hasError = true;
-                    } else if ((textField == cardYear || textField == cardMonth ) && textField.getText().length() != 2) {
-                        textField.getStyleClass().add("error-textfield");
-                        textField.setText("fel");
-                        hasError = true;
-                    }
-                    else if ((textField  == cardCVC ) && textField.getText().length() != 3) {
-                        textField.getStyleClass().add("error-textfield");
-                        textField.setText("fel");
-                        hasError = true;
-                    }
-
+                } else if ((textField == cardNumber1 || textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4 || textField == cardCVC || textField == cardYear || textField == cardMonth || textField == phoneNumberField || textField == postalCodeField ) && textField.getText().matches("[a-zA-Z]+")) {
+                    textField.getStyleClass().add("error-textfield");
+                    textField.setText("fel");
+                    hasError = true;
+                } else if (textField == cardNumber1 && cardNumber1.getText().length() < 4) {
+                    textField.getStyleClass().add("error-textfield");
+                    textField.setText("fel");
+                    hasError = true;
+                } else if ((textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4) && textField.getText().length() != 4) {
+                    textField.getStyleClass().add("error-textfield");
+                    textField.setText("fel");
+                    hasError = true;
+                } else if ((textField == cardYear || textField == cardMonth) && textField.getText().length() != 2) {
+                    textField.getStyleClass().add("error-textfield");
+                    textField.setText("fel");
+                    hasError = true;
+                } else if (textField == cardCVC && textField.getText().length() != 3) {
+                    textField.getStyleClass().add("error-textfield");
+                    textField.setText("fel");
+                    hasError = true;
                 }
+            }
+
+            if (timeCombo.getValue() == null) {
+                timeCombo.getStyleClass().add("error-textfield");
+                hasError = true;
+            } else {
+                timeCombo.getStyleClass().remove("error-textfield");
             }
         }
 
         if (!hasError && !model.getShoppingCart().getItems().isEmpty()) {
             completePurchase();
             check();
-
         }
     }
-
     @FXML
     public void check() {
         for (Node node : pane.getChildren()) {
