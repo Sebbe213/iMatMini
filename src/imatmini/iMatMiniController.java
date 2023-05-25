@@ -214,6 +214,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //IMatDataHandler.getInstance().isFirstRun();
+        //IMatDataHandler.getInstance().reset();
         // TODO
         model.getShoppingCart().addShoppingCartListener(this);
 
@@ -252,6 +254,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         favoritesPane.setTranslateY(94);
         checkoutPane.setTranslateY(94);
         detailPane.setTranslateY(94);
+        CategoryAnchorpane.setTranslateX(238);
 
         updateNumberInCart();
     }    
@@ -476,5 +479,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             }
             numberInCartLabel.setText(String.format("%d",amount));
         }
+    }
+
+    public ShoppingItem getShoppingItem(Product product) {
+        for(ShoppingItem cartItem : model.getShoppingCart().getItems()) {
+            if(cartItem.getProduct().equals(product)){
+                return cartItem;
+            }
+        }
+        return null;
     }
 }

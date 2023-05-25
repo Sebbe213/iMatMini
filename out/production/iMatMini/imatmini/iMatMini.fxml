@@ -22,6 +22,38 @@
    <children>
       <StackPane prefHeight="720.0" prefWidth="1080.0">
          <children>
+            <AnchorPane fx:id="CategoryAnchorpane" minHeight="810.0" minWidth="1202.0" prefHeight="810.0" prefWidth="1202.0" stylesheets="@iMatMini.css">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1216.0" />
+                  <ScrollPane hbarPolicy="NEVER" layoutX="132.0" layoutY="201.0" prefHeight="607.0" prefWidth="938.0" style="-fx-background-color: #ffffff;" vbarPolicy="ALWAYS">
+                     <content>
+                        <GridPane fx:id="categoryGridPane" alignment="CENTER" prefHeight="626.0" prefWidth="923.0" style="-fx-background-color: #FFFFFF;">
+                          <columnConstraints>
+                              <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
+                            <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
+                            <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
+                              <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
+                          </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+                  <Button layoutX="990.0" layoutY="140.0" mnemonicParsing="false" onAction="#closeCategory" prefHeight="25.0" prefWidth="90.0" styleClass="close-category-button" text="Stäng" textFill="#3c3c50">
+                     <font>
+                        <Font name="Arial Bold Italic" size="17.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="categoryId" layoutX="71.0" layoutY="139.0" text="Kategori" textFill="#3c3c50">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="ProductsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
@@ -100,7 +132,7 @@
                         <Image url="@pics/image1.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="605.0" layoutY="254.0" prefHeight="159.0" prefWidth="271.0" text="Välkommen till iMat!" textFill="#3c3c50" wrapText="true">
+                  <Label layoutX="628.0" layoutY="250.0" prefHeight="159.0" prefWidth="225.0" text="Välkommen till iMat!" textFill="#3c3c50" wrapText="true">
                      <font>
                         <Font name="Arial Bold" size="40.0" />
                      </font>
@@ -243,38 +275,6 @@
                         </GridPane>
                      </children>
                   </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="CategoryAnchorpane" layoutX="440.0" prefHeight="950.0" prefWidth="1000.0" stylesheets="@iMatMini.css">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutX="237.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1202.0" />
-                  <ScrollPane hbarPolicy="NEVER" layoutX="351.0" layoutY="200.0" prefHeight="607.0" prefWidth="938.0" style="-fx-background-color: ffffff;" vbarPolicy="ALWAYS">
-                     <content>
-                        <GridPane fx:id="categoryGridPane" alignment="CENTER" prefHeight="626.0" prefWidth="923.0">
-                          <columnConstraints>
-                              <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
-                            <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
-                            <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
-                              <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
-                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
-                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
-                          </rowConstraints>
-                        </GridPane>
-                     </content>
-                  </ScrollPane>
-                  <Button layoutX="1170.0" layoutY="140.0" mnemonicParsing="false" onAction="#closeCategory" prefHeight="25.0" prefWidth="90.0" styleClass="close-category-button" text="Stäng" textFill="#3c3c50">
-                     <font>
-                        <Font name="Arial Bold Italic" size="17.0" />
-                     </font>
-                  </Button>
-                  <Label fx:id="categoryId" layoutX="322.0" layoutY="139.0" text="Kategori" textFill="#3c3c50">
-                     <font>
-                        <Font name="Arial Bold" size="30.0" />
-                     </font>
-                  </Label>
                </children>
             </AnchorPane>
          </children>

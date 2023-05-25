@@ -23,7 +23,7 @@ import se.chalmers.cse.dat216.project.*;
  *
  * @author oloft
  */
-public class ProductPanel extends AnchorPane {
+public class ProductPanel extends AnchorPane implements ShoppingCartListener {
 
     @FXML ImageView imageView;
     @FXML Label nameLabel;
@@ -64,6 +64,8 @@ public class ProductPanel extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        model.getShoppingCart().addShoppingCartListener(this);
+
         this.mainController = mainController;
         addButton.setText("+");
         this.product = product;
@@ -187,6 +189,17 @@ public class ProductPanel extends AnchorPane {
         mainController.getDetailPane().getChildren().clear();
         mainController.getDetailPane().getChildren().add(mainController.detailedViewMap.get(product.getName()));
         mainController.getDetailPane().toFront();
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        ShoppingItem item = mainController.getShoppingItem(this.product);
+        if(item != null) {
+            if(item.getAmount()) {
+
+            System.out.println("jdaokd");
+            }
+        }
     }
 }
 

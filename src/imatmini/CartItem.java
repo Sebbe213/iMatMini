@@ -73,6 +73,7 @@ public class CartItem extends AnchorPane implements ShoppingCartListener {
     private void removeProductFromCart() {
         dataHandler.getShoppingCart().removeItem(this.item);
         cart.fillCartFlowPane();
+        dataHandler.getShoppingCart().fireShoppingCartChanged(this.item,true);
     }
 
     @FXML
