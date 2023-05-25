@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root minHeight="252.0" minWidth="217.0" prefHeight="252.0" prefWidth="217.0" style="-fx-background-color: #ffffff;" styleClass="product-card" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="product" minHeight="252.0" minWidth="217.0" prefHeight="252.0" prefWidth="217.0" styleClass="product-card" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <top>
@@ -26,7 +26,7 @@
             </Label>
          </center>
          <bottom>
-            <GridPane prefHeight="68.0" prefWidth="193.0" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="68.0" prefWidth="193.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.57141876220703" minWidth="0.0" prefWidth="0.0" />
                 <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="192.57142857142856" minWidth="10.0" prefWidth="192.57142857142856" />
@@ -37,7 +37,7 @@
               </rowConstraints>
                <children>
                   <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#40aa54" height="40.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="94.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <GridPane prefHeight="50.0" prefWidth="137.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <GridPane prefHeight="50.0" prefWidth="137.0" style="-fx-background-color: transparent;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                     <columnConstraints>
                         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -99,7 +99,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="detailedPane" onMousePressed="#openDetailView" prefHeight="201.0" prefWidth="217.0" />
+      <AnchorPane fx:id="detailedPane" onMousePressed="#openDetailView" prefHeight="201.0" prefWidth="217.0" style="-fx-background-color: transparent;" styleClass="product-panel" stylesheets="@iMatMini.css" />
       <Button fx:id="favorite" mnemonicParsing="false" onMouseEntered="#onMouseEnteredFavorite" onMouseExited="#onMouseExitedFavorite" onMousePressed="#addFavorite" prefHeight="33.0" prefWidth="34.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fx:id="favImage" fitHeight="40.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">

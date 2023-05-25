@@ -136,6 +136,18 @@
     -fx-border-width:1px;
 }
 
+.product-card:hover{
+    -fx-background-color: #AACDC1;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, #000000, 10, 0, 0, 0);
+}
+
+.product-card:pressed{
+    -fx-cursor: hand;
+    -fx-background-color: #AACDC1;
+
+}
+
 .buy-button{
     -fx-border-radius: 30px;
     -fx-background-radius:30px;
