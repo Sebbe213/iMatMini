@@ -207,6 +207,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         cart.fillCartFlowPane();
         checkout.fillCartFlowPane();
         updateNumberInCart();
+        carousel.populateCarousel(Model.getInstance().getProducts(), 0);
         costLabel.setText("Köpet klart!");
     }
 
