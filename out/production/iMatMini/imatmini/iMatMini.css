@@ -247,6 +247,13 @@
 }
 
 .error-textfield{
-    -fx-border-color:#FF0000;
+    -fx-border-color:#F57979;
     -fx-border-width:2px;
+}
+
+.button:focused{
+      -fx-underline: true;
+      -fx-underline-color: #000000;
+      -fx-underline-width:2px;
+
 }

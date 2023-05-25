@@ -8,17 +8,12 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
+import javax.accessibility.AccessibleValue;
 import javax.swing.*;
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
+import java.util.*;
 
 public class HistoryItem extends AnchorPane {
     @FXML
@@ -30,7 +25,10 @@ public class HistoryItem extends AnchorPane {
     @FXML
     private Rectangle rect;
 
+     iMatMiniController update;
 
+    List<Order> orderList = new ArrayList<>();
+    private Model model = Model.getInstance();
     protected Order order;
     private final iMatMiniController mainController;
 
@@ -74,7 +72,22 @@ public class HistoryItem extends AnchorPane {
         this.rect.getStyleClass().add("green");
         history.updateActiveHistoryItem(this);
     }
+    @FXML
+    public void addHistoryToCart(ActionEvent event) {
 
+        ShoppingCart shoppingCart = model.getShoppingCart();
+
+        List<ShoppingItem> items = order.getItems();
+        for (ShoppingItem item : items) {
+            Product product = item.getProduct();
+            int quantity = (int) item.getAmount();
+            shoppingCart.addItem(new ShoppingItem(product, quantity));
+
+        }
+
+        shoppingCart.fireShoppingCartChanged(null, true);
+        //update.updateNumberInCart();
+    }
     public  void unselectOrder() {
         this.rect.getStyleClass().remove("green");
     }
