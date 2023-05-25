@@ -68,6 +68,7 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
 
     @FXML private Label errorLabel2;
 
+    private Model model = Model.getInstance();
     boolean purchaseCompleted = false;
 
     public Checkout(iMatMiniController mainController) {
@@ -230,16 +231,30 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
                     textField.setText("Fyll i denna rutan");
                     hasError = true;
                 } else if (textField == cardNumber1 || textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4 || textField == cardCVC || textField == cardYear || textField == cardMonth) {
-                    if (textField.getText().matches("[a-zA-Z]+")) {
+                    if (textField == cardNumber1 && cardNumber1.getText().length() < 4) {
+                        textField.getStyleClass().add("error-textfield");
+                        textField.setText("fel");
+                        hasError = true;
+                    } else if ((textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4) && textField.getText().length() != 4) {
+                        textField.getStyleClass().add("error-textfield");
+                        textField.setText("fel");
+                        hasError = true;
+                    } else if ((textField == cardYear || textField == cardMonth ) && textField.getText().length() != 2) {
                         textField.getStyleClass().add("error-textfield");
                         textField.setText("fel");
                         hasError = true;
                     }
+                    else if ((textField  == cardCVC ) && textField.getText().length() != 3) {
+                        textField.getStyleClass().add("error-textfield");
+                        textField.setText("fel");
+                        hasError = true;
+                    }
+
                 }
             }
         }
 
-        if (!hasError) {
+        if (!hasError && !model.getShoppingCart().getItems().isEmpty()) {
             completePurchase();
             check();
 
