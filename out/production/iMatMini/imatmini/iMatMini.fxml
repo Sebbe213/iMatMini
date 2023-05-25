@@ -247,8 +247,8 @@
             </AnchorPane>
             <AnchorPane fx:id="CategoryAnchorpane" layoutX="440.0" prefHeight="950.0" prefWidth="1000.0" stylesheets="@iMatMini.css">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutX="237.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1202.0" />
-                  <ScrollPane hbarPolicy="NEVER" layoutX="304.0" layoutY="200.0" prefHeight="607.0" prefWidth="985.0" style="-fx-background-color: FFFFFF;" vbarPolicy="ALWAYS">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1202.0" />
+                  <ScrollPane hbarPolicy="NEVER" layoutX="67.0" layoutY="200.0" prefHeight="607.0" prefWidth="985.0" style="-fx-background-color: FFFFFF;" vbarPolicy="ALWAYS">
                      <content>
                         <GridPane fx:id="categoryGridPane" alignment="CENTER" hgap="20.0" prefHeight="796.0" prefWidth="966.0" style="-fx-background-color: FFFFFF;" vgap="20.0">
                           <columnConstraints>
@@ -265,7 +265,7 @@
                         </GridPane>
                      </content>
                   </ScrollPane>
-                  <Button layoutX="1170.0" layoutY="140.0" mnemonicParsing="false" onAction="#closeCategory" prefHeight="25.0" prefWidth="90.0" styleClass="close-category-button" text="Stäng" textFill="#3c3c50">
+                  <Button layoutX="933.0" layoutY="140.0" mnemonicParsing="false" onAction="#closeCategory" prefHeight="25.0" prefWidth="90.0" styleClass="close-category-button" text="Stäng" textFill="#3c3c50">
                      <font>
                         <Font name="Arial Bold Italic" size="17.0" />
                      </font>

@@ -264,7 +264,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         favoritesPane.setTranslateY(94);
         checkoutPane.setTranslateY(94);
         detailPane.setTranslateY(94);
-        CategoryAnchorpane.setTranslateX(238);
+        CategoryAnchorpane.setTranslateX(237);
 
         updateNumberInCart();
     }    
