@@ -250,3 +250,9 @@
     -fx-border-color:#FF0000;
     -fx-border-width:2px;
 }
+
+.combo-promt-text {
+    -fx-font-size: 20px;
+    -fx-font-family: Arial
+    -fx-text-fill: #3C3C50
+}
