@@ -192,12 +192,22 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void handleBuyItemsAction() {
         for(ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()) {
-            if(item.getAmount() == 0) {IMatDataHandler.getInstance().getShoppingCart().removeItem(item);}
+            if(item.getAmount() == 0) {
+                model.getShoppingCart().fireShoppingCartChanged(item, true );
+                IMatDataHandler.getInstance().getShoppingCart().removeItem(item);}
         }
-        model.placeOrder();
+        for(ShoppingItem item: IMatDataHandler.getInstance().getShoppingCart().getItems()) {
+            double amount = item.getAmount();
+            item.setAmount(0);
+            model.getShoppingCart().fireShoppingCartChanged(item, true);
+            item.setAmount(amount);
+        }
+        IMatDataHandler.getInstance().placeOrder();
         history.fillHistory();
         cart.fillCartFlowPane();
         checkout.fillCartFlowPane();
+        updateNumberInCart();
+        carousel.populateCarousel(Model.getInstance().getProducts(), 0);
         costLabel.setText("Köpet klart!");
     }
 
@@ -214,6 +224,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //IMatDataHandler.getInstance().isFirstRun();
+        //IMatDataHandler.getInstance().reset();
         // TODO
         model.getShoppingCart().addShoppingCartListener(this);
 
@@ -252,6 +264,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         favoritesPane.setTranslateY(94);
         checkoutPane.setTranslateY(94);
         detailPane.setTranslateY(94);
+        CategoryAnchorpane.setTranslateX(237);
 
         updateNumberInCart();
     }    
@@ -290,9 +303,22 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         return detailPane;
     }
 
+    public void openDetailView(Product product) {
+        detailPane.getChildren().clear();
+        detailPane.getChildren().add(detailedViewMap.get(product.getName()));
+        if(getShoppingItem(product) != null) {
+            detailedViewMap.get(product.getName()).openWheProductInShoppingCart();
+        }
+        detailPane.toFront();
+    }
+
     public void openFavourites() {
-       favourites.fillGridPane();
+        updateFavorites();
        favoritesPane.toFront();
+    }
+
+    public void updateFavorites() {
+        favourites.fillGridPane();
     }
 
     public void openShoppingCart() {
@@ -370,11 +396,18 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         int col = 0; int row = 0;
         for(Product product : products) {
             if(selectedCategory.contains(product.getCategory())) {
-                categoryGridPane.add(new ProductPanel(product, this), col, row);
+                ProductPanel panel = new ProductPanel(product, this);
+                categoryGridPane.add(panel, col, row);
                 col++;
                 if (col % 4 == 0) {
                     col = 0;
                     row++;
+                }
+                if(getShoppingItem(product) != null) {
+                    Model.getInstance().getShoppingCart().fireShoppingCartChanged(getShoppingItem(product), true);
+                    if (getShoppingItem(product).getAmount() > 0) {
+                        panel.openWheProductInShoppingCart();
+                    }
                 }
             }
         }
@@ -462,6 +495,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     private void updateNumberInCart() {
         if(Model.getInstance().getShoppingCart().getItems().isEmpty()) {
+            numberInCartLabel.setText("0");
+            numberInCartLabel.setVisible(false);
         }
         else {
             redDotImageView.setVisible(true);
@@ -476,5 +511,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             }
             numberInCartLabel.setText(String.format("%d",amount));
         }
+    }
+
+    public ShoppingItem getShoppingItem(Product product) {
+        for(ShoppingItem cartItem : Model.getInstance().getShoppingCart().getItems()) {
+            if(cartItem.getProduct().equals(product)){
+                return cartItem;
+            }
+        }
+        return null;
     }
 }

@@ -68,7 +68,7 @@ public class History extends AnchorPane {
         System.out.println(IMatDataHandler.getInstance().getOrders().size());
         orderPane.getChildren().clear();
 
-        for (int i = orderList.size()-1; i>0; i--) {
+        for (int i = orderList.size()-1; i>=0; i--) {
             HistoryItem item = new HistoryItem(orderList.get(i), mainController);
             orderPane.getChildren().add(item);
             historyItemMap.put(item.order.getDate().toString(), item);

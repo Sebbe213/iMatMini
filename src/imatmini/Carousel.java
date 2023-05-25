@@ -144,34 +144,50 @@ public class Carousel extends AnchorPane {
                 break;
         }
     }
+
+    private void checkIfInCart(Product product, ProductPanel panel) {
+        if(mainController.getShoppingItem(product) != null) {
+            Model.getInstance().getShoppingCart().fireShoppingCartChanged(mainController.getShoppingItem(product), true);
+            if (mainController.getShoppingItem(product).getAmount() > 0) {
+                panel.openWheProductInShoppingCart();
+            }
+        }
+        productBox.getChildren().add(panel);
+    }
     public void populateCarousel(List<Product> products,int offset) {
         productBox.getChildren().clear();
+
         if(offset == 4){
             for (int i=0+offset; i<2+offset; i++){
                 int randomIndex = productIndexList.get(i);
                 Product product = (products.get(randomIndex));
-                productBox.getChildren().add(new ProductPanel(product, mainController));
+                ProductPanel panel = new ProductPanel(product,mainController);
+                checkIfInCart(product,panel);
             }
             int randomIndex = productIndexList.get(0);
             Product product = (products.get(randomIndex));
-            productBox.getChildren().add(new ProductPanel(product, mainController));
+            ProductPanel panel = new ProductPanel(product,mainController);
+            checkIfInCart(product,panel);
         }
 
         else if (offset == 5) {
             int randomIndex = productIndexList.get(5);
             Product product = (products.get(randomIndex));
-            productBox.getChildren().add(new ProductPanel(product, mainController));
+            ProductPanel panel = new ProductPanel(product,mainController);
+            checkIfInCart(product,panel);
             for (int i=0; i<2; i++){
                 randomIndex = productIndexList.get(i);
                 product = (products.get(randomIndex));
-                productBox.getChildren().add(new ProductPanel(product, mainController));
+                ProductPanel panelNew = new ProductPanel(product, mainController);
+                checkIfInCart(product, panelNew);
             }
         }
         else {
             for (int i = 0 + offset; i < 3 + offset; i++) {
                 int randomIndex = productIndexList.get(i);
                 Product product = (products.get(randomIndex));
-                productBox.getChildren().add(new ProductPanel(product, mainController));
+                ProductPanel panel = new ProductPanel(product,mainController);
+                checkIfInCart(product,panel);
             }
         }
     }

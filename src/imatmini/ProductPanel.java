@@ -23,7 +23,7 @@ import se.chalmers.cse.dat216.project.*;
  *
  * @author oloft
  */
-public class ProductPanel extends AnchorPane {
+public class ProductPanel extends AnchorPane implements ShoppingCartListener {
 
     @FXML ImageView imageView;
     @FXML Label nameLabel;
@@ -64,6 +64,8 @@ public class ProductPanel extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        model.getShoppingCart().addShoppingCartListener(this);
+
         this.mainController = mainController;
         addButton.setText("+");
         this.product = product;
@@ -82,22 +84,17 @@ public class ProductPanel extends AnchorPane {
 
     @FXML
     public void addProduct() {
-        int quantity = Integer.parseInt(howLabel.getText());
-        quantity++;
-        howLabel.setText(String.valueOf(quantity));
+        howLabel.setText(String.valueOf((int)mainController.getShoppingItem(product).getAmount()));
     }
 
     @FXML
     public void removeProduct(){
 
-        int quantity = Integer.parseInt(howLabel.getText());
-        if(quantity>0) {
-            quantity--;
-            if(quantity==0){
-                buyButton.toFront();
-            }
-            howLabel.setText(String.valueOf(quantity));
+        int quantity = (int)mainController.getShoppingItem(product).getAmount();
+        if(quantity<=0){
+            buyButton.toFront();
         }
+        howLabel.setText(String.valueOf(quantity));
     }
 
     @FXML
@@ -162,6 +159,8 @@ public class ProductPanel extends AnchorPane {
 
 
                 } else {
+                    item.setAmount(0);
+                    model.getShoppingCart().fireShoppingCartChanged(item,true);
                     model.getShoppingCart().removeProduct(product);
                 }
                 model.getShoppingCart().fireShoppingCartChanged(item ,true);
@@ -177,16 +176,40 @@ public class ProductPanel extends AnchorPane {
     @FXML
     private void handleAddAction(ActionEvent event) {
         System.out.println("Add " + product.getName());
-        model.addToShoppingCart(product);
+        model.getShoppingCart().addProduct(product);
         addProduct();
 
 
         }
     @FXML
     private void openDetailView() {
-        mainController.getDetailPane().getChildren().clear();
-        mainController.getDetailPane().getChildren().add(mainController.detailedViewMap.get(product.getName()));
-        mainController.getDetailPane().toFront();
+        mainController.openDetailView(product);
+    }
+
+    public void openWheProductInShoppingCart() {
+        howLabel.setText(String.format("%d",(int) mainController.getShoppingItem(product).getAmount()));
+        buyButton.toBack();
+    }
+
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        ShoppingItem item = mainController.getShoppingItem(this.product);
+        if(item != null) {
+            if(item.getAmount() <= 0) {
+                System.out.println("uppdaterar " + item.getProduct() + " mängd till 0");
+                howLabel.setText("0");
+                buyButton.toFront();
+            }
+            else if (Model.getInstance().isFavorite(product)) {
+                buyButton.toBack();
+                howLabel.setText(String.format("%d",(int)item.getAmount()));
+            }
+            if(item.getAmount() > 0) {
+                howLabel.setText(String.format("%d",(int)item.getAmount()));
+                buyButton.toBack();
+            }
+        }
     }
 }
 

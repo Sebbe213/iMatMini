@@ -10,15 +10,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 import java.util.List;
 
-public class DetailedView extends AnchorPane {
+public class DetailedView extends AnchorPane implements ShoppingCartListener {
     private Product product;
     private final iMatMiniController mainController;
     private Model model = Model.getInstance();
@@ -176,6 +173,8 @@ public class DetailedView extends AnchorPane {
 
 
                 } else {
+                    item.setAmount(0);
+                    model.getShoppingCart().fireShoppingCartChanged(item,true);
                     model.getShoppingCart().removeProduct(product);
                 }
                 model.getShoppingCart().fireShoppingCartChanged(item, true);
@@ -195,5 +194,26 @@ public class DetailedView extends AnchorPane {
         addProduct();
 
 
+    }
+
+
+    public void openWheProductInShoppingCart() {
+        howLabel.setText(String.format("%d",(int) mainController.getShoppingItem(product).getAmount()));
+        buyButton.toBack();
+    }
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        ShoppingItem item = mainController.getShoppingItem(this.product);
+        if(item != null) {
+            if(item.getAmount() <= 0) {
+                System.out.println("uppdaterar " + item.getProduct() + " mängd till 0");
+                howLabel.setText("0");
+                buyButton.toFront();
+            }
+            else if (item.getProduct().equals(product)) {
+                howLabel.setText(String.format("%d",(int)item.getAmount()));
+                buyButton.toBack();
+            }
+        }
     }
 }

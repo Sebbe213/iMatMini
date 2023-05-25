@@ -266,12 +266,17 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         cityField.setText(customer.getPostAddress());
         phoneNumberField.setText(customer.getMobilePhoneNumber());
 
-        String[] number = creditcard.getCardNumber().split("-");
-        if(!(number[1].equals(""))) {cardNumber1.setText(number[1]);}
-        if(!(number[2].equals(""))) {cardNumber2.setText(number[2]);}
-        if(!(number[3].equals(""))) {cardNumber3.setText(number[3]);}
-        if(!(number[4].equals(""))) {cardNumber4.setText(number[4]);}
+        System.out.println("Is not first run");
+        if (!creditcard.getCardNumber().isEmpty()) {
+            String[] number = creditcard.getCardNumber().split("-");
+            if (!(number[1].equals(""))) {cardNumber1.setText(number[1]);}
+            if (!(number[2].equals(""))) {cardNumber2.setText(number[2]);}
+            if (!(number[3].equals(""))) {cardNumber3.setText(number[3]);}
+            if (!(number[4].equals(""))) {cardNumber4.setText(number[4]);}
+        }
 
+
+        System.out.println(creditcard.getValidMonth() + "  " + creditcard.getValidYear() + "  " + creditcard.getVerificationCode());
         if(creditcard.getValidMonth() < 10) {cardMonth.setText("0" + String.format("%d",creditcard.getValidMonth()));}
         else {cardMonth.setText(String.format("%d",creditcard.getValidMonth()));}
         if(creditcard.getValidYear() < 10) {cardYear.setText("0" + String.format("%d",creditcard.getValidYear()));}
