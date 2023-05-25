@@ -64,9 +64,9 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
 
     @FXML private Button buyButton;
 
-    @FXML private Label errorLabel;
+    @FXML private Label error1;
 
-    @FXML private Label errorLabel2;
+    @FXML private Label error2;
 
     private Model model = Model.getInstance();
     boolean purchaseCompleted = false;
@@ -230,6 +230,7 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
                     textField.getStyleClass().add("error-textfield");
                     textField.setText("Fyll i denna rutan");
                     hasError = true;
+                    error1.toFront();
                 } else if ((textField == cardNumber1 || textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4 || textField == cardCVC || textField == cardYear || textField == cardMonth || textField == phoneNumberField || textField == postalCodeField ) && textField.getText().matches("[a-zA-Z]+")) {
                     textField.getStyleClass().add("error-textfield");
                     textField.setText("fel");
@@ -238,18 +239,22 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
                     textField.getStyleClass().add("error-textfield");
                     textField.setText("fel");
                     hasError = true;
+                    error2.toFront();
                 } else if ((textField == cardNumber2 || textField == cardNumber3 || textField == cardNumber4) && textField.getText().length() != 4) {
                     textField.getStyleClass().add("error-textfield");
                     textField.setText("fel");
                     hasError = true;
+                    error2.toFront();
                 } else if ((textField == cardYear || textField == cardMonth) && textField.getText().length() != 2) {
                     textField.getStyleClass().add("error-textfield");
                     textField.setText("fel");
                     hasError = true;
+                    error2.toFront();
                 } else if (textField == cardCVC && textField.getText().length() != 3) {
                     textField.getStyleClass().add("error-textfield");
                     textField.setText("fel");
                     hasError = true;
+                    error2.toFront();
                 }
             }
 
@@ -263,7 +268,10 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
 
         if (!hasError && !model.getShoppingCart().getItems().isEmpty()) {
             completePurchase();
+            error2.toBack();
+            error1.toBack();
             check();
+
         }
     }
     @FXML
