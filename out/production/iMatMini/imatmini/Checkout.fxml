@@ -39,7 +39,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label fx:id="error2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla i bokstäver!">
+      <Label fx:id="error2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla för få nummer!">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
