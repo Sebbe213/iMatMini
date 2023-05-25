@@ -97,6 +97,13 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         addTextLimiter(cardMonth,2);
         addTextLimiter(cardYear,2);
         addTextLimiter(cardCVC,3);
+        numericOnly(cardNumber1);
+        numericOnly(cardNumber2);
+        numericOnly(cardNumber3);
+        numericOnly(cardNumber4);
+        numericOnly(cardYear);
+        numericOnly(cardMonth);
+        numericOnly(cardCVC);
 
         this.mainController = mainController;
         this.customer = dataHandler.getCustomer();
@@ -285,6 +292,19 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
                 }
             }
         }
+    }
+
+    public static void numericOnly(final TextField field) {
+        field.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(
+                    ObservableValue<? extends String> observable,
+                    String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    field.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
     void init() {
         firstNameField.setText(customer.getFirstName());

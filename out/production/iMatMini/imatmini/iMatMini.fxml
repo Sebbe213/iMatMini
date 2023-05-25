@@ -22,6 +22,33 @@
    <children>
       <StackPane prefHeight="720.0" prefWidth="1080.0">
          <children>
+            <AnchorPane fx:id="CategoryAnchorpane" layoutX="440.0" prefHeight="950.0" prefWidth="1000.0" stylesheets="@iMatMini.css">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1202.0" />
+                  <ScrollPane hbarPolicy="NEVER" layoutX="67.0" layoutY="200.0" prefHeight="607.0" prefWidth="985.0" style="-fx-background-color: FFFFFF;" vbarPolicy="ALWAYS">
+                     <content>
+                        <GridPane fx:id="categoryGridPane" alignment="CENTER" hgap="20.0" prefHeight="796.0" prefWidth="966.0" style="-fx-background-color: FFFFFF;" vgap="20.0">
+                          <columnConstraints>
+                              <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
+                            <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
+                            <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
+                              <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
+                          </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+                  <Button layoutX="933.0" layoutY="140.0" mnemonicParsing="false" onAction="#closeCategory" prefHeight="25.0" prefWidth="90.0" styleClass="close-category-button" text="Stäng" textFill="#3c3c50">
+                     <font>
+                        <Font name="Arial Bold Italic" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="ProductsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" width="1440.0" />
@@ -245,33 +272,6 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="CategoryAnchorpane" layoutX="440.0" prefHeight="950.0" prefWidth="1000.0" stylesheets="@iMatMini.css">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1202.0" />
-                  <ScrollPane hbarPolicy="NEVER" layoutX="67.0" layoutY="200.0" prefHeight="607.0" prefWidth="985.0" style="-fx-background-color: FFFFFF;" vbarPolicy="ALWAYS">
-                     <content>
-                        <GridPane fx:id="categoryGridPane" alignment="CENTER" hgap="20.0" prefHeight="796.0" prefWidth="966.0" style="-fx-background-color: FFFFFF;" vgap="20.0">
-                          <columnConstraints>
-                              <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
-                            <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
-                            <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
-                              <ColumnConstraints minWidth="217.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
-                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
-                            <RowConstraints minHeight="252.0" prefHeight="30.0" />
-                          </rowConstraints>
-                        </GridPane>
-                     </content>
-                  </ScrollPane>
-                  <Button layoutX="933.0" layoutY="140.0" mnemonicParsing="false" onAction="#closeCategory" prefHeight="25.0" prefWidth="90.0" styleClass="close-category-button" text="Stäng" textFill="#3c3c50">
-                     <font>
-                        <Font name="Arial Bold Italic" size="17.0" />
-                     </font>
-                  </Button>
-               </children>
-            </AnchorPane>
          </children>
       </StackPane>
       <AnchorPane fx:id="headerAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="1440.0" style="-fx-background-color: ';" styleClass="header-color" stylesheets="@iMatMini.css">
@@ -327,7 +327,10 @@
                   <Image url="@../../out/production/iMatMini/imatmini/pics/redcircle.png" />
                </image>
             </ImageView>
-            <Label fx:id="numberInCartLabel" layoutX="1331.0" layoutY="22.0" text="0" />
+            <Label fx:id="numberInCartLabel" contentDisplay="RIGHT" layoutX="1298.0" layoutY="20.0" prefHeight="25.0" prefWidth="25.0" styleClass="cart-item-circle" text=" 1" textAlignment="RIGHT" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Arial" size="25.0" />
+               </font></Label>
          </children>
       </AnchorPane>
    </children>
