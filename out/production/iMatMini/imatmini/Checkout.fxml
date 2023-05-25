@@ -213,14 +213,14 @@
             <Font name="Arial" size="17.0" />
          </font>
       </Label>
-      <Label fx:id="error2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla för få nummer!">
+      <Label fx:id="error2" layoutX="437.0" layoutY="471.0" prefHeight="33.0" prefWidth="313.0" text="Du har råkat fylla för få nummer!" textFill="#f57979">
          <font>
-            <Font name="Arial" size="20.0" />
+            <Font name="Arial Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="error1" layoutX="413.0" layoutY="107.0" prefHeight="36.0" prefWidth="393.0" text="Du har glömt att fylla en textruta nedan!">
+      <Label fx:id="error1" layoutX="413.0" layoutY="107.0" prefHeight="36.0" prefWidth="393.0" text="Du har glömt att fylla en textruta nedan!" textFill="#f57979">
          <font>
-            <Font name="Arial" size="20.0" />
+            <Font name="Arial Bold" size="20.0" />
          </font>
       </Label>
     </children>
