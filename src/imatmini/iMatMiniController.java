@@ -402,7 +402,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
                     col = 0;
                     row++;
                 }
-
+                if(getShoppingItem(product) != null) {
+                    Model.getInstance().getShoppingCart().fireShoppingCartChanged(getShoppingItem(product), true);
+                    if (getShoppingItem(product).getAmount() > 0) {
+                        panel.openWheProductInShoppingCart();
+                    }
+                }
             }
         }
 
@@ -508,7 +513,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     public ShoppingItem getShoppingItem(Product product) {
-        for(ShoppingItem cartItem : model.getShoppingCart().getItems()) {
+        for(ShoppingItem cartItem : Model.getInstance().getShoppingCart().getItems()) {
             if(cartItem.getProduct().equals(product)){
                 return cartItem;
             }
