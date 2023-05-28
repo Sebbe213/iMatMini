@@ -18,10 +18,19 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+<AnchorPane id="AnchorPane" fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="951.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
    <children>
       <StackPane prefHeight="720.0" prefWidth="1080.0">
          <children>
+            <AnchorPane prefHeight="65.0" prefWidth="488.0" style="-fx-background-color: #ff6600;">
+               <children>
+                  <Label fx:id="itemsLabel" layoutX="139.0" layoutY="21.0" prefHeight="17.0" prefWidth="150.0" text="Antal varor: 3456" />
+                  <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
+                  <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
+                  <Label fx:id="costLabel" layoutX="479.0" layoutY="21.0" text="Kostnad: 3456.60" />
+                  <Button layoutX="312.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleNameAction" text="Mina uppgifter" />
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="CategoryAnchorpane" layoutX="440.0" prefHeight="950.0" prefWidth="1000.0" stylesheets="@iMatMini.css">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="810.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1202.0" />
@@ -108,7 +117,7 @@
             <AnchorPane fx:id="profilePane" prefHeight="810.0" prefWidth="1080.0" />
             <AnchorPane fx:id="shopPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1440.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <TextField fx:id="searchField" layoutX="294.0" layoutY="138.0" onAction="#handleSearchAction" prefHeight="46.0" prefWidth="965.0" stylesheets="@iMatMini.css" AnchorPane.rightAnchor="208.0">
+                  <TextField fx:id="searchField" layoutX="294.0" layoutY="138.0" onAction="#handleSearchAction" prefHeight="46.0" prefWidth="965.0" stylesheets="@iMatMini.css" AnchorPane.bottomAnchor="771.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="138.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -122,7 +131,7 @@
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="222.0" fitWidth="913.0" layoutX="313.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="222.0" fitWidth="913.0" layoutX="313.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="313.0" AnchorPane.rightAnchor="239.0">
                      <image>
                         <Image url="@pics/image1.png" />
                      </image>
@@ -132,7 +141,7 @@
                         <Font name="Arial Bold" size="40.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="37.0" layoutY="158.0" prefHeight="607.0" prefWidth="200.0" styleClass="checkout-anchorpane-style" stylesheets="@iMatMini.css" />
+                  <AnchorPane layoutX="37.0" layoutY="158.0" prefHeight="607.0" prefWidth="200.0" styleClass="checkout-anchorpane-style" stylesheets="@iMatMini.css" AnchorPane.bottomAnchor="185.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="1203.0" />
                   <Button fx:id="fiskButton" layoutX="77.0" layoutY="231.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openCategory" prefHeight="194.0" prefWidth="210.0" styleClass="category-button" stylesheets="@iMatMini.css" text="Fisk" textFill="#3c3c50">
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
@@ -227,15 +236,6 @@
                         <FlowPane fx:id="flowCarousel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="1146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="782.0" layoutY="929.0" prefHeight="65.0" prefWidth="488.0" style="-fx-background-color: #ff6600;">
-                     <children>
-                        <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
-                        <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
-                        <Label fx:id="itemsLabel" layoutX="139.0" layoutY="21.0" prefHeight="17.0" prefWidth="150.0" text="Antal varor: 3456" />
-                        <Label fx:id="costLabel" layoutX="479.0" layoutY="21.0" text="Kostnad: 3456.60" />
-                        <Button layoutX="312.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleNameAction" text="Mina uppgifter" />
-                     </children>
-                  </AnchorPane>
                   <Label layoutX="307.0" layoutY="452.0" prefHeight="74.0" prefWidth="239.0" text="Populära varor" textFill="#3c3c50">
                      <font>
                         <Font name="Arial Bold" size="30.0" />
@@ -290,12 +290,12 @@
                   <String fx:value="button" />
                </styleClass>
             </Button>
-            <Button layoutX="402.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleShowFavouritesAction" prefHeight="56.0" prefWidth="169.0" styleClass="header-color" stylesheets="@iMatMini.css" text="Favoriter" translateX="70.0">
+            <Button layoutX="402.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleShowFavouritesAction" prefHeight="56.0" prefWidth="169.0" styleClass="header-color" stylesheets="@iMatMini.css" text="Favoriter" translateX="70.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="598.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleShowHistoryAction" prefHeight="56.0" prefWidth="169.0" stylesheets="@iMatMini.css" text="Historik" translateX="70.0">
+            <Button layoutX="598.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleShowHistoryAction" prefHeight="56.0" prefWidth="169.0" stylesheets="@iMatMini.css" text="Historik" translateX="70.0" AnchorPane.leftAnchor="598.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="25.0">
                <font>
                   <Font size="20.0" />
                </font>

@@ -231,6 +231,9 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
                     if (textField.getStyleClass().contains("error-textfield")) {
                         textField.clear();
                         textField.getStyleClass().remove("error-textfield");
+                        error2.toBack();
+                        error1.toBack();
+                        error3.toBack();
                     }
                 });
 
