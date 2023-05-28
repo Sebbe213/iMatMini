@@ -51,7 +51,7 @@ public class History extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.mainController = mainController;
-        System.out.print("hehhahaha");
+        //System.out.print("hehhahaha");
         this.orderList = IMatDataHandler.getInstance().getOrders();
         this.activeItem = null;
 
@@ -65,7 +65,7 @@ public class History extends AnchorPane {
 
     public void fillHistory() {
         this.orderList = IMatDataHandler.getInstance().getOrders();
-        System.out.println(IMatDataHandler.getInstance().getOrders().size());
+     //   System.out.println(IMatDataHandler.getInstance().getOrders().size());
         orderPane.getChildren().clear();
 
         for (int i = orderList.size()-1; i>=0; i--) {
@@ -81,7 +81,7 @@ public class History extends AnchorPane {
     }
 
     public void fillHistoryProduct(Order order) {
-        System.out.println(order);
+        //System.out.println(order);
 
         double totalCost = 0;
         orderItemsPane.getChildren().clear();
@@ -94,7 +94,7 @@ public class History extends AnchorPane {
 
         }
         selectedOrderDateLabel.setText("Order " + order.getDate().toString());
-        System.out.println(selectedOrderDateLabel);
+        //System.out.println(selectedOrderDateLabel);
         orderPriceLabel.setText( String.format("%.2f", totalCost + 40) + "kr");
     }
 

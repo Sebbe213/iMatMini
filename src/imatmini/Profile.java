@@ -108,7 +108,7 @@ public class Profile extends AnchorPane {
             cardYear.setText(String.format("%d", creditcard.getValidYear()));
         }
 
-        System.out.println(creditcard.getVerificationCode() + "FÖRE");
+        //System.out.println(creditcard.getVerificationCode() + "FÖRE");
         if ((creditcard.getVerificationCode() < 100) && (creditcard.getVerificationCode() >= 10)) {
             cardCVC.setText("0" + String.format("%d", creditcard.getVerificationCode()));
         } else if (creditcard.getVerificationCode() < 10) {
@@ -116,7 +116,7 @@ public class Profile extends AnchorPane {
         } else {
             cardCVC.setText(String.format("%d", creditcard.getVerificationCode()));
         }
-        System.out.println(creditcard.getVerificationCode());
+        //System.out.println(creditcard.getVerificationCode());
         cardCVC.setText(String.format("%d", creditcard.getVerificationCode()));
     }
 
@@ -166,7 +166,7 @@ public class Profile extends AnchorPane {
         customer.setMobilePhoneNumber(phoneNumberField.getText());
 
         creditcard.setCardNumber( "start-" + cardNumber1.getText() + "-" + cardNumber2.getText() + "-" + cardNumber3.getText() + "-" + cardNumber4.getText() + "-end");
-        System.out.println(creditcard.getCardNumber());
+       // System.out.println(creditcard.getCardNumber());
 
         creditcard.setHoldersName(customer.getFirstName() + " " + customer.getLastName());
         if(!cardYear.getText().isBlank()) {creditcard.setValidYear(Integer.parseInt(cardYear.getText()));}

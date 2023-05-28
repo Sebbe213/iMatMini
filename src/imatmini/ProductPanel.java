@@ -197,7 +197,7 @@ public class ProductPanel extends AnchorPane implements ShoppingCartListener {
         ShoppingItem item = mainController.getShoppingItem(this.product);
         if(item != null) {
             if(item.getAmount() <= 0) {
-                System.out.println("uppdaterar " + item.getProduct() + " mängd till 0");
+                //System.out.println("uppdaterar " + item.getProduct() + " mängd till 0");
                 howLabel.setText("0");
                 buyButton.toFront();
             }
