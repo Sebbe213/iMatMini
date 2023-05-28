@@ -1,6 +1,7 @@
 package imatmini;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -77,6 +78,11 @@ public class DetailedView extends AnchorPane implements ShoppingCartListener {
     @FXML
     private void closeDetailView() {
         mainController.getDetailPane().toBack();
+    }
+
+    @FXML
+    public void mouseTrap(Event event){
+        event.consume();
     }
 
     @FXML

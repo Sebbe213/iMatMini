@@ -212,7 +212,7 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         customer.setMobilePhoneNumber(phoneNumberField.getText());
 
         creditcard.setCardNumber( "start-" + cardNumber1.getText() + "-" + cardNumber2.getText() + "-" + cardNumber3.getText() + "-" + cardNumber4.getText() + "-end");
-        System.out.println(creditcard.getCardNumber());
+        //System.out.println(creditcard.getCardNumber());
 
         creditcard.setHoldersName(customer.getFirstName() + " " + customer.getLastName());
         if(!cardYear.getText().isBlank()) {creditcard.setValidYear(Integer.parseInt(cardYear.getText()));}
@@ -324,7 +324,7 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         cityField.setText(customer.getPostAddress());
         phoneNumberField.setText(customer.getMobilePhoneNumber());
 
-        System.out.println("Is not first run");
+       // System.out.println("Is not first run");
         if (!creditcard.getCardNumber().isEmpty()) {
             String[] number = creditcard.getCardNumber().split("-");
             if (!(number[1].equals(""))) {cardNumber1.setText(number[1]);}
@@ -340,11 +340,11 @@ public class Checkout extends AnchorPane implements ShoppingCartListener {
         if(creditcard.getValidYear() < 10) {cardYear.setText("0" + String.format("%d",creditcard.getValidYear()));}
         else {cardYear.setText(String.format("%d",creditcard.getValidYear()));}
 
-        System.out.println(creditcard.getVerificationCode() + "FÖRE");
+       // System.out.println(creditcard.getVerificationCode() + "FÖRE");
         if((creditcard.getVerificationCode() < 100) && (creditcard.getVerificationCode() >= 10)) {cardCVC.setText("0" + String.format("%d",creditcard.getVerificationCode()));}
         else if (creditcard.getVerificationCode() < 10) {cardCVC.setText("00" + String.format("%d",creditcard.getVerificationCode()));}
         else {cardCVC.setText(String.format("%d",creditcard.getVerificationCode()));}
-        System.out.println(creditcard.getVerificationCode());
+       // System.out.println(creditcard.getVerificationCode());
         cardCVC.setText(String.format("%d",creditcard.getVerificationCode()));
     }
 }

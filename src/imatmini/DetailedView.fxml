@@ -14,7 +14,7 @@
 
 <fx:root onMouseClicked="#closeDetailView" prefHeight="810.0" prefWidth="1440.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);" styleClass="navigation-bar-text" stylesheets="@iMatMini.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="220.0" layoutY="85.0" prefHeight="567.0" prefWidth="1083.0" styleClass="cart-anchorpane-style">
+      <AnchorPane layoutX="220.0" layoutY="85.0" onMouseClicked="#mouseTrap" prefHeight="567.0" prefWidth="1083.0" styleClass="cart-anchorpane-style">
          <children>
             <Button layoutX="733.0" layoutY="27.0" mnemonicParsing="false" onAction="#closeDetailView" prefHeight="34.0" prefWidth="99.0" styleClass="close-deatil-button" text="Stäng">
                <font>
@@ -34,7 +34,7 @@
                <font>
                   <Font name="Arial" size="30.0" />
                </font></Label>
-            <Label fx:id="suffixLabel" layoutX="841.0" layoutY="155.0" text="kr" textFill="#3c3c50">
+            <Label fx:id="suffixLabel" layoutX="854.0" layoutY="155.0" text="kr" textFill="#3c3c50">
                <font>
                   <Font name="Arial" size="30.0" />
                </font></Label>
